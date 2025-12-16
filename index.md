@@ -1,5 +1,3 @@
-# BrainCheck (뇌체크)
-
 ## 우리가 하는 일
 
 **뇌체크(BrainCheck)** 는
