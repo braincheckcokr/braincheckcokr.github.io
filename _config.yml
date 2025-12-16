@@ -1,0 +1,21 @@
+# Site settings
+title: BrainCheck
+description: 플래시카드 기반 언어 학습 플랫폼
+url: "https://braincheckcokr.github.io"
+baseurl: ""
+
+# Theme
+remote_theme: pages-themes/minimal@v0.2.0
+
+# Markdown processing (GFM)
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  syntax_highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
