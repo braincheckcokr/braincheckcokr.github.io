@@ -1,3 +1,10 @@
+---
+layout: default
+title: BrainCheck - 언어 학습 플랫폼
+description: 플래시카드 기반 언어 학습 플랫폼. AI 기반 학습 추천, 음성인식, TTS 제공.
+canonical_url: "https://braincheck.co.kr/"
+---
+
 ## 우리가 하는 일
 
 **뇌체크(BrainCheck)** 는

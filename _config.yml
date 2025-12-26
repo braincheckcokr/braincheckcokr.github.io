@@ -1,1 +1,11 @@
 title: BrainCheck
+url: "https://braincheck.co.kr"
+baseurl: ""
+
+# SEO 설정
+description: "플래시카드 기반 언어 학습 플랫폼"
+lang: ko
+
+# Jekyll SEO Tag 플러그인 (GitHub Pages 기본 지원)
+plugins:
+  - jekyll-seo-tag
