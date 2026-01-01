@@ -175,8 +175,9 @@ body {
 }
 
 .features-content {
-    max-width: 900px;
+    max-width: 980px;
     margin: 0 auto;
+    padding: 0 40px;
 }
 
 .features-content h2 {
@@ -372,14 +373,67 @@ hr {
 
 /* Info Box */
 .info-box {
-    background: #f5faf5;
-    padding: 32px;
-    border-radius: 16px;
     margin: 24px 0;
 }
 
 .info-box p {
     margin-bottom: 8px;
+}
+
+/* Download Section */
+.download-section {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin: 24px 0;
+}
+
+.qr-code {
+    text-align: center;
+}
+
+.qr-code img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    background: #fff;
+    padding: 8px;
+}
+
+.qr-code p {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #666;
+}
+
+.store-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.store-badge img {
+    height: 50px;
+    transition: transform 0.2s;
+}
+
+.store-badge img[alt*="App Store"] {
+    height: 60px;
+}
+
+.store-badge img[alt*="Google Play"] {
+    height: 70px;
+}
+
+.store-badge:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .download-section {
+        flex-direction: column;
+        gap: 24px;
+    }
 }
 
 /* Footer */
