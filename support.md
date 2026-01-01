@@ -20,7 +20,3 @@ canonical_url: "https://braincheck.co.kr/support"
 ## 자주 묻는 질문
 
 준비 중입니다.
-
----
-
-[홈으로 돌아가기](/)

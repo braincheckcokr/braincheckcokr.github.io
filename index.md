@@ -110,7 +110,3 @@ canonical_url: "https://braincheck.co.kr/"
 
 뇌체크의 모든 학습 경험은
 이 원칙을 기준으로 설계됩니다.
-
----
-
-[회사소개](/about) | [고객센터](/support) | [개인정보처리방침](/information) |© 뇌체크

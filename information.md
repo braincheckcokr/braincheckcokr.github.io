@@ -1,4 +1,9 @@
-# 뇌체크 개인보호
+---
+layout: default
+title: 개인정보처리방침 - BrainCheck
+description: 뇌체크 개인정보처리방침
+canonical_url: "https://braincheck.co.kr/information"
+---
 
 # 개인정보 처리방침
 
