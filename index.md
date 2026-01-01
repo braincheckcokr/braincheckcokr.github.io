@@ -113,4 +113,4 @@ canonical_url: "https://braincheck.co.kr/"
 
 ---
 
-[회사소개](/about) | [고객센터](/support) | © 뇌체크
+[회사소개](/about) | [고객센터](/support) | [개인정보처리방침](/information) |© 뇌체크
