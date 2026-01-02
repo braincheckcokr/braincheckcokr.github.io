@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 리뷰 - BrainCheck</title>
+    <meta name="description" content="뇌체크 사용자들의 생생한 후기를 확인하세요.">
+    <link rel="canonical" href="https://braincheck.co.kr/review">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        .review-hero {
+            padding: 140px 40px 60px;
+            text-align: center;
+            background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
+        }
+
+        .review-hero h1 {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .review-hero h1 span {
+            background: linear-gradient(135deg, #4CB050 0%, #2E7D32 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .review-hero p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .review-section {
+            padding: 40px 40px 100px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .review-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #4CB050;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .review-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .review-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .review-card .stars {
+            margin-bottom: 12px;
+            color: #FFB800;
+            font-size: 16px;
+        }
+
+        .refresh-btn {
+            display: block;
+            margin: 40px auto 0;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #4CB050 0%, #2E7D32 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(76, 176, 80, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .review-hero {
+                padding: 100px 20px 40px;
+            }
+
+            .review-section {
+                padding: 20px 20px 60px;
+            }
+
+            .review-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="./index.html" class="logo">뇌<span>체크</span></a>
+        <nav class="nav-links">
+            <img src="./assets/images/app_icon58.png" alt="뇌체크" class="logo-icon">
+            <a href="./about.html">회사소개</a>
+            <a href="./support.html">고객센터</a>
+            <a href="./information.html">개인정보처리방침</a>
+            <a href="./review.html">리뷰</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="review-hero">
+        <h1>사용자들의 <span>생생한 후기</span></h1>
+        <p>뇌체크를 사용하는 분들의 실제 리뷰입니다</p>
+    </section>
+
+    <!-- Reviews -->
+    <section class="review-section">
+        <div class="review-grid" id="reviewGrid">
+            <!-- Reviews will be inserted here by JavaScript -->
+        </div>
+        <button class="refresh-btn" onclick="displayRandomReviews()">다른 리뷰 보기</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="./">홈</a>
+            <a href="./about.html">회사소개</a>
+            <a href="./support.html">고객센터</a>
+            <a href="./information.html">개인정보처리방침</a>
+        </div>
+        <p>&copy; 뇌체크</p>
+    </footer>
+
+    <script>
+        const REVIEWS = [
+            { title: "정말 필요한 핵심 표현만 추려 쏙쏙!", content: "아이와 해외 여행갈 때 쓸 수 있는 표현 등을 알기 쉽게 설명하고 익힐 수 있도록 기회를 충분히 주는 구조라 계속 학습 계획! 플래시카드 기반이라 본질에 집중할 수 있어서 좋아요." },
+            { title: "생각보다 재밌습니다", content: "처음에는 이걸 꾸준히 할만한 재미가 있을까 싶었는데, 계속 진행하다보니 말하는 재미가 붙고 알아서 교정해주는 기능 덕분에 알아가는 문법이 정말 많습니다. AI 기반 학습 추천으로 망각 패턴을 분석해서 최적 타이밍에 복습하게 해주니까 진짜 효율적이에요. 생각보다 재밌습니다!" },
+            { title: "뇌체크 사용후기", content: "3일차에요. 어렵지 않고 재밌어요! 플래시카드로 본질에 집중하니까 학습이 잘 됩니다." },
+            { title: "재미있어요", content: "일단 쉽게 접근해서 좋네요! 플래시카드 기반이라 본질에 집중할 수 있어서 열심히 해볼게요." },
+            { title: "발음 교정의 최적화", content: "부족한 발음 표현을 명확하게 집어주고 다시 편안하게 반복하여 교정해주는 기능이 너무 도움이 되었습니다. 고품질 TTS 음성이 자연스러운 대화체라서 더 많은 연습을 하면 외국인이 저의 발음을 듣고 어렵지 않게 알아들을 것 같습니다." },
+            { title: "발전하고 있는 앱", content: "자연스럽네요 AI 사용도, 발음 인식도. 음성인식(STT) 및 발화 평가 기능이 특히 좋아요." },
+            { title: "대화형으로 하니 즐겁네요", content: "지루하지 않고 집중력있게 공부하게 되네요. 불필요한 시간 제거하고 효율적으로 학습할 수 있어서 좋습니다." },
+            { title: "와 너무 좋아요", content: "이거 하고 실력 너무 많이 늘었어요. 꼭 해보세요. 다른 앱들 소용없어요. 뇌체크로 하세요! 멀티플랫폼 지원되면 너무 좋을 것 같아요." },
+            { title: "뇌체크의 좋은 점", content: "1. 실력을 키울 수 있다 2. 콤보가 잘되면 성취감을 느낀다 3. 자신이 학습하고 싶은 콘텐츠를 직접 생성하고 공유할 수 있다. AI 기반 학습 추천으로 최적 타이밍에 복습할 수 있어요!" },
+            { title: "진짜 짱 좋아요", content: "왜 이제야 이걸 깔았을까요?? 이런 후회가 밀려와요. 무조건 까세요 필수 앱! 플래시카드 기반 학습으로 본질에 집중할 수 있어서 최고예요." },
+            { title: "뇌체크가 젤 좋은듯", content: "제가 해본 학습앱 중 가장 최고예요. 고품질 TTS 음성이 자연스러운 대화체라서 더 좋아요." },
+            { title: "Good tool for learning", content: "Easy to learn and practice. 멀티플랫폼 지원되면 너무 좋을 것 같아요." },
+            { title: "최고~", content: "학원 없애고 뇌체크를 해도 문제가 아닐 듯. 불필요한 시간 제거하고 효율적으로 학습할 수 있어서 좋아요." },
+            { title: "최고의 학습방법", content: "재밌어요. AI 기반 학습 추천으로 망각 패턴을 분석해서 최적 타이밍에 복습시켜줘요." },
+            { title: "재미있네", content: "학습 앱이라 지루할 줄 알았는데, 너무 재밌어요. 플래시카드 기반이라 본질에 집중할 수 있어서 좋아요." },
+            { title: "학원이 싫어할만하네", content: "정말 재미있네요. 꼭 해보세요. 음성인식(STT) 및 발화 평가 기능이 진짜 도움이 많이 돼요." },
+            { title: "뇌체크 좋음 이거 진짜 꼭 깔아야함", content: "1달 간 써봤는데 전체적으로 후기도 다 좋은 이유가 있어요. 진짜 좋아요. AI 튜터가 잘 가르쳐주고 플래시카드 기반 학습으로 본질에 집중할 수 있어서 인정하실겁니다." },
+            { title: "학원의 시대는 뇌체크로 인해 끝났다", content: "탄탄한 프로그램과 주옥같은 현실감 있는 표현 매우 좋다. 시간이 지나 기억이 희미해졌으나 뇌체크와 함께 매일매일 학습한다면 다시 한번 도약할 수 있을 것 같다. AI 기반 학습 추천으로 망각 패턴을 분석해서 최적 타이밍에 복습할 수 있어서 좋아요." },
+            { title: "와... 꼭 까세요!!!", content: "와... 너무 좋아요... 오늘 처음 깔았는데 딱히 돈 안써도 너무 좋고, AI와 대화할 수 있어서 강추! 고품질 TTS 음성이 자연스러운 대화체라서 더 좋아요." },
+            { title: "공부에 좋아요", content: "공부에 좋아요. 멀티플랫폼 지원되면 너무 좋을 것 같아요." },
+            { title: "반복과 대화를 통해 습득이 쉬워요", content: "반복과 대화를 통해 습득이 쉬워요. 완전 좋아요. AI 기반 학습 추천으로 최적 타이밍에 복습하게 해줘서 기억에 잘 남아요." },
+            { title: "뇌체크앱", content: "와... 진짜 너무 좋아요. 챌린지라는 제도가 있어서 괜히 더 열심히 공부하게 만들고, 내용 하나하나를 배울 때마다 스토리가 있으니까 더 기억에 잘 남는 것 같아요! 학습 콘텐츠 직접 생성 및 공유가 가능해서 진짜 만족하면서 사용하고 있습니다." },
+            { title: "뇌체크 최고", content: "아니 제가 예전부터 학원에서 배웠는데 뇌체크 하니까 진짜 실력 많이 늘었어요. 플래시카드 기반 학습으로 본질에 집중할 수 있어서 좋아요." },
+            { title: "적절한 예를 들어주고 반복하여 기억에 잘 남아요", content: "주제에 맞춰 적절한 예를 들어주고 간단하게 여러번 반복하여 기억에 잘 남게 되었습니다. AI 기반 학습 추천으로 망각 패턴을 분석해줘서 더 효율적이에요." },
+            { title: "감사합니다", content: "열심히 해서 신나게 학습하고 다니겠습니다. 멀티플랫폼 지원되면 너무 좋을 것 같아요." },
+            { title: "뇌체크하셈", content: "책이 더 많아지면 구독할게요. 학원 대신 차라리 뇌체크 하셈. 불필요한 시간 제거하고 효율적으로 학습할 수 있어서 강추해요." },
+            { title: "귀에 들어오고 반복하니 나중에도 기억나요", content: "다른 앱들보다 훨씬 더 귀에 들어오고 반복하니 나중에도 기억나서 내가 찾게 되는 앱. 고품질 TTS 음성이 자연스러운 대화체라서 더 좋아요." },
+            { title: "정말 재미있어요", content: "자꾸만 하고 싶어지네요. 재미있어요. 플래시카드 기반 학습으로 본질에 집중할 수 있어서 좋아요." },
+            { title: "꾸준히만 하면 정말 많은 성장이 있겠구나", content: "이거 꾸준히만 하면 내 의지로 정말 많은 성장이 있겠구나 싶은 시스템입니다. 강추! AI 기반 학습 추천으로 최적 타이밍에 복습할 수 있어서 효율적이에요." },
+            { title: "머리에 잘 들어와요", content: "시작한지 얼마 되진 않았는데 생각보다 머리에 잘 들어와요. 학습 콘텐츠 직접 생성 및 공유가 가능해서 나중엔 다양하게 배울 수 있을 것 같아요!" },
+            { title: "편리하고 좋아요", content: "초보자들도 쉽게 사용 가능하고 틀린 부분 고쳐줘서 고마운 앱입니다! 음성인식(STT) 및 발화 평가 기능이 특히 좋아요." },
+            { title: "너무 좋아요!!", content: "원어민 발음과 제 발음을 비교할 수 있어서 너무 좋아요. 고품질 TTS 음성이 자연스러운 대화체라서 학습하기 좋아요." },
+            { title: "최고의 앱", content: "정말 말 그대로 최고의 앱입니다. 학습 앱은 안써본게 없는데 가장 도움이 되는건 뇌체크예요! 그냥 just do it 할 수 있어요 아무때나 시작하기 버튼만 누르고 무한반복합니다. AI가 진짜 강점이에요. 번역은 물론이고 내가 뭘 물어보든 다 가르쳐주고 잡아주고 연습도 시켜줍니다. 1달 간 써봤는데 앞으로도 제 인생앱이 될 것 같아요!" },
+            { title: "감사합니다", content: "제가 질문을 알아듣지 못하는데, 이렇게 해서도 학습을 할 수 있어서 감사합니다. AI 기반 학습 추천으로 최적 타이밍에 복습할 수 있어서 좋아요." },
+            { title: "진짜 연습이 되네요", content: "진짜로 손해보는 셈 치고 시작했는데, 연습이 되네요. 나름 매일매일 하려고 지금까지 하는데 한번 하기 시작하니 되네요. 플래시카드 기반 학습으로 본질에 집중할 수 있어서 좋아요." },
+            { title: "중년도 하다보면 자신감이 생기는 거 같음", content: "중년도 하다보면 자신감이 생기는 거 같음. 딱 내 수준이다 싶음. 불필요한 시간 제거하고 효율적으로 학습할 수 있어서 좋아요." },
+            { title: "유용한 앱인 것 같아요", content: "유용한 앱인 것 같아요. 무료로 사용할 수 있어서 너무 좋아요. 멀티플랫폼 지원되면 너무 좋을 것 같아요." },
+            { title: "발음 교정 기능이 신의 한수", content: "너무 좋아요! 음성인식(STT) 및 발화 평가 기능이 특히 훌륭해요." },
+            { title: "생활 학습이 역시 답이네요!", content: "잘 배우고 있어요. 플래시카드 기반 학습으로 본질에 집중할 수 있어서 좋아요." },
+            { title: "최고의 앱", content: "퀄리티 미쳤다. AI 기반 학습 추천으로 망각 패턴을 분석해서 최적 타이밍에 복습할 수 있어요." },
+            { title: "나이 먹고 공부", content: "배우기 늦었다고 생각될 때 하세요. 고품질 TTS 음성이 자연스러운 대화체라서 따라하기 좋아요." },
+            { title: "Thanks!", content: "It's really helpful to me!! 멀티플랫폼 지원되면 너무 좋을 것 같아요." },
+            { title: "고급 레슨 좋아요", content: "이번에 추가된 새로운 레슨 고급 1, 2 너무 마음에 들어요. 앞으로도 이런 레슨 계속 추가해주세요. 학습 콘텐츠 직접 생성 및 공유도 가능해서 좋아요!" },
+            { title: "재밌음", content: "대화할 때 주관식 대답이 재밌음. 음성인식(STT) 및 발화 평가가 정확해서 좋아요." },
+            { title: "잼남", content: "밖에 안나가고 스피킹 연습할 수 있어서 좋아요. 친절한 내용도 좋습니다. 플래시카드 기반이라 본질에 집중할 수 있어요!" },
+            { title: "최고", content: "발음이 더 좋아졌어요! 고품질 TTS 음성이 자연스러운 대화체라서 따라하기 좋아요." },
+            { title: "초등생 버전도 부탁드립니다", content: "정말 뇌체크만큼 스피킹을 잘 시켜주는 앱은 없다고 생각합니다. 아들에게도 뇌체크를 왕초보 모드로 시켜주고 있어요. AI 기반 학습 추천으로 최적의 타이밍에 복습시켜줘서 효과적이에요!" },
+            { title: "재미", content: "재미있어요. 플래시카드 기반이라 본질에 집중할 수 있어서 좋아요." },
+            { title: "리그전으로 더 열심히 하고 있어요", content: "리그전으로 조금 더 열심히 하고 있는데 아는 사람들과 경쟁할 수 있으면 더 재미있게 경쟁할 수 있겠다는 생각이 듭니다. AI 기반 학습 추천으로 최적 타이밍에 복습할 수 있어서 효율적이에요." },
+            { title: "나이스!!!!", content: "나이스!!!! 멀티플랫폼 지원되면 너무 좋을 것 같아요." }
+        ];
+
+        function getRandomReviews(count) {
+            const shuffled = [...REVIEWS].sort(() => Math.random() - 0.5);
+            return shuffled.slice(0, count);
+        }
+
+        function displayRandomReviews() {
+            const grid = document.getElementById('reviewGrid');
+            const reviews = getRandomReviews(4);
+
+            grid.innerHTML = reviews.map(review => `
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <h3>${review.title}</h3>
+                    <p>${review.content}</p>
+                </div>
+            `).join('');
+        }
+
+        // Initial display
+        displayRandomReviews();
+    </script>
+</body>
+</html>
