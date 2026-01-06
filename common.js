@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         footer.className = 'footer';
         footer.innerHTML = `
             <div class="footer-links">
-                <a href="./">홈</a>
+                <a href="./index.html">홈</a>
                 <a href="./about.html">회사소개</a>
                 <a href="./support.html">고객센터</a>
                 <a href="./information.html">개인정보처리방침</a>
