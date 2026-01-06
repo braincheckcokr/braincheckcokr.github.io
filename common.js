@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const mobileMenu = document.createElement('nav');
         mobileMenu.className = 'mobile-menu';
         mobileMenu.innerHTML = `
-            <a href="./review.html"><img src="./assets/images/app_icon58.png" alt="앱 리뷰" class="logo-icon">앱 리뷰</a>
             <a href="./about.html">회사소개</a>
             <a href="./support.html">고객센터</a>
             <a href="./information.html">개인정보처리방침</a>
