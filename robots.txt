@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://braincheck.co.kr/sitemap.xml
