@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티플랫폼 지원 기술 소개 - 뇌체크</title>
+    <meta name="description" content="뇌체크의 멀티플랫폼 지원 기술 소개. Google의 오픈소스 UI 프레임워크 Flutter를 활용한 iOS, Android, macOS, Windows 지원 배경을 설명합니다.">
+    <meta name="keywords" content="뇌체크, Flutter, 멀티플랫폼, iOS, Android, macOS, Windows, Dart, 크로스플랫폼">
+    <meta name="author" content="뇌체크">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="뇌체크">
+    <meta property="og:title" content="멀티플랫폼 지원 기술 소개 - 뇌체크">
+    <meta property="og:description" content="뇌체크의 멀티플랫폼 지원 기술 소개. Flutter를 활용한 iOS, Android, macOS, Windows 지원 배경을 설명합니다.">
+    <meta property="og:url" content="https://braincheck.co.kr/multiplatform.html">
+    <meta property="og:image" content="https://braincheck.co.kr/assets/images/app_icon729.png">
+    <meta property="og:locale" content="ko_KR">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="멀티플랫폼 지원 기술 소개 - 뇌체크">
+    <meta name="twitter:description" content="뇌체크의 멀티플랫폼 지원 기술 소개. Flutter를 활용한 iOS, Android, macOS, Windows 지원 배경을 설명합니다.">
+    <meta name="twitter:image" content="https://braincheck.co.kr/assets/images/app_icon729.png">
+    <link rel="canonical" href="https://braincheck.co.kr/multiplatform.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/app_icon58.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/app_icon729.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/app_icon729.png">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="./index.html" class="logo">뇌<span>체크</span></a>
+        <nav class="nav-links">
+            <a href="./about.html">회사소개</a>
+            <a href="./support.html">고객센터</a>
+            <a href="./information.html">개인정보처리방침</a>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <h1>멀티플랫폼 지원 기술 소개</h1>
+        <p>이 페이지는 뇌체크가 iOS, Android, macOS, Windows에서 핵심 학습 흐름을 일관되게 유지하는 기술적 배경을 소개합니다. Google이 개발한 오픈소스 UI 프레임워크인 Flutter를 중심으로 설명합니다.</p>
+
+        <hr>
+
+        <h2>멀티 플랫폼이 중요한 이유</h2>
+        <p>언어 학습은 일상 속에서 반복적으로 이루어집니다. 통근길에는 스마트폰으로, 집에서는 데스크톱으로 학습하는 것이 자연스럽습니다. 이때 기기마다 학습 경험이 달라지면 학습 흐름이 끊기고, 사용자에게 혼란을 줄 수 있습니다.</p>
+        <p>뇌체크는 iOS, Android, macOS, Windows에서 가능한 한 일관된 화면 구성, 조작 방식, 학습 데이터를 제공하는 것을 목표로 합니다.</p>
+
+        <hr>
+
+        <h2>Flutter란?</h2>
+        <p>Flutter는 Google이 개발하고 오픈소스(BSD 3-Clause 라이선스)로 공개한 UI 프레임워크입니다. 대부분의 UI와 로직을 하나의 코드베이스로 공유하면서, 플랫폼별 설정과 배포 구성은 별도로 관리합니다. 뇌체크는 현재 iOS, Android, macOS, Windows를 우선 지원하며, 웹과 Linux는 제공 범위에 포함되지 않습니다.</p>
+
+        <h3>핵심 특징</h3>
+
+        <h4>단일 코드베이스, 다중 플랫폼</h4>
+        <p>전통적인 앱 개발에서는 iOS용(Swift/Objective-C)과 Android용(Kotlin/Java) 코드를 각각 작성해야 했습니다. 데스크톱(Windows, macOS)까지 지원하려면 별도의 코드가 추가로 필요합니다. Flutter는 Dart 언어로 작성된 하나의 코드베이스에서 여러 플랫폼의 앱을 생성합니다.</p>
+
+        <h4>자체 렌더링 방식</h4>
+        <p>Flutter는 기본적으로 각 플랫폼의 기본 UI 컴포넌트를 사용하는 대신, 자체 렌더링 방식(엔진 내부에서 Skia 등 렌더러를 사용)을 통해 화면을 직접 그립니다. 사용되는 렌더러는 플랫폼과 버전에 따라 달라질 수 있습니다.</p>
+        <p>이 방식 덕분에 플랫폼이 달라도 비교적 일관된 UI를 구현하는 데 유리하지만, 폰트 렌더링, 입력 방식, OS 설정에 따라 미세한 차이가 날 수 있습니다. 필요하면 플랫폼별 네이티브 기능이나 UI와 연동하는 것도 가능합니다.</p>
+
+        <h4>위젯(Widget) 기반 UI 구성</h4>
+        <p>Flutter에서 대부분의 UI는 위젯(widget)이라는 단위로 설계됩니다. 버튼, 텍스트, 레이아웃, 애니메이션까지 위젯의 조합으로 표현됩니다. 위젯은 계층 구조(트리)로 조합되며, 상태 변화 시 관련 위젯을 다시 빌드하고, 렌더링 단계에서 필요한 부분을 중심으로 다시 그리도록 최적화되어 있습니다.</p>
+
+        <h4>Hot Reload</h4>
+        <p>개발 중에는 Hot Reload로 많은 변경을 빠르게 확인할 수 있습니다. 상황에 따라 Hot Restart나 전체 재빌드가 필요할 수 있습니다.</p>
+
+        <hr>
+
+        <h2>Flutter의 아키텍처</h2>
+        <p>Flutter는 계층화된(layered) 아키텍처를 채택하고 있습니다.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>계층</th>
+                    <th>역할</th>
+                    <th>구현 언어</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Framework</td>
+                    <td>위젯, 레이아웃, 애니메이션, 제스처 등 앱 개발 API</td>
+                    <td>Dart</td>
+                </tr>
+                <tr>
+                    <td>Engine</td>
+                    <td>Dart 런타임, 렌더링 파이프라인, 텍스트 렌더링, I/O 등 핵심 런타임</td>
+                    <td>주로 C++</td>
+                </tr>
+                <tr>
+                    <td>Embedder</td>
+                    <td>플랫폼별 진입점, 이벤트 루프, 네이티브 통합</td>
+                    <td>플랫폼별 (Swift, Kotlin, C++ 등)</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>개발자는 최상위 Framework 계층에서 작업하며, Engine과 Embedder가 많은 플랫폼 차이를 추상화합니다. 다만 권한, 파일 접근, 알림, 인앱 결제 같은 기능에서는 플랫폼별 설정이나 네이티브 연동이 필요할 수 있습니다.</p>
+
+        <hr>
+
+        <h2>플랫폼별 적응(Adaptive Design)</h2>
+        <p>하나의 코드베이스로 여러 플랫폼을 지원하더라도, 각 플랫폼의 사용 관습을 존중하는 것이 중요합니다. Flutter는 이를 위한 도구를 제공합니다:</p>
+        <ul>
+            <li><strong>Material Design / Cupertino 위젯</strong>: Android 스타일(Material)과 iOS 스타일(Cupertino)의 UI 컴포넌트를 모두 제공하여, 각 플랫폼의 사용자가 익숙한 인터페이스를 구성하는 데 도움이 됩니다. 적응형 설계는 제품 의도에 따라 선택적으로 적용합니다.</li>
+            <li><strong>반응형 레이아웃</strong>: 스마트폰의 작은 화면부터 데스크톱의 넓은 화면까지, 화면 크기에 맞춘 레이아웃을 구현할 수 있도록 도구를 제공합니다.</li>
+            <li><strong>플랫폼 채널(Platform Channels)</strong>: 카메라, 파일 시스템, 알림 등 플랫폼 고유의 기능이 필요할 때, 네이티브 코드와 Flutter 코드를 연결하는 통신 채널을 사용합니다.</li>
+        </ul>
+        <p>다만, 모든 플랫폼에서 완벽히 동일한 경험을 보장하기는 어렵습니다. 예를 들어 키보드·마우스 입력 방식, 창 크기·멀티윈도우, 파일 접근 권한, 시스템 폰트·접근성 설정에 따라 동작과 표현이 달라질 수 있습니다.</p>
+
+        <hr>
+
+        <h2>뇌체크 앱 지원 플랫폼</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>플랫폼</th>
+                    <th>뇌체크 앱 지원</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>iOS</td>
+                    <td>지원</td>
+                </tr>
+                <tr>
+                    <td>Android</td>
+                    <td>지원</td>
+                </tr>
+                <tr>
+                    <td>macOS</td>
+                    <td>지원</td>
+                </tr>
+                <tr>
+                    <td>Windows</td>
+                    <td>지원</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Flutter의 플랫폼별 기술 지원 범위는 공식 문서의 <a href="https://docs.flutter.dev/reference/supported-platforms" target="_blank">Supported Platforms</a> 페이지를 참고하시기 바랍니다. 뇌체크 앱의 최소 지원 OS 버전은 각 스토어 및 릴리스 노트에서 안내합니다.</p>
+
+        <hr>
+
+        <h2>뇌체크에서의 적용</h2>
+        <p>뇌체크는 Flutter를 사용하여 iOS, Android, macOS, Windows 앱을 하나의 코드베이스에서 개발하고 있습니다.</p>
+        <ol>
+            <li><strong>일관된 학습 흐름</strong>: 어떤 기기에서든 가능한 한 같은 화면 구성과 조작 방식을 제공합니다.</li>
+            <li><strong>학습 데이터 동기화</strong>: 로그인한 기기 간 학습 기록을 동기화하도록 설계했습니다. 네트워크 상태에 따라 지연되거나 일부 항목이 즉시 반영되지 않을 수 있습니다.</li>
+            <li><strong>빠른 개발 주기</strong>: 공유 코드가 많아 기능 개선과 버그 수정의 개발 속도가 빨라집니다. 다만 배포는 플랫폼별 심사·배포 정책에 따라 시점이 달라질 수 있습니다.</li>
+        </ol>
+
+        <hr>
+
+        <p>출처: <a href="https://docs.flutter.dev/ui" target="_blank">Flutter 공식 문서 — Building user interfaces</a> · <a href="https://docs.flutter.dev/resources/architectural-overview" target="_blank">Flutter 아키텍처 개요</a> · <a href="https://docs.flutter.dev/reference/supported-platforms" target="_blank">Flutter 지원 플랫폼</a> · <a href="https://github.com/flutter/flutter" target="_blank">Flutter GitHub</a></p>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="./index.html">홈</a>
+            <a href="./about.html">회사소개</a>
+            <a href="./support.html">고객센터</a>
+            <a href="./information.html">개인정보처리방침</a>
+        </div>
+        <p>&copy; 뇌체크</p>
+    </footer>
+
+    <script src="./common.js"></script>
+</body>
+</html>

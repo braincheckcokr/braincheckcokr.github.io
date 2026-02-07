@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음성 인식(STT) 기술 소개 - 뇌체크</title>
+    <meta name="description" content="뇌체크의 음성 인식 배경 기술 소개. OpenAI Whisper 모델을 중심으로 최신 STT 기술의 구조와 특징을 설명합니다.">
+    <meta name="keywords" content="뇌체크, STT, 음성인식, Speech-to-Text, Whisper, OpenAI, 발화평가">
+    <meta name="author" content="뇌체크">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="뇌체크">
+    <meta property="og:title" content="음성 인식(STT) 기술 소개 - 뇌체크">
+    <meta property="og:description" content="뇌체크의 음성 인식 배경 기술 소개. OpenAI Whisper를 중심으로 최신 STT 기술을 설명합니다.">
+    <meta property="og:url" content="https://braincheck.co.kr/stt.html">
+    <meta property="og:image" content="https://braincheck.co.kr/assets/images/app_icon729.png">
+    <meta property="og:locale" content="ko_KR">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="음성 인식(STT) 기술 소개 - 뇌체크">
+    <meta name="twitter:description" content="뇌체크의 음성 인식 배경 기술 소개. OpenAI Whisper를 중심으로 최신 STT 기술을 설명합니다.">
+    <meta name="twitter:image" content="https://braincheck.co.kr/assets/images/app_icon729.png">
+    <link rel="canonical" href="https://braincheck.co.kr/stt.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/app_icon58.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/app_icon729.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/app_icon729.png">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="./index.html" class="logo">뇌<span>체크</span></a>
+        <nav class="nav-links">
+            <a href="./about.html">회사소개</a>
+            <a href="./support.html">고객센터</a>
+            <a href="./information.html">개인정보처리방침</a>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <h1>음성 인식(STT) 기술 소개</h1>
+        <p>이 페이지는 뇌체크의 음성 인식 기능을 이해하기 위한 배경 기술을 소개합니다. OpenAI의 Whisper 모델을 중심으로 최신 음성 인식 기술의 구조와 특징을 설명하며, 뇌체크가 Whisper를 그대로 사용한다는 의미는 아닙니다.</p>
+
+        <hr>
+
+        <h2>음성 인식이란?</h2>
+        <p>음성 인식(Speech-to-Text, STT)은 사람의 음성을 텍스트로 변환하는 기술입니다.</p>
+        <p>언어 학습에서 음성 인식은 핵심적인 역할을 합니다. 학습자가 직접 말한 내용을 텍스트로 변환하면, 말한 내용이 목표 문장과 얼마나 일치하는지를 확인할 수 있습니다. 정확한 음성 인식이 뒷받침되어야 의미 있는 학습 피드백이 가능합니다.</p>
+
+        <hr>
+
+        <h2>STT와 발화 평가는 다릅니다</h2>
+        <p>음성 인식(STT)은 "무엇을 말했는가"를 텍스트로 변환하는 기술입니다. 반면, 발화(발음) 평가는 "얼마나 잘 말했는가"를 측정하는 것으로, 억양·강세·연음·발화 속도 등 소리 자체의 품질을 다룹니다.</p>
+        <p>STT 결과를 정답과 비교하면 "말한 내용의 일치도"는 확인할 수 있지만, 이것만으로 발음 품질을 완전히 평가하기는 어렵습니다. 발음 품질 평가에는 음소 단위 정렬, 발화 속도/강세 분석 등 STT 외의 추가 신호가 필요할 수 있습니다.</p>
+        <p>또한 발화 평가 결과는 마이크 품질, 주변 소음, 말하기 속도에 영향을 받습니다. 따라서 결과는 학습 피드백을 위한 참고 정보이며, 절대적인 발음 점수로 해석하기는 어렵습니다.</p>
+
+        <hr>
+
+        <h2>Whisper: 대규모 약지도 학습 기반 음성 인식</h2>
+        <p>OpenAI가 개발한 Whisper는 인터넷에서 수집한 68만 시간 분량의 다국어 오디오-텍스트 쌍으로 훈련된 범용 음성 인식 모델입니다. 코드와 모델 가중치가 MIT 라이선스로 공개된 오픈소스 프로젝트입니다.</p>
+
+        <h3>대규모 약지도 학습 (Large-Scale Weak Supervision)</h3>
+        <p>기존 음성 인식 모델은 사람이 직접 정밀하게 레이블링한 데이터로 훈련하는 것이 일반적이었습니다. Whisper는 다른 접근을 택합니다. 인터넷에서 수집한 방대한 양의 오디오와 그에 대응하는 텍스트(자막, 전사 등)를 활용하여 훈련합니다. 개별 데이터의 품질은 완벽하지 않지만, 규모와 다양성으로 이를 보완합니다. 다양한 녹음 환경(마이크, 소음, 억양)이 섞인 데이터를 대량으로 학습하기 때문에, 실제 사용 환경에서의 강건성이 좋아지는 경향이 있습니다.</p>
+
+        <h3>다중 작업(Multitask) 모델</h3>
+        <p>Whisper는 단일 모델로 여러 음성 처리 작업을 수행합니다:</p>
+        <ul>
+            <li><strong>음성 인식</strong> (Speech Recognition): 음성을 해당 언어의 텍스트로 변환</li>
+            <li><strong>음성 번역</strong> (Speech Translation): 음성을 영어 텍스트로 번역</li>
+            <li><strong>언어 식별</strong> (Language Identification): 어떤 언어가 사용되었는지 감지</li>
+            <li><strong>음성 구간 추정</strong> (Voice Activity Detection): 무음/잡음 구간을 구분하여 전사 품질을 보조</li>
+        </ul>
+        <p>이 모든 작업은 Transformer(문맥을 잘 파악하는 신경망) 기반의 시퀀스-투-시퀀스(입력 시퀀스를 출력 시퀀스로 변환하는) 모델 하나로 처리됩니다. 특수 토큰(작업 지시용 기호)을 사용해 어떤 작업을 수행할지 지정하므로, 전통적인 음성 처리 파이프라인의 여러 단계를 단일 모델로 대체합니다.</p>
+
+        <h3>제로샷 전이 (Zero-Shot Transfer)</h3>
+        <p>Whisper의 가장 주목할 만한 특성은, 특정 데이터셋에 맞춰 미세 조정(fine-tuning)하지 않고도 다양한 벤치마크에서 높은 성능을 보인다는 점입니다. 논문에서는 이를 "제로샷 전이"라고 부릅니다. 여러 공개 벤치마크에서 추가 미세 조정 없이도 기존 완전 지도 학습 방식과 경쟁력 있는 오류율(WER/CER)을 보고했습니다. 다만 언어, 소음 환경, 발화 스타일에 따라 성능 편차가 클 수 있습니다.</p>
+
+        <hr>
+
+        <h2>모델 크기와 성능</h2>
+        <p>Whisper는 용도와 환경에 맞게 선택할 수 있는 여러 크기의 모델을 제공합니다.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>모델</th>
+                    <th>파라미터 수</th>
+                    <th>다국어 지원</th>
+                    <th>필요 VRAM</th>
+                    <th>상대 속도</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tiny</td>
+                    <td>3,900만</td>
+                    <td>O</td>
+                    <td>~1 GB</td>
+                    <td>~10x</td>
+                </tr>
+                <tr>
+                    <td>base</td>
+                    <td>7,400만</td>
+                    <td>O</td>
+                    <td>~1 GB</td>
+                    <td>~7x</td>
+                </tr>
+                <tr>
+                    <td>small</td>
+                    <td>2억 4,400만</td>
+                    <td>O</td>
+                    <td>~2 GB</td>
+                    <td>~4x</td>
+                </tr>
+                <tr>
+                    <td>medium</td>
+                    <td>7억 6,900만</td>
+                    <td>O</td>
+                    <td>~5 GB</td>
+                    <td>~2x</td>
+                </tr>
+                <tr>
+                    <td>large</td>
+                    <td>15억 5,000만</td>
+                    <td>O</td>
+                    <td>~10 GB</td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td><strong>turbo</strong></td>
+                    <td>8억 900만</td>
+                    <td>O</td>
+                    <td>~6 GB</td>
+                    <td>~8x</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><small>수치는 OpenAI Whisper GitHub README의 모델 표(A100 GPU에서 영어 전사 기준의 상대 속도, 대략적 VRAM)를 요약한 것입니다. 언어, 발화 속도, 하드웨어에 따라 실제 속도는 달라질 수 있습니다.</small></p>
+
+        <p>turbo 모델은 large-v3를 최적화한 버전으로, 전사(transcription) 정확도를 거의 유지하면서 속도를 크게 개선했습니다. 단, turbo는 전사에 초점이 맞춰져 있어 번역(비영어 음성 → 영어 텍스트)에는 적합하지 않습니다. 번역이 필요하면 tiny, base, small, medium, large 같은 다국어 모델을 사용합니다.</p>
+
+        <h3>영어 전용 모델</h3>
+        <p>tiny, base, small, medium 크기에는 영어 전용(.en) 모델이 별도로 제공됩니다. 영어만 처리하는 경우 다국어 모델보다 더 나은 성능을 보이며, 특히 작은 모델(tiny.en, base.en)에서 차이가 두드러집니다. 모델 크기가 커질수록 다국어 모델과의 성능 차이는 줄어듭니다.</p>
+
+        <hr>
+
+        <h2>기술 구조</h2>
+        <p>Whisper는 Transformer 기반의 인코더-디코더(encoder-decoder) 구조를 사용합니다.</p>
+        <ol>
+            <li><strong>오디오 전처리</strong>: 입력 오디오를 로그 멜 스펙트로그램(log-Mel spectrogram)으로 변환합니다. 이는 소리를 주파수와 시간 축으로 나타낸 표현입니다.</li>
+            <li><strong>인코더</strong>: 스펙트로그램을 읽고, 음성의 특징을 압축된 표현으로 변환합니다.</li>
+            <li><strong>디코더</strong>: 인코더의 출력을 바탕으로, 토큰(문장을 쪼갠 단위) 단위로 텍스트를 순차 생성합니다. 특수 토큰으로 작업 유형(인식, 번역 등)과 언어를 지정합니다.</li>
+        </ol>
+        <p>모델이 한 번에 처리할 수 있는 입력 길이에 제한이 있어, 긴 음성은 30초 단위로 나눠 순차 처리합니다.</p>
+
+        <hr>
+
+        <h2>뇌체크에서의 적용</h2>
+        <p>뇌체크의 발화 기능은 음성 인식 기술을 바탕으로 구성됩니다.</p>
+        <ol>
+            <li><strong>발화 인식</strong>: 학습자가 말한 영어를 텍스트로 변환합니다</li>
+            <li><strong>내용 일치 확인</strong>: 인식된 텍스트가 목표 문장과 얼마나 일치하는지(누락, 추가, 치환)를 분석합니다</li>
+            <li><strong>학습 피드백</strong>: 인식 결과를 참고하여 학습자에게 피드백을 제공합니다. 환경에 따라 정확도와 반응 속도는 달라질 수 있습니다.</li>
+        </ol>
+
+        <hr>
+
+        <p>관련 논문: <a href="https://arxiv.org/abs/2212.04356" target="_blank">Robust Speech Recognition via Large-Scale Weak Supervision</a> — Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, Ilya Sutskever (2022)</p>
+        <p>출처: <a href="https://github.com/openai/whisper" target="_blank">OpenAI Whisper GitHub</a> · <a href="https://openai.com/blog/whisper" target="_blank">OpenAI Whisper Blog</a></p>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="./index.html">홈</a>
+            <a href="./about.html">회사소개</a>
+            <a href="./support.html">고객센터</a>
+            <a href="./information.html">개인정보처리방침</a>
+        </div>
+        <p>&copy; 뇌체크</p>
+    </footer>
+
+    <script src="./common.js"></script>
+</body>
+</html>
