@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>머신러닝 기반 추천 시스템 - 뇌체크</title>
+    <meta name="description" content="뇌체크의 머신러닝 기반 간격 반복 추천 시스템. FSRS 알고리즘의 성능과 벤치마크 결과를 소개합니다.">
+    <meta name="keywords" content="뇌체크, 머신러닝, FSRS, 간격반복, Spaced Repetition, 알고리즘, 벤치마크">
+    <meta name="author" content="뇌체크">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="뇌체크">
+    <meta property="og:title" content="머신러닝 기반 추천 시스템 - 뇌체크">
+    <meta property="og:description" content="뇌체크의 머신러닝 기반 간격 반복 추천 시스템. FSRS 알고리즘의 성능과 벤치마크 결과를 소개합니다.">
+    <meta property="og:url" content="https://braincheck.co.kr/mlsystem.html">
+    <meta property="og:image" content="https://braincheck.co.kr/assets/images/app_icon729.png">
+    <meta property="og:locale" content="ko_KR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="머신러닝 기반 추천 시스템 - 뇌체크">
+    <meta name="twitter:description" content="뇌체크의 머신러닝 기반 간격 반복 추천 시스템. FSRS 알고리즘의 성능과 벤치마크 결과를 소개합니다.">
+    <meta name="twitter:image" content="https://braincheck.co.kr/assets/images/app_icon729.png">
+    <link rel="canonical" href="https://braincheck.co.kr/mlsystem.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/app_icon58.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/app_icon729.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/app_icon729.png">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="./index.html" class="logo">뇌<span>체크</span></a>
+        <nav class="nav-links">
+            <a href="./about.html">회사소개</a>
+            <a href="./support.html">고객센터</a>
+            <a href="./information.html">개인정보처리방침</a>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <h1>머신러닝 기반 추천 시스템</h1>
+        <p>뇌체크가 채택한 간격 반복(Spaced Repetition) 알고리즘과 그 성능을 소개합니다.</p>
+
+        <hr>
+
+        <h2>간격 반복 알고리즘이란?</h2>
+        <p>간격 반복 알고리즘은 플래시카드의 복습 일정을 자동으로 관리해 주는 프로그램입니다.</p>
+        <p>핵심 원리는 단순합니다. 한꺼번에 몰아서 외우는 대신, 복습을 시간에 걸쳐 분산시킵니다. 이를 효율적으로 수행하기 위해 알고리즘은 학습자의 기억이 어떻게 작동하는지 모델링합니다. 특정 내용을 잊어버릴 가능성이 높은 시점을 예측하고, 정확히 그때 복습을 예약합니다.</p>
+        <p>좋은 알고리즘일수록 이 예측이 정확하며, 학습자는 더 적은 시간으로 더 오래 기억할 수 있습니다.</p>
+
+        <hr>
+
+        <h2>벤치마크 데이터셋</h2>
+        <p>이 벤치마크에 사용된 데이터는 10,000명의 실제 사용자로부터 수집되었습니다.</p>
+        <ul>
+            <li>총 리뷰 수: 약 7억 2,700만 건</li>
+            <li>평가에 사용된 리뷰 수: 약 3억 4,990만 건 (당일 복습 제외 기준)</li>
+            <li>데이터 출처: Hugging Face Datasets (open-spaced-repetition)</li>
+        </ul>
+        <p>당일 복습은 평가에서 제외됩니다. 같은 날 여러 번 반복한 기록은 장기 기억 예측과 무관하며, 포함할 경우 알고리즘의 실제 예측 능력을 왜곡할 수 있기 때문입니다.</p>
+        <p>수동으로 날짜를 변경하거나, 특정 설정이 비활성화된 상태에서 생성된 리뷰 기록은 필터링되었으며, 이상치(outlier) 필터도 적용되었습니다.</p>
+
+        <hr>
+
+        <h2>평가 방법</h2>
+
+        <h3>시계열 데이터 분할</h3>
+        <p>벤치마크에서는 sklearn 라이브러리의 TimeSeriesSplit을 사용합니다. 과거의 학습 기록으로 훈련하고, 미래의 학습 결과로 평가합니다. 이렇게 하면 알고리즘이 미래 정보를 미리 알 수 없으므로, 실제 사용 환경과 동일한 조건에서 성능을 측정할 수 있습니다.</p>
+        <p><small>※ TimeSeriesSplit은 사용자별로 독립 적용됩니다. 사용자 간 데이터가 섞이지 않으므로, 한 사용자의 미래 정보가 다른 사용자의 훈련 데이터로 유출되는 문제는 발생하지 않습니다.</small></p>
+
+        <h3>평가 지표</h3>
+        <p><strong>한 줄 요약:</strong> 알고리즘이 "기억할 확률"을 얼마나 정확하게 예측하는지를 세 가지 관점에서 측정합니다.</p>
+
+        <p><strong>Log Loss (로그 손실)</strong><br>
+        예측한 기억 확률과 실제 복습 결과(기억함/잊음) 사이의 차이를 측정합니다. 알고리즘이 실제 기억 확률에 얼마나 근접하게 예측하는지를 보여줍니다. 0에서 무한대 범위이며, 낮을수록 좋습니다.</p>
+
+        <p><strong>RMSE (bins) — 구간별 평균 제곱근 오차</strong><br>
+        예측값과 실제 결과를 복습 간격, 복습 횟수, 망각 횟수 등을 기준으로 구간(bin)별로 분류한 뒤, 각 구간에서의 오차를 가중 평균하여 산출합니다. 다양한 학습 상황에서의 알고리즘 정확도를 세밀하게 평가합니다. 0에서 1 범위이며, 낮을수록 좋습니다.</p>
+
+        <p><strong>AUC (ROC 곡선 아래 면적)</strong><br>
+        알고리즘이 "기억 성공"과 "기억 실패"를 얼마나 잘 구별하는지를 측정합니다. 0에서 1 범위이며, 높을수록 좋습니다. 실제로는 거의 항상 0.5 이상입니다.</p>
+
+        <p>Log Loss와 RMSE (bins)는 보정(calibration)을 측정합니다. 즉, 예측 확률이 실제 데이터와 얼마나 일치하는가입니다.<br>
+        AUC는 판별력(discrimination)을 측정합니다. 즉, 두 가지 결과를 얼마나 잘 구별하는가입니다.</p>
+
+        <hr>
+
+        <h2>알고리즘 분류</h2>
+
+        <h3>기억의 2-요소 / 3-요소 모델</h3>
+        <p>장기 기억의 2-요소 모델에서는 두 가지 독립 변수로 기억 상태를 설명합니다:</p>
+        <ul>
+            <li><strong>인출 가능성(Retrievability, R)</strong>: 기억을 떠올릴 확률</li>
+            <li><strong>안정성(Stability, S)</strong>: 기억의 반감기</li>
+        </ul>
+        <p>3-요소 모델은 여기에 <strong>난이도(Difficulty, D)</strong>를 추가합니다.</p>
+
+        <p>대표 알고리즘:</p>
+        <ul>
+            <li><strong>FSRS v1~v4</strong>: 초기 실험 버전부터 커뮤니티 피드백을 반영해 개선한 정식 버전까지</li>
+            <li><strong>FSRS-4.5</strong>: 망각 곡선의 형태를 변경하여 소폭 개선</li>
+            <li><strong>FSRS-5</strong>: 당일 복습 데이터를 훈련에 활용하기 시작한 버전</li>
+            <li><strong>FSRS-6</strong>: 최신 버전. 망각 곡선의 평탄도를 사용자별로 최적화하는 파라미터 도입</li>
+            <li><strong>HLR (Half-Life Regression)</strong>: Duolingo가 제안한 알고리즘</li>
+        </ul>
+
+        <h3>대안적 기억 모델</h3>
+        <ul>
+            <li><strong>DASH</strong>: Difficulty, Ability, Study History의 약자. 학습 능력과 학습 이력을 기반으로 예측</li>
+            <li><strong>ACT-R</strong>: 선언적 기억의 활성화 기반 시스템. 기억 흔적의 활성화를 통해 간격 효과를 설명</li>
+        </ul>
+
+        <h3>신경망 기반</h3>
+        <ul>
+            <li><strong>GRU</strong>: 시계열 데이터 예측에 널리 사용되는 순환 신경망(RNN)</li>
+            <li><strong>LSTM</strong>: GRU보다 정교한 구조의 순환 신경망</li>
+            <li><strong>RWKV</strong>: RNN과 Transformer의 특성을 결합한 아키텍처. 전체 복습 이력, 형제 카드 정보, 덱 구조, 요일 등 풍부한 입력 특성을 활용</li>
+        </ul>
+
+        <hr>
+
+        <h2>벤치마크 결과</h2>
+        <p>아래 표는 대표 알고리즘 일부를 발췌한 것이며, 당일 복습을 제외한 평가 결과입니다. 각 수치는 평균값이며, 원본 벤치마크에서는 99% 신뢰 구간이 함께 제공됩니다.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>알고리즘</th>
+                    <th>학습 가능한 파라미터 수</th>
+                    <th>Log Loss ↓</th>
+                    <th>RMSE (bins) ↓</th>
+                    <th>AUC ↑</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>RWKV-P</strong></td>
+                    <td>2,762,884</td>
+                    <td><strong>0.2773</strong></td>
+                    <td>0.0250</td>
+                    <td><strong>0.8329</strong></td>
+                </tr>
+                <tr>
+                    <td>RWKV</td>
+                    <td>2,762,884</td>
+                    <td>0.3193</td>
+                    <td>0.0540</td>
+                    <td>0.7683</td>
+                </tr>
+                <tr>
+                    <td>LSTM</td>
+                    <td>8,869</td>
+                    <td>0.3332</td>
+                    <td>0.0538</td>
+                    <td>0.7329</td>
+                </tr>
+                <tr>
+                    <td>FSRS-rs</td>
+                    <td>21</td>
+                    <td>0.3443</td>
+                    <td>0.0635</td>
+                    <td>0.7074</td>
+                </tr>
+                <tr>
+                    <td><strong>FSRS-6</strong></td>
+                    <td><strong>21</strong></td>
+                    <td><strong>0.3460</strong></td>
+                    <td><strong>0.0653</strong></td>
+                    <td><strong>0.7034</strong></td>
+                </tr>
+                <tr>
+                    <td>FSRS-5</td>
+                    <td>19</td>
+                    <td>0.3560</td>
+                    <td>0.0741</td>
+                    <td>0.7011</td>
+                </tr>
+                <tr>
+                    <td>FSRS-4.5</td>
+                    <td>17</td>
+                    <td>0.3624</td>
+                    <td>0.0764</td>
+                    <td>0.6893</td>
+                </tr>
+                <tr>
+                    <td>DASH</td>
+                    <td>9</td>
+                    <td>0.3682</td>
+                    <td>0.0836</td>
+                    <td>0.6312</td>
+                </tr>
+                <tr>
+                    <td>GRU</td>
+                    <td>39</td>
+                    <td>0.3753</td>
+                    <td>0.0864</td>
+                    <td>0.6683</td>
+                </tr>
+                <tr>
+                    <td>HLR (Duolingo)</td>
+                    <td>3</td>
+                    <td>0.4694</td>
+                    <td>0.1275</td>
+                    <td>0.6369</td>
+                </tr>
+                <tr>
+                    <td>Ebisu v2</td>
+                    <td>0</td>
+                    <td>0.4989</td>
+                    <td>0.1627</td>
+                    <td>0.6051</td>
+                </tr>
+                <tr>
+                    <td>AVG (기준선)</td>
+                    <td>0</td>
+                    <td>0.3945</td>
+                    <td>0.1034</td>
+                    <td>0.4997</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>주목할 점</h2>
+
+        <h3>FSRS-6: 소규모 모델로도 높은 정확도</h3>
+        <p>FSRS-6은 단 21개의 학습 가능한 파라미터만으로, 수백만 개의 파라미터를 가진 대형 신경망(RWKV-P)과 비교해 상당히 높은 예측 정확도를 달성합니다.</p>
+        <ul>
+            <li>RWKV-P(파라미터 약 276만 개)의 Log Loss: 0.2773</li>
+            <li>FSRS-6(파라미터 21개)의 Log Loss: 0.3460</li>
+        </ul>
+        <p>파라미터 수 대비 성능 효율이 매우 뛰어납니다. 모델이 작기 때문에 모바일 기기에서도 빠르게 연산할 수 있어, 서버 호출 없이 기기 내에서 직접 최적화를 실행하기에 유리합니다.</p>
+
+        <h3>RWKV-P가 1위인데 왜 FSRS를 쓰나요?</h3>
+        <p>RWKV-P는 약 276만 개의 파라미터를 가진 대형 신경망입니다. 정확도는 가장 높지만, 학습과 추론에 GPU 수준의 연산 자원이 필요하며, 사용자별 개인화를 위한 미세 조정(fine-tuning)도 현실적으로 어렵습니다. 반면 FSRS-6은 21개 파라미터로 사용자의 복습 데이터만으로도 빠르게 개인화할 수 있고, 어떤 기기에서든 실시간으로 동작합니다.</p>
+
+        <h3>HLR(Duolingo)과의 비교</h3>
+        <p>Duolingo가 제안한 HLR 알고리즘(Log Loss 0.4694)과 비교하면, FSRS-6(0.3460)은 약 26% 더 낮은 Log Loss를 기록합니다.</p>
+
+        <h3>사용자별 망각 곡선 최적화</h3>
+        <p>FSRS-6의 가장 큰 혁신은 사용자마다 서로 다른 망각 곡선 형태를 적용한다는 점입니다. 모든 사람이 같은 속도로 잊는 것이 아니기 때문에, 각자의 기억 패턴에 맞춰 복습 일정을 조정합니다.</p>
+
+        <hr>
+
+        <h2>뇌체크에서의 적용</h2>
+        <p>뇌체크는 FSRS 알고리즘을 기반으로 학습자의 기억 상태를 추적합니다.</p>
+        <ol>
+            <li><strong>인출 가능성 예측</strong>: 각 카드를 기억할 확률을 계산합니다</li>
+            <li><strong>최적 복습 타이밍 결정</strong>: 기억 확률이 목표치 이하로 떨어지기 직전에 복습을 예약합니다</li>
+            <li><strong>개인화된 파라미터 최적화</strong>: 학습자의 복습 이력을 바탕으로 FSRS 파라미터를 지속적으로 조정합니다</li>
+        </ol>
+        <p>학습자는 항상 '가장 기억이 잘 되는 상태'에서 복습하게 되며, 불필요한 반복을 줄이고 학습 효율을 높입니다.</p>
+
+        <hr>
+
+        <p>출처: <a href="https://github.com/open-spaced-repetition/srs-benchmark" target="_blank">open-spaced-repetition/srs-benchmark</a><br>
+        데이터셋: <a href="https://huggingface.co/datasets/open-spaced-repetition" target="_blank">open-spaced-repetition</a> (Hugging Face Datasets)</p>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="./index.html">홈</a>
+            <a href="./about.html">회사소개</a>
+            <a href="./support.html">고객센터</a>
+            <a href="./information.html">개인정보처리방침</a>
+        </div>
+        <p>&copy; 뇌체크</p>
+    </footer>
+
+    <script src="./common.js"></script>
+</body>
+</html>
