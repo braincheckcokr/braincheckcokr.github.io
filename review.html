@@ -80,6 +80,49 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
 
+        .review-card h3,
+        .review-card p.review-content {
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 4px 8px;
+            margin-left: -8px;
+            margin-right: -8px;
+            transition: background 0.2s;
+            position: relative;
+        }
+
+        .review-card h3:hover,
+        .review-card p.review-content:hover {
+            background: #f0f7f0;
+        }
+
+        .review-card h3:active,
+        .review-card p.review-content:active {
+            background: #e0f0e0;
+        }
+
+        .copied-feedback {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s, transform 0.2s;
+            z-index: 9999;
+        }
+
+        .copied-feedback.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
         .review-card h3 {
             font-size: 18px;
             font-weight: 700;
@@ -693,15 +736,26 @@
             grid.innerHTML = reviews.map(review => `
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <h3>${review.title}</h3>
-                    <p>${review.content}</p>
+                    <h3 onclick="copyText(this.textContent)">${review.title}</h3>
+                    <p class="review-content" onclick="copyText(this.textContent)">${review.content}</p>
                 </div>
             `).join('');
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('copiedFeedback');
+                toast.classList.add('show');
+                clearTimeout(toast._timer);
+                toast._timer = setTimeout(() => toast.classList.remove('show'), 1000);
+            });
         }
 
         // Initial display
         displayRandomReviews();
     </script>
+
+    <div id="copiedFeedback" class="copied-feedback">복사됨 ✓</div>
 
     <footer class="footer">
         <div class="footer-links">
