@@ -833,44 +833,50 @@ hr {
     justify-content: center;
 }
 
-.org-chart li {
+.org-chart ul li {
     float: left;
     text-align: center;
     list-style-type: none;
     position: relative;
     padding: 20px 5px 0 5px;
+    padding-left: 5px;
+    margin-bottom: 0;
+    color: inherit;
     transition: all 0.5s;
 }
 
-.org-chart li::before, .org-chart li::after {
+.org-chart ul li::before, .org-chart ul li::after {
     content: '';
     position: absolute;
     top: 0;
     right: 50%;
+    left: auto;
     border-top: 1px solid #ccc;
     width: 50%;
     height: 20px;
+    background: none;
+    border-radius: 0;
 }
 
-.org-chart li::after {
+.org-chart ul li::after {
     right: auto;
     left: 50%;
     border-left: 1px solid #ccc;
 }
 
-.org-chart li:only-child::after, .org-chart li:only-child::before {
+.org-chart ul li:only-child::after, .org-chart ul li:only-child::before {
     display: none;
 }
 
-.org-chart li:only-child {
+.org-chart ul li:only-child {
     padding-top: 0;
 }
 
-.org-chart li:first-child::before, .org-chart li:last-child::after {
+.org-chart ul li:first-child::before, .org-chart ul li:last-child::after {
     border: 0 none;
 }
 
-.org-chart li:last-child::before {
+.org-chart ul li:last-child::before {
     border-right: 1px solid #ccc;
 }
 
@@ -881,15 +887,6 @@ hr {
     left: 50%;
     border-left: 1px solid #ccc;
     width: 0;
-    height: 20px;
-}
-
-/* Reset page-content green dot on org-chart list items */
-.org-chart li::before,
-.org-chart li::after {
-    background: none;
-    border-radius: 0;
-    width: 50%;
     height: 20px;
 }
 
@@ -957,20 +954,20 @@ hr {
         margin-bottom: 0;
     }
 
-    .org-chart li {
+    .org-chart ul li {
         float: none;
         text-align: left;
         padding: 10px 0 0 20px;
         border-left: 1px solid #ccc;
     }
 
-    .org-chart li::before, 
-    .org-chart li::after,
+    .org-chart ul li::before, 
+    .org-chart ul li::after,
     .org-chart ul ul::before {
         display: none;
     }
 
-    .org-chart li::before {
+    .org-chart ul li::before {
         display: block;
         content: '';
         position: absolute;
@@ -981,13 +978,14 @@ hr {
         border-top: 1px solid #ccc;
         border-right: none;
         border-radius: 0;
+        background: none;
     }
 
-    .org-chart li:last-child {
+    .org-chart ul li:last-child {
         border-left: 1px solid transparent;
     }
     
-    .org-chart li:last-child::after {
+    .org-chart ul li:last-child::after {
         display: block;
         content: '';
         position: absolute;
@@ -997,6 +995,7 @@ hr {
         height: 25px;
         background: #ccc;
         border: none;
+        border-radius: 0;
     }
 
     .org-node {
@@ -1015,10 +1014,7 @@ hr {
         border-left: none;
     }
     
-    .org-chart > ul > li::before {
-        display: none;
-    }
-    
+    .org-chart > ul > li::before,
     .org-chart > ul > li::after {
         display: none;
     }
