@@ -90,6 +90,82 @@ body {
     color: #4CB050;
 }
 
+/* More Menu (≡) */
+.more-menu-wrapper {
+    position: relative;
+}
+
+.more-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 6px;
+    gap: 3px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.more-menu-btn:hover {
+    border-color: #4CB050;
+    background: #f5faf5;
+}
+
+.more-menu-btn span {
+    display: block;
+    width: 14px;
+    height: 2px;
+    background: #1a1a1a;
+    border-radius: 1px;
+    transition: background 0.2s;
+}
+
+.more-menu-btn:hover span {
+    background: #4CB050;
+}
+
+.more-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    min-width: 240px;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+    z-index: 1100;
+}
+
+.more-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.more-dropdown a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+}
+
+.more-dropdown a:hover {
+    background: #f5faf5;
+    color: #4CB050;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
