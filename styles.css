@@ -834,12 +834,11 @@ hr {
 }
 
 .org-chart ul li {
-    float: left;
+    flex: 1;
     text-align: center;
     list-style-type: none;
     position: relative;
     padding: 20px 5px 0 5px;
-    padding-left: 5px;
     margin-bottom: 0;
     color: inherit;
     transition: all 0.5s;
