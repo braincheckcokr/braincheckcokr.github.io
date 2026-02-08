@@ -810,3 +810,216 @@ hr {
         margin: 8px 0;
     }
 }
+
+/* Org Chart Styles */
+.org-chart-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.org-chart {
+    display: flex;
+    justify-content: center;
+    min-width: 600px;
+}
+
+.org-chart ul {
+    padding-top: 20px;
+    position: relative;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+}
+
+.org-chart li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    transition: all 0.5s;
+}
+
+.org-chart li::before, .org-chart li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    height: 20px;
+}
+
+.org-chart li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+.org-chart li:only-child::after, .org-chart li:only-child::before {
+    display: none;
+}
+
+.org-chart li:only-child {
+    padding-top: 0;
+}
+
+.org-chart li:first-child::before, .org-chart li:last-child::after {
+    border: 0 none;
+}
+
+.org-chart li:last-child::before {
+    border-right: 1px solid #ccc;
+}
+
+.org-chart ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+
+/* Reset page-content green dot on org-chart list items */
+.org-chart li::before,
+.org-chart li::after {
+    background: none;
+    border-radius: 0;
+    width: 50%;
+    height: 20px;
+}
+
+/* Node Styling */
+.org-node {
+    display: inline-block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+    min-width: 120px;
+}
+
+.org-node:hover {
+    box-shadow: 0 8px 16px rgba(76, 176, 80, 0.15);
+    border-color: #4CB050;
+    transform: translateY(-2px);
+}
+
+/* Specific Node Styles */
+.org-root {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #4CB050, #2E7D32);
+    border: none;
+    padding: 14px 24px;
+}
+
+.org-dept {
+    font-weight: 600;
+    color: #2E7D32;
+    background: #f5faf5;
+    border-color: #c8e6c9;
+}
+
+.org-role {
+    font-size: 13px;
+    color: #555;
+}
+
+/* Mobile Responsive Styles for Org Chart */
+@media (max-width: 768px) {
+    .org-chart-wrapper {
+        overflow-x: visible;
+    }
+
+    .org-chart {
+        display: block;
+        min-width: auto;
+    }
+
+    .org-chart ul {
+        display: block;
+        padding-top: 0;
+        padding-left: 20px;
+        margin-bottom: 0;
+    }
+
+    .org-chart li {
+        float: none;
+        text-align: left;
+        padding: 10px 0 0 20px;
+        border-left: 1px solid #ccc;
+    }
+
+    .org-chart li::before, 
+    .org-chart li::after,
+    .org-chart ul ul::before {
+        display: none;
+    }
+
+    .org-chart li::before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 25px;
+        left: 0;
+        width: 20px;
+        height: 1px;
+        border-top: 1px solid #ccc;
+        border-right: none;
+        border-radius: 0;
+    }
+
+    .org-chart li:last-child {
+        border-left: 1px solid transparent;
+    }
+    
+    .org-chart li:last-child::after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -1px;
+        width: 1px;
+        height: 25px;
+        background: #ccc;
+        border: none;
+    }
+
+    .org-node {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+        min-width: auto;
+    }
+    
+    .org-chart > ul {
+        padding-left: 0;
+    }
+    
+    .org-chart > ul > li {
+        padding-left: 0;
+        border-left: none;
+    }
+    
+    .org-chart > ul > li::before {
+        display: none;
+    }
+    
+    .org-chart > ul > li::after {
+        display: none;
+    }
+}
