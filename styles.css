@@ -815,6 +815,7 @@ hr {
 .org-chart-wrapper {
     width: 100%;
     overflow-x: auto;
+    overflow-y: visible;
     padding: 20px 0;
     margin-bottom: 40px;
 }
@@ -938,7 +939,8 @@ hr {
 /* Mobile Responsive Styles for Org Chart */
 @media (max-width: 768px) {
     .org-chart-wrapper {
-        overflow-x: visible;
+        overflow: visible;
+        padding-left: 5px;
     }
 
     .org-chart {
