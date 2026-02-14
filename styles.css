@@ -569,8 +569,8 @@ hr {
 }
 
 .qr-code img {
-    width: 150px;
-    height: 150px;
+    width: 400px;
+    height: 400px;
     border-radius: 8px;
     background: #fff;
     padding: 8px;
