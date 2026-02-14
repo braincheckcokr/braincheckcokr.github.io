@@ -1,0 +1,17 @@
+{
+  "version": "20260214",
+  "totalReviews": 997,
+  "chunkSize": 100,
+  "chunks": [
+    "reviews-001.json",
+    "reviews-002.json",
+    "reviews-003.json",
+    "reviews-004.json",
+    "reviews-005.json",
+    "reviews-006.json",
+    "reviews-007.json",
+    "reviews-008.json",
+    "reviews-009.json",
+    "reviews-010.json"
+  ]
+}
