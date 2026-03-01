@@ -135,11 +135,55 @@
         "@type": "Organization",
         "@id": "https://braincheck.co.kr/#organization",
         "name": "뇌체크",
+        "alternateName": "BrainCheck",
         "url": "https://braincheck.co.kr/",
-        "logo": "https://braincheck.co.kr/assets/images/app_icon729.png",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://braincheck.co.kr/assets/images/app_icon729.png",
+            "width": 729,
+            "height": 729
+        },
         "founder": {
             "@type": "Person",
-            "name": "이영훈"
+            "@id": "https://braincheck.co.kr/#founder",
+            "name": "이영훈",
+            "url": "https://www.linkedin.com/in/younghun-lee-92209ab2/",
+            "jobTitle": "대표",
+            "sameAs": [
+                "https://www.linkedin.com/in/younghun-lee-92209ab2/"
+            ],
+            "knowsAbout": [
+                "AI",
+                "머신러닝",
+                "소프트웨어 엔지니어링",
+                "언어 학습 기술"
+            ],
+            "hasOccupation": [
+                {
+                    "@type": "Occupation",
+                    "name": "AI 서버 테크 리더",
+                    "occupationLocation": {
+                        "@type": "Organization",
+                        "name": "매직엑스"
+                    }
+                },
+                {
+                    "@type": "Occupation",
+                    "name": "머신러닝 엔지니어",
+                    "occupationLocation": {
+                        "@type": "Organization",
+                        "name": "파운트"
+                    }
+                },
+                {
+                    "@type": "Occupation",
+                    "name": "소프트웨어 엔지니어",
+                    "occupationLocation": {
+                        "@type": "Organization",
+                        "name": "EA"
+                    }
+                }
+            ]
         },
         "address": {
             "@type": "PostalAddress",
@@ -152,9 +196,38 @@
             "@type": "ContactPoint",
             "email": "admin@braincheck.co.kr",
             "contactType": "customer service"
-        }
+        },
+        "knowsAbout": [
+            "AI 기반 언어 학습",
+            "간격 반복 학습(Spaced Repetition)",
+            "플래시카드 학습법",
+            "음성 인식(STT)",
+            "음성 합성(TTS)",
+            "대규모 언어 모델(LLM)"
+        ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "홈",
+                "item": "https://braincheck.co.kr/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "회사소개",
+                "item": "https://braincheck.co.kr/about.html"
+            }
+        ]
+    }
+    </script>
+
     <script src="./common.js"></script>
 </body>
 </html>
