@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="{{ t.html_lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_t.title }}</title>
+    <meta name="description" content="{{ page_t.description }}">
+    <meta name="keywords" content="{{ page_t.keywords }}">
+    <meta name="author" content="{{ t.site_name }}">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="{{ og_type }}">
+    <meta property="og:site_name" content="{{ t.site_name }}">
+    <meta property="og:title" content="{{ t.global.og.title }}">
+    <meta property="og:description" content="{{ t.global.og.description }}">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:image" content="{{ site.base_url }}/assets/images/og_kakao.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="{{ t.locale }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ t.global.twitter.title }}">
+    <meta name="twitter:description" content="{{ t.global.twitter.description }}">
+    <meta name="twitter:image" content="{{ site.base_url }}/assets/images/og_kakao.png">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    <!-- hreflang -->
+    {% for alt_lang in site.languages %}
+    {% if alt_lang == site.default_lang %}
+    <link rel="alternate" hreflang="{{ alt_lang }}" href="{{ site.base_url }}/{{ page_file }}">
+    {% else %}
+    <link rel="alternate" hreflang="{{ alt_lang }}" href="{{ site.base_url }}/{{ alt_lang }}/{{ page_file }}">
+    {% endif %}
+    {% endfor %}
+    <link rel="alternate" hreflang="x-default" href="{{ site.base_url }}/{{ page_file }}">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset_prefix }}assets/images/app_icon58.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset_prefix }}assets/images/app_icon729.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset_prefix }}assets/images/app_icon729.png">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset_prefix }}styles.css">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="{{ nav_prefix }}index.html" class="logo">{{ t.site_name_display | safe }}</a>
+        <nav class="nav-links">
+            <a href="{{ nav_prefix }}about.html">{{ t.global.nav.about }}</a>
+            <a href="{{ nav_prefix }}support.html">{{ t.global.nav.support }}</a>
+            <a href="{{ nav_prefix }}information.html">{{ t.global.nav.privacy }}</a>
+            <a href="{{ t.global.lang_switch.url }}" class="lang-switch" style="font-weight:700;color:#4CB050;">{{ t.global.lang_switch.label }}</a>
+        </nav>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="{{ nav_prefix }}index.html">{{ t.global.nav.home }}</a>
+            <a href="{{ nav_prefix }}about.html">{{ t.global.nav.about }}</a>
+            <a href="{{ nav_prefix }}support.html">{{ t.global.nav.support }}</a>
+            <a href="{{ nav_prefix }}information.html">{{ t.global.nav.privacy }}</a>
+        </div>
+        <p><a href="{{ nav_prefix }}review.html" style="text-decoration:none;color:inherit;">&copy; {{ t.global.footer.copyright }}</a></p>
+    </footer>
+
+    {% block jsonld %}{% endblock %}
+
+    <script src="{{ asset_prefix }}common.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

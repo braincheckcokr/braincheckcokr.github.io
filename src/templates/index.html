@@ -1,0 +1,172 @@
+{% extends "_base.html" %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>{{ page_t.hero_title | safe }}</h1>
+            <p>{{ page_t.hero_description | safe }}</p>
+        </div>
+        <div class="badges-section">
+            {% for badge in page_t.badges %}
+            <div class="badge-item">
+                <img src="{{ asset_prefix }}assets/images/badge_no1.png" alt="1위" class="badge-icon">
+                <div class="badge-info">
+                    <div class="badge-text">{{ badge.text }}</div>
+                    <div class="badge-note">{{ badge.note }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section class="section">
+        <h2>{{ page_t.what_we_do.heading }}</h2>
+        <p>{{ page_t.what_we_do.intro }}</p>
+        <ul>
+            {% for item in page_t.what_we_do.items %}
+            <li>{{ item | safe }}</li>
+            {% endfor %}
+        </ul>
+        <p>{{ page_t.what_we_do.abstraction | safe }}</p>
+        <p>{{ page_t.what_we_do.tracking | safe }}</p>
+        <p class="goal">{{ page_t.what_we_do.goal }}</p>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="features-content">
+            <h2>{{ page_t.features.heading }}</h2>
+            <p>{{ page_t.features.intro }}</p>
+            <div class="feature-grid">
+                {% set feature_links = ["mlsystem.html", "tts.html", "stt.html", "ai-content.html", "multiplatform.html"] %}
+                {% for card in page_t.features.cards %}
+                <a href="{{ asset_prefix }}{{ feature_links[loop.index0] }}" class="feature-card" style="text-decoration: none; color: inherit;">
+                    <h4>{{ card.title }}</h4>
+                    <p>{{ card.desc }}</p>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Creation -->
+    <section class="section">
+        <h2>{{ page_t.content_creation.heading }}</h2>
+        <p>{{ page_t.content_creation.intro }}</p>
+        <ul>
+            {% for item in page_t.content_creation.items %}
+            <li>{{ item | safe }}</li>
+            {% endfor %}
+        </ul>
+        <p class="goal">{{ page_t.content_creation.goal }}</p>
+    </section>
+
+    <!-- Mission -->
+    <section class="mission">
+        <h2>{{ page_t.mission.heading }}</h2>
+        <p>{{ page_t.mission.text | safe }}</p>
+    </section>
+
+    <!-- Principles -->
+    <section class="section">
+        <h2>{{ page_t.principles.heading }}</h2>
+        {% for principle in page_t.principles.items %}
+        {% if not loop.first %}<hr>{% endif %}
+
+        <h3>{{ principle.title }}</h3>
+        {% if principle.intro %}
+        <p>{{ principle.intro | safe }}</p>
+        {% endif %}
+        <blockquote>
+            {{ principle.quote | safe }}
+        </blockquote>
+        <p>{{ principle.text | safe }}</p>
+        {% endfor %}
+    </section>
+
+    <!-- FAQ Preview -->
+    <section class="section">
+        <h2>{{ page_t.faq.heading }}</h2>
+        {% for item in page_t.faq.items %}
+        <p><strong>{{ item.q }}</strong><br>{{ item.a }}</p>
+        {% endfor %}
+    </section>
+
+    <!-- App Download -->
+    <section class="section" style="text-align: center;">
+        <h2>{{ t.global.download.heading }}</h2>
+        <div class="download-section" style="justify-content: center;">
+            <div class="qr-code">
+                <img src="{{ asset_prefix }}assets/images/qrword0_qr_code.svg" alt="{{ t.global.download.qr_alt }}" width="150" height="150">
+            </div>
+            <div class="store-badges" style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+                <a href="{{ site.app_links.app_store }}" target="_blank">
+                    <img src="{{ asset_prefix }}assets/images/app_store_badge.png" alt="{{ t.global.download.app_store_alt }}" height="50">
+                </a>
+                <a href="{{ site.app_links.google_play }}" target="_blank">
+                    <img src="{{ asset_prefix }}assets/images/google_play_badge.png" alt="{{ t.global.download.google_play_alt }}" height="50">
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block jsonld %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "{{ site.base_url }}/#website",
+        "name": "{{ page_t.schemas.website.name }}",
+        "alternateName": "BrainCheck",
+        "url": "{{ site.base_url }}/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ page_t.schemas.website.name }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ site.base_url }}/assets/images/app_icon729.png",
+                "width": 729,
+                "height": 729
+            }
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "@id": "{{ site.base_url }}/#app",
+        "name": "{{ page_t.schemas.app.name }}",
+        "alternateName": "BrainCheck",
+        "description": "{{ page_t.schemas.app.description }}",
+        "applicationCategory": "{{ page_t.schemas.app.category }}",
+        "applicationSubCategory": "{{ page_t.schemas.app.subcategory }}",
+        "operatingSystem": ["iOS", "Android", "macOS", "Windows"],
+        "inLanguage": ["ko", "en"],
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "KRW",
+            "description": "{{ page_t.schemas.app.offer_description }}"
+        },
+        "downloadUrl": [
+            "{{ site.app_links.app_store }}",
+            "{{ site.app_links.google_play }}"
+        ],
+        "featureList": [
+            {% for feature in page_t.schemas.app.features %}
+            "{{ feature }}"{% if not loop.last %},{% endif %}
+            {% endfor %}
+        ],
+        "screenshot": "{{ site.base_url }}/assets/images/og_kakao.png",
+        "image": "{{ site.base_url }}/assets/images/app_icon729.png",
+        "author": {
+            "@type": "Organization",
+            "@id": "{{ site.base_url }}/#organization"
+        }
+    }
+    </script>
+{% endblock %}

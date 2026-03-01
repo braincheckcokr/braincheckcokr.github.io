@@ -1,0 +1,31 @@
+{
+  "base_url": "https://braincheck.co.kr",
+  "languages": ["ko", "en"],
+  "default_lang": "ko",
+  "pages": [
+    {"slug": "index", "file": "index.html", "og_type": "website"},
+    {"slug": "about", "file": "about.html", "og_type": "website"},
+    {"slug": "support", "file": "support.html", "og_type": "website"},
+    {"slug": "information", "file": "information.html", "og_type": "website"},
+    {"slug": "mlsystem", "file": "mlsystem.html", "og_type": "article"},
+    {"slug": "tts", "file": "tts.html", "og_type": "article"},
+    {"slug": "stt", "file": "stt.html", "og_type": "article"},
+    {"slug": "ai-content", "file": "ai-content.html", "og_type": "article"},
+    {"slug": "multiplatform", "file": "multiplatform.html", "og_type": "article"},
+    {"slug": "review", "file": "review.html", "og_type": "website"}
+  ],
+  "app_links": {
+    "app_store": "https://apps.apple.com/kr/app/%EB%87%8C%EC%B2%B4%ED%81%AC-%EC%98%81%EC%96%B4%ED%9A%8C%ED%99%94-%EC%98%81%EC%96%B4%EC%9E%91%EB%AC%B8/id6754181689",
+    "google_play": "https://play.google.com/store/apps/details?id=kr.co.braincheck.bc&hl=ko"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/younghun-lee-92209ab2/"
+  },
+  "contact": {
+    "email": "admin@braincheck.co.kr",
+    "support_email": "support@braincheck.co.kr"
+  },
+  "business": {
+    "registration": "816-35-01459"
+  }
+}

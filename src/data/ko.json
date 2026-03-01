@@ -1,0 +1,285 @@
+{
+  "lang": "ko",
+  "locale": "ko_KR",
+  "html_lang": "ko",
+  "site_name": "뇌체크",
+  "site_name_display": "뇌<span>체크</span>",
+  "global": {
+    "nav": {
+      "home": "홈",
+      "about": "회사소개",
+      "support": "고객센터",
+      "privacy": "개인정보처리방침"
+    },
+    "lang_switch": {
+      "label": "EN",
+      "url": "/en/"
+    },
+    "footer": {
+      "copyright": "뇌체크"
+    },
+    "og": {
+      "title": "뇌체크 - 덜어내는 순간, 몰입이 시작됩니다.",
+      "description": "영어회화, 영어작문, 뇌체크는 플래시카드를 핵심 추상화로 삼아, 언어 학습의 본질에 몰입하도록 설계된 미니멀리스트 앱입니다."
+    },
+    "twitter": {
+      "title": "뇌체크 - 덜어내는 순간, 몰입이 시작됩니다.",
+      "description": "영어회화, 영어작문, 뇌체크는 플래시카드를 핵심 추상화로 삼아, 언어 학습의 본질에 몰입하도록 설계된 미니멀리스트 앱입니다."
+    },
+    "download": {
+      "heading": "지금 시작하세요",
+      "app_store_alt": "App Store에서 다운로드",
+      "google_play_alt": "Google Play에서 다운로드",
+      "qr_alt": "앱 다운로드 QR 코드"
+    }
+  },
+  "pages": {
+    "index": {
+      "title": "뇌체크 - AI 기반 언어 학습 앱 | 플래시카드 영어학습",
+      "description": "뇌체크는 AI 기반 플래시카드로 영어를 효율적으로 학습하는 앱입니다. 머신러닝 추천, 음성인식 발화 평가, 고품질 TTS로 자연스러운 발음 학습. iOS, Android, Windows, macOS 지원.",
+      "keywords": "영어학습, 플래시카드, AI영어, 영어앱, 토익, 영어회화, 언어학습, 뇌체크",
+      "hero_title": "언어 학습의 본질을<br><span>정밀하게 다루다</span>",
+      "hero_description": "뇌체크는 플래시카드를 핵심 추상화로 삼아 언어 학습의 본질을 <br>정밀하게 다루는 언어 학습 커뮤니티 플랫폼입니다.",
+      "badges": [
+        {"text": "언어 학습 경험 1위", "note": "(본사 내부 기준)"},
+        {"text": "학습 정확도 중심 1위", "note": "(본사 내부 기준)"},
+        {"text": "플래시카드 기반 음성 학습 1위", "note": "(본사 내부 기준)"}
+      ],
+      "what_we_do": {
+        "heading": "우리가 하는 일",
+        "intro": "언어 학습은 복잡해 보이지만, 본질적으로 다음 두 과정으로 요약할 수 있습니다.",
+        "items": [
+          "<strong>듣기</strong>는 소리를 인식하고 정답을 판별하는 과정",
+          "<strong>말하기</strong>는 생각을 언어로 변환하고, 그 정확성을 검증하는 과정"
+        ],
+        "abstraction": "뇌체크는 이 모든 과정을 <strong>플래시카드라는 단순한 인터페이스</strong>로 추상화합니다.",
+        "tracking": "그러나 그 내부에서는 학습자의 <strong>이해도, 기억 유지율, 망각 속도</strong>를 지속적으로 추적합니다.",
+        "goal": "학습자가 항상 '가장 기억이 잘 되는 상태'에 머물도록 학습 흐름을 조정합니다."
+      },
+      "features": {
+        "heading": "기술과 경험",
+        "intro": "뇌체크는 학습의 효율과 경험을 동시에 끌어올리기 위해 다음 기술들을 핵심으로 설계되었습니다.",
+        "cards": [
+          {"title": "머신러닝 기반 추천 시스템", "desc": "학습자의 이해도와 망각 패턴을 분석해 다음 학습 자료를 최적의 타이밍에 선택합니다"},
+          {"title": "고품질 음성 생성(TTS)", "desc": "기존의 기계적인 음성이 아닌, 실제 대화에 가까운 자연스러운 음성으로 몰입도 높은 청취 경험을 제공합니다"},
+          {"title": "음성 인식(STT) 및 발화 평가", "desc": "사용자의 발화를 인식하고 발음, 정확성, 문장 완성도를 분석해 즉각적인 피드백을 제공합니다"},
+          {"title": "AI 기반 자동 학습 콘텐츠 생성", "desc": "책이나 음성을 입력하면 플래시카드 형태의 학습 자료로 자동 변환됩니다"},
+          {"title": "완전한 멀티 플랫폼 지원", "desc": "iOS, Android, macOS, Windows에서 동일한 학습 흐름과 경험을 제공합니다"}
+        ]
+      },
+      "content_creation": {
+        "heading": "콘텐츠 생성과 공유",
+        "intro": "뇌체크에서 유저는 단순한 학습자가 아닙니다.",
+        "items": [
+          "누구나 <strong>언어 학습 책(덱)</strong>을 직접 만들 수 있고",
+          "이를 다른 유저에게 <strong>공유하거나 판매</strong>할 수 있습니다",
+          "텍스트나 음성을 제공하면 <strong>AI가 자동으로 학습 콘텐츠를 생성</strong>하고 사용자는 이를 검수한 뒤 바로 배포할 수 있습니다"
+        ],
+        "goal": "학습자이자 제작자인 언어 학습 유저 커뮤니티"
+      },
+      "mission": {
+        "heading": "우리의 믿음",
+        "text": "우리는 사람들이 원하는 것을 최소한의 시간으로 학습할 수 있도록 돕습니다.<br>학습은 더 많은 시간을 투자하는 일이 아니라, <br><br><strong>불필요한 시간을 제거하는 일</strong>이라고 믿습니다."
+      },
+      "principles": {
+        "heading": "우리의 원칙",
+        "items": [
+          {
+            "title": "1. 완벽함은 덜어냄에서 온다",
+            "quote": "\"완벽함이란 더 이상 더할 것이 없을 때가 아니라 더 이상 뺄 것이 없을 때 이루어진다.\" — 생텍쥐페리",
+            "text": "뇌체크는 기능을 쌓기보다 <strong>본질에 집중하기 위해 계속 제거합니다.</strong>"
+          },
+          {
+            "title": "2. 학습은 '도달'의 과정이다",
+            "quote": "학습이란 정보를 축적하는 것이 아니라, <strong>특정 주제의 진실에 스스로 도달할 수 있게 되는 상태</strong>입니다.",
+            "text": "우리는 사용자가 직관과 연역을 통해 이해에 도달하도록 설계합니다."
+          },
+          {
+            "title": "3. 쉬운 설명은 짧고, 전체를 보여준다",
+            "intro": "쉬운 설명이란 자세한 설명이 아닙니다. 짧은 시간 안에 상대가 <strong>\"이해했다\"</strong>고 느끼게 하는 설명입니다.",
+            "quote": "이는 개별 정보가 아니라 <strong>상황 전체의 구조와 전망을 보여주는 것</strong>에서 나옵니다.",
+            "text": "뇌체크의 모든 학습 경험은 이 원칙을 기준으로 설계됩니다."
+          }
+        ]
+      },
+      "faq": {
+        "heading": "자주 묻는 질문",
+        "items": [
+          {"q": "뇌체크는 무료인가요?", "a": "네, 기본 기능은 무료로 사용할 수 있습니다."},
+          {"q": "어떤 기기에서 사용 가능한가요?", "a": "iOS, Android, macOS, Windows 모두 지원합니다."},
+          {"q": "학습 기록은 동기화되나요?", "a": "네, 계정 로그인 시 모든 기기에서 자동 동기화됩니다."}
+        ]
+      },
+      "schemas": {
+        "website": {
+          "name": "뇌체크"
+        },
+        "app": {
+          "name": "뇌체크",
+          "description": "AI 기반 플래시카드 언어 학습 앱. FSRS 머신러닝 알고리즘으로 학습자의 망각 패턴을 분석해 최적의 복습 타이밍을 제안하고, 고품질 TTS와 음성인식(STT) 발화 평가로 듣기·말하기 학습을 지원합니다.",
+          "category": "EducationalApplication",
+          "subcategory": "언어 학습",
+          "offer_description": "기본 무료, 프리미엄 구독 옵션",
+          "features": [
+            "머신러닝 기반 FSRS 간격 반복 추천 시스템",
+            "고품질 음성 생성(TTS)",
+            "음성 인식(STT) 및 발화 평가",
+            "AI 기반 자동 학습 콘텐츠 생성",
+            "iOS, Android, macOS, Windows 멀티 플랫폼 지원",
+            "기기 간 학습 데이터 자동 동기화",
+            "오프라인 학습 지원"
+          ]
+        }
+      }
+    },
+    "about": {
+      "title": "회사소개 - 뇌체크",
+      "description": "뇌체크 회사소개. 대표 이영훈, 전 매직엑스 AI 테크리더 출신. 언어 학습의 본질에 집중하는 AI 기반 플래시카드 학습 플랫폼을 만듭니다.",
+      "keywords": "뇌체크, 회사소개, 이영훈, AI 학습, 영어학습 앱",
+      "heading": "회사소개",
+      "company_name": "뇌체크",
+      "ceo_label": "대표",
+      "ceo_name": "이영훈",
+      "career_heading": "대표 약력",
+      "careers": [
+        "전 매직엑스 AI 서버 테크 리더",
+        "전 파운트 머신러닝 엔지니어",
+        "전 EA 소프트웨어 엔지니어"
+      ],
+      "linkedin_label": "링크드인",
+      "business_heading": "사업자 등록 정보",
+      "business_number_label": "사업자등록번호",
+      "address_label": "주소",
+      "address": "서울특별시 강남구 자곡로11길 11, 301동",
+      "breadcrumb_name": "회사소개",
+      "schemas": {
+        "org": {
+          "name": "뇌체크",
+          "founder_name": "이영훈",
+          "founder_title": "대표",
+          "founder_knows": ["AI", "머신러닝", "소프트웨어 엔지니어링", "언어 학습 기술"],
+          "occupations": [
+            {"name": "AI 서버 테크 리더", "org": "매직엑스"},
+            {"name": "머신러닝 엔지니어", "org": "파운트"},
+            {"name": "소프트웨어 엔지니어", "org": "EA"}
+          ],
+          "address": {
+            "street": "자곡로11길 11, 301동",
+            "locality": "강남구",
+            "region": "서울특별시",
+            "country": "KR"
+          },
+          "knows_about": [
+            "AI 기반 언어 학습",
+            "간격 반복 학습(Spaced Repetition)",
+            "플래시카드 학습법",
+            "음성 인식(STT)",
+            "음성 합성(TTS)",
+            "대규모 언어 모델(LLM)"
+          ]
+        }
+      }
+    },
+    "support": {
+      "title": "고객센터 - 뇌체크",
+      "description": "뇌체크 고객센터. 서비스 이용 중 문의사항이나 지원이 필요하시면 admin@braincheck.co.kr로 연락해주세요. 빠른 답변을 드리겠습니다.",
+      "keywords": "뇌체크, 고객센터, 문의, 고객지원, 영어앱 문의",
+      "heading": "고객센터",
+      "intro": "서비스 이용 중 문의사항이나 지원이 필요하신 경우 아래로 연락해 주세요.",
+      "contact_heading": "문의하기",
+      "email_label": "이메일",
+      "faq_heading": "자주 묻는 질문",
+      "breadcrumb_name": "고객센터",
+      "faqs": [
+        {
+          "id": "what-is",
+          "question": "뇌체크는 어떤 학습 앱인가요?",
+          "answer": "뇌체크는 AI 기반 플래시카드 언어 학습 앱입니다. 머신러닝이 학습자의 망각 패턴을 분석해 최적의 타이밍에 복습을 제안하고, 음성인식(STT)과 고품질 TTS로 듣기·말하기 학습을 지원합니다."
+        },
+        {
+          "id": "free",
+          "question": "뇌체크는 무료인가요?",
+          "answer": "네, 기본 기능은 무료로 사용할 수 있습니다. 일부 프리미엄 기능은 구독을 통해 이용 가능합니다."
+        },
+        {
+          "id": "platforms",
+          "question": "iOS/Android 모두 사용 가능한가요?",
+          "answer": "네, 가능합니다. iOS, Android, macOS, Windows에서 모두 사용할 수 있으며, 동일한 학습 경험을 제공합니다."
+        },
+        {
+          "id": "sync",
+          "question": "학습 기록은 기기 간 동기화되나요?",
+          "answer": "네, 동기화됩니다. 계정에 로그인하면 모든 기기에서 학습 진도와 기록이 자동으로 동기화됩니다."
+        },
+        {
+          "id": "offline",
+          "question": "오프라인에서도 학습 가능한가요?",
+          "answer": "네, 가능합니다. 학습 콘텐츠를 미리 다운로드하면 인터넷 연결 없이도 학습할 수 있습니다."
+        },
+        {
+          "id": "privacy",
+          "question": "개인정보는 어떻게 처리되나요?",
+          "answer": "뇌체크는 개인정보보호법을 준수하며, 학습 데이터는 암호화되어 안전하게 보관됩니다. 자세한 내용은 개인정보처리방침을 참고해주세요."
+        },
+        {
+          "id": "refund",
+          "question": "환불/구독 해지는 어떻게 하나요?",
+          "answer": "구독 해지와 환불은 각 앱스토어(App Store, Google Play) 정책에 따라 처리됩니다. 앱스토어 설정에서 구독을 관리하거나, 고객센터로 문의해주세요."
+        }
+      ]
+    },
+    "information": {
+      "title": "개인정보처리방침 - 뇌체크",
+      "description": "뇌체크 개인정보처리방침. 수집하는 개인정보 항목, 이용 목적, 보유기간, 안전성 확보 조치 등 개인정보 보호에 관한 안내입니다.",
+      "keywords": "뇌체크, 개인정보처리방침, 개인정보보호, 프라이버시",
+      "breadcrumb_name": "개인정보처리방침"
+    },
+    "mlsystem": {
+      "title": "머신러닝 기반 추천 시스템 - 뇌체크",
+      "description": "뇌체크의 머신러닝 기반 간격 반복 추천 시스템. FSRS 알고리즘의 성능과 벤치마크 결과를 소개합니다.",
+      "keywords": "뇌체크, 머신러닝, FSRS, 간격반복, Spaced Repetition, 알고리즘, 벤치마크",
+      "breadcrumb_name": "머신러닝 기반 추천 시스템",
+      "breadcrumb_parent": "기술과 경험"
+    },
+    "tts": {
+      "title": "고품질 음성 생성(TTS) 기술 소개 - 뇌체크",
+      "description": "뇌체크의 TTS 배경 기술 소개. CALM(Continuous Audio Language Models)과 Pocket TTS를 중심으로 최신 음성 합성 기술을 설명합니다.",
+      "keywords": "뇌체크, TTS, 음성합성, Text-to-Speech, CALM, Pocket TTS, Kyutai, 음성생성",
+      "breadcrumb_name": "고품질 음성 생성(TTS)",
+      "breadcrumb_parent": "기술과 경험"
+    },
+    "stt": {
+      "title": "음성 인식(STT) 기술 소개 - 뇌체크",
+      "description": "뇌체크의 음성 인식 배경 기술 소개. OpenAI Whisper 모델을 중심으로 최신 STT 기술의 구조와 특징을 설명합니다.",
+      "keywords": "뇌체크, STT, 음성인식, Speech-to-Text, Whisper, OpenAI, 발화평가",
+      "breadcrumb_name": "음성 인식(STT) 및 발화 평가",
+      "breadcrumb_parent": "기술과 경험"
+    },
+    "ai-content": {
+      "title": "AI 기반 자동 학습 콘텐츠 생성 기술 소개 - 뇌체크",
+      "description": "뇌체크의 AI 기반 학습 콘텐츠 자동 생성 배경 기술 소개. 공개 대규모 언어 모델(LLM) 생태계와 OpenLLaMA를 중심으로 설명합니다.",
+      "keywords": "뇌체크, AI, LLM, 대규모 언어 모델, OpenLLaMA, 플래시카드, 학습 콘텐츠 생성, 오픈소스",
+      "breadcrumb_name": "AI 기반 자동 학습 콘텐츠 생성",
+      "breadcrumb_parent": "기술과 경험"
+    },
+    "multiplatform": {
+      "title": "멀티플랫폼 지원 기술 소개 - 뇌체크",
+      "description": "뇌체크의 멀티플랫폼 지원 기술 소개. Google의 오픈소스 UI 프레임워크 Flutter를 활용한 iOS, Android, macOS, Windows 지원 배경을 설명합니다.",
+      "keywords": "뇌체크, Flutter, 멀티플랫폼, iOS, Android, macOS, Windows, Dart, 크로스플랫폼",
+      "breadcrumb_name": "멀티플랫폼 지원",
+      "breadcrumb_parent": "기술과 경험"
+    },
+    "review": {
+      "title": "사용자 리뷰 - 뇌체크",
+      "description": "뇌체크 사용자 리뷰. 토익 점수 200점 향상, 영어 회화 자신감 향상 등 실제 사용자들의 생생한 학습 후기를 확인하세요.",
+      "keywords": "뇌체크, 리뷰, 후기, 영어앱 후기, 영어학습 후기, 토익",
+      "hero_title": "사용자들의 <span>생생한 후기</span>",
+      "hero_subtitle": "뇌체크를 사용하는 분들의 실제 리뷰입니다",
+      "refresh_btn": "다른 리뷰 보기",
+      "loading": "리뷰 불러오는 중...",
+      "error": "리뷰를 불러올 수 없습니다.",
+      "copied": "복사됨 ✓",
+      "qr_alt": "리뷰 페이지 QR 코드"
+    }
+  }
+}

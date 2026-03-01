@@ -1,0 +1,297 @@
+{
+  "lang": "en",
+  "locale": "en_US",
+  "html_lang": "en",
+  "site_name": "BrainCheck",
+  "site_name_display": "Brain<span>Check</span>",
+  "global": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "support": "Support",
+      "privacy": "Privacy Policy"
+    },
+    "lang_switch": {
+      "label": "KO",
+      "url": "/"
+    },
+    "footer": {
+      "copyright": "BrainCheck"
+    },
+    "og": {
+      "title": "BrainCheck - When you let go, focus begins.",
+      "description": "English conversation, English writing — BrainCheck is a minimalist app designed to help you focus on the essence of language learning through flashcard abstraction."
+    },
+    "twitter": {
+      "title": "BrainCheck - When you let go, focus begins.",
+      "description": "English conversation, English writing — BrainCheck is a minimalist app designed to help you focus on the essence of language learning through flashcard abstraction."
+    },
+    "download": {
+      "heading": "Get Started Now",
+      "app_store_alt": "Download on the App Store",
+      "google_play_alt": "Get it on Google Play",
+      "qr_alt": "App Download QR Code"
+    }
+  },
+  "pages": {
+    "index": {
+      "title": "BrainCheck - AI-Powered Language Learning App | Flashcard English Study",
+      "description": "BrainCheck is an app for efficient English learning with AI-powered flashcards. Features ML recommendations, speech recognition evaluation, and high-quality TTS for natural pronunciation learning. Supports iOS, Android, Windows, macOS.",
+      "keywords": "English learning, flashcard, AI English, English app, TOEIC, English conversation, language learning, BrainCheck",
+      "hero_title": "Precisely mastering<br><span>the essence of language learning</span>",
+      "hero_description": "BrainCheck is a language learning community platform that uses flashcards as its core abstraction to precisely address the essence of language learning.",
+      "badges": [
+        {"text": "#1 Language Learning Experience", "note": "(Internal benchmark)"},
+        {"text": "#1 Learning Accuracy Focus", "note": "(Internal benchmark)"},
+        {"text": "#1 Flashcard-Based Voice Learning", "note": "(Internal benchmark)"}
+      ],
+      "what_we_do": {
+        "heading": "What We Do",
+        "intro": "Language learning may seem complex, but it can essentially be summarized into two processes.",
+        "items": [
+          "<strong>Listening</strong> is the process of recognizing sounds and determining correct answers",
+          "<strong>Speaking</strong> is the process of converting thoughts into language and verifying their accuracy"
+        ],
+        "abstraction": "BrainCheck abstracts all these processes into <strong>a simple flashcard interface</strong>.",
+        "tracking": "Behind the scenes, it continuously tracks the learner's <strong>comprehension, retention rate, and forgetting speed</strong>.",
+        "goal": "It adjusts the learning flow so that learners always remain in the 'optimal memory state'."
+      },
+      "features": {
+        "heading": "Technology & Experience",
+        "intro": "BrainCheck is built around these core technologies to simultaneously elevate both learning efficiency and experience.",
+        "cards": [
+          {"title": "ML-Based Recommendation System", "desc": "Analyzes learner comprehension and forgetting patterns to select the next study material at the optimal timing"},
+          {"title": "High-Quality Text-to-Speech (TTS)", "desc": "Delivers an immersive listening experience with natural speech that closely resembles real conversation"},
+          {"title": "Speech Recognition (STT) & Pronunciation Evaluation", "desc": "Recognizes user speech and provides instant feedback on pronunciation, accuracy, and sentence completion"},
+          {"title": "AI-Powered Auto Content Generation", "desc": "Input books or audio and they're automatically converted into flashcard-format study materials"},
+          {"title": "Full Multi-Platform Support", "desc": "Provides the same learning flow and experience across iOS, Android, macOS, and Windows"}
+        ]
+      },
+      "content_creation": {
+        "heading": "Content Creation & Sharing",
+        "intro": "On BrainCheck, users are more than just learners.",
+        "items": [
+          "Anyone can create their own <strong>language learning books (decks)</strong>",
+          "And <strong>share or sell</strong> them to other users",
+          "Provide text or audio and <strong>AI automatically generates learning content</strong> — users can review and publish immediately"
+        ],
+        "goal": "A language learning user community of learners and creators"
+      },
+      "mission": {
+        "heading": "Our Belief",
+        "text": "We help people learn what they want in the minimum amount of time.<br>Learning is not about investing more time — it's about<br><br><strong>eliminating unnecessary time</strong>."
+      },
+      "principles": {
+        "heading": "Our Principles",
+        "items": [
+          {
+            "title": "1. Perfection comes from removal",
+            "quote": "\"Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.\" — Antoine de Saint-Exupéry",
+            "text": "BrainCheck <strong>keeps removing to focus on the essence</strong> rather than piling on features."
+          },
+          {
+            "title": "2. Learning is a process of 'arrival'",
+            "quote": "Learning is not accumulating information, but <strong>reaching a state where you can arrive at the truth of a subject on your own</strong>.",
+            "text": "We design so that users reach understanding through intuition and deduction."
+          },
+          {
+            "title": "3. Easy explanations are short and show the whole picture",
+            "intro": "An easy explanation is not a detailed one. It's one that makes the other person feel they <strong>\"understand\"</strong> in a short time.",
+            "quote": "This comes not from individual pieces of information, but from <strong>showing the structure and perspective of the entire situation</strong>.",
+            "text": "Every learning experience in BrainCheck is designed based on this principle."
+          }
+        ]
+      },
+      "faq": {
+        "heading": "Frequently Asked Questions",
+        "items": [
+          {"q": "Is BrainCheck free?", "a": "Yes, basic features are available for free."},
+          {"q": "What devices can I use it on?", "a": "It supports iOS, Android, macOS, and Windows."},
+          {"q": "Is my learning data synced?", "a": "Yes, all devices are automatically synced when you log in."}
+        ]
+      },
+      "schemas": {
+        "website": {
+          "name": "BrainCheck"
+        },
+        "app": {
+          "name": "BrainCheck",
+          "description": "AI-powered flashcard language learning app. Uses the FSRS machine learning algorithm to analyze learner forgetting patterns and suggest optimal review timing, with high-quality TTS and speech recognition (STT) pronunciation evaluation for listening and speaking practice.",
+          "category": "EducationalApplication",
+          "subcategory": "Language Learning",
+          "offer_description": "Free basic, premium subscription option",
+          "features": [
+            "ML-based FSRS spaced repetition recommendation system",
+            "High-quality text-to-speech (TTS)",
+            "Speech recognition (STT) and pronunciation evaluation",
+            "AI-powered automatic learning content generation",
+            "iOS, Android, macOS, Windows multi-platform support",
+            "Cross-device learning data auto-sync",
+            "Offline learning support"
+          ]
+        }
+      }
+    },
+    "about": {
+      "title": "About - BrainCheck",
+      "description": "About BrainCheck. Founded by Younghun Lee, former AI Tech Leader at MagicX. Building an AI-powered flashcard learning platform focused on the essence of language learning.",
+      "keywords": "BrainCheck, about, Younghun Lee, AI learning, English learning app",
+      "heading": "About Us",
+      "company_name": "BrainCheck",
+      "ceo_label": "CEO",
+      "ceo_name": "Younghun Lee",
+      "career_heading": "CEO Background",
+      "careers": [
+        "Former AI Server Tech Leader at MagicX",
+        "Former Machine Learning Engineer at Fount",
+        "Former Software Engineer at EA"
+      ],
+      "linkedin_label": "LinkedIn",
+      "business_heading": "Business Registration",
+      "business_number_label": "Business Registration Number",
+      "address_label": "Address",
+      "address": "301-dong, 11, Jagok-ro 11-gil, Gangnam-gu, Seoul, South Korea",
+      "breadcrumb_name": "About",
+      "schemas": {
+        "org": {
+          "name": "BrainCheck",
+          "founder_name": "Younghun Lee",
+          "founder_title": "CEO",
+          "founder_knows": ["AI", "Machine Learning", "Software Engineering", "Language Learning Technology"],
+          "occupations": [
+            {"name": "AI Server Tech Leader", "org": "MagicX"},
+            {"name": "Machine Learning Engineer", "org": "Fount"},
+            {"name": "Software Engineer", "org": "EA"}
+          ],
+          "address": {
+            "street": "11, Jagok-ro 11-gil, 301-dong",
+            "locality": "Gangnam-gu",
+            "region": "Seoul",
+            "country": "KR"
+          },
+          "knows_about": [
+            "AI-based language learning",
+            "Spaced Repetition",
+            "Flashcard learning methods",
+            "Speech Recognition (STT)",
+            "Text-to-Speech (TTS)",
+            "Large Language Models (LLM)"
+          ]
+        }
+      }
+    },
+    "support": {
+      "title": "Support - BrainCheck",
+      "description": "BrainCheck Support Center. For inquiries or assistance, contact us at admin@braincheck.co.kr. We'll respond promptly.",
+      "keywords": "BrainCheck, support, contact, customer service, English app support",
+      "heading": "Support",
+      "intro": "If you need assistance or have questions about our service, please contact us below.",
+      "contact_heading": "Contact Us",
+      "email_label": "Email",
+      "faq_heading": "Frequently Asked Questions",
+      "breadcrumb_name": "Support",
+      "faqs": [
+        {
+          "id": "what-is",
+          "question": "What kind of learning app is BrainCheck?",
+          "answer": "BrainCheck is an AI-powered flashcard language learning app. Machine learning analyzes learner forgetting patterns to suggest reviews at optimal timing, with speech recognition (STT) and high-quality TTS for listening and speaking practice."
+        },
+        {
+          "id": "free",
+          "question": "Is BrainCheck free?",
+          "answer": "Yes, basic features are available for free. Some premium features are available through subscription."
+        },
+        {
+          "id": "platforms",
+          "question": "Is it available on both iOS and Android?",
+          "answer": "Yes, it is. You can use it on iOS, Android, macOS, and Windows, with the same learning experience across all platforms."
+        },
+        {
+          "id": "sync",
+          "question": "Is my learning data synced across devices?",
+          "answer": "Yes, it is. When you log in to your account, your learning progress and records are automatically synced across all devices."
+        },
+        {
+          "id": "offline",
+          "question": "Can I study offline?",
+          "answer": "Yes, you can. If you download learning content in advance, you can study without an internet connection."
+        },
+        {
+          "id": "privacy",
+          "question": "How is my personal information handled?",
+          "answer": "BrainCheck complies with the Personal Information Protection Act. Learning data is encrypted and securely stored. For details, please refer to our Privacy Policy."
+        },
+        {
+          "id": "refund",
+          "question": "How do I cancel my subscription or get a refund?",
+          "answer": "Subscription cancellation and refunds are processed according to each app store's (App Store, Google Play) policies. You can manage your subscription in your app store settings or contact our support center."
+        }
+      ]
+    },
+    "information": {
+      "title": "Privacy Policy - BrainCheck",
+      "description": "BrainCheck Privacy Policy. Information about personal data collected, purpose of use, retention period, and security measures.",
+      "keywords": "BrainCheck, privacy policy, personal information protection, privacy",
+      "heading": "Privacy Policy",
+      "breadcrumb_name": "Privacy Policy",
+      "content_html": "KEEP_ORIGINAL"
+    },
+    "mlsystem": {
+      "title": "ML-Based Recommendation System - BrainCheck",
+      "description": "BrainCheck's machine learning-based spaced repetition recommendation system. Introducing the FSRS algorithm's performance and benchmark results.",
+      "keywords": "BrainCheck, machine learning, FSRS, spaced repetition, algorithm, benchmark",
+      "heading": "ML-Based Recommendation System",
+      "breadcrumb_name": "ML-Based Recommendation System",
+      "breadcrumb_parent": "Technology & Experience",
+      "content_html": "KEEP_ORIGINAL"
+    },
+    "tts": {
+      "title": "High-Quality Text-to-Speech (TTS) Technology - BrainCheck",
+      "description": "BrainCheck's TTS background technology. Introducing CALM (Continuous Audio Language Models) and Pocket TTS for modern speech synthesis.",
+      "keywords": "BrainCheck, TTS, text-to-speech, speech synthesis, CALM, Pocket TTS, Kyutai",
+      "heading": "High-Quality Text-to-Speech (TTS) Technology",
+      "breadcrumb_name": "High-Quality TTS",
+      "breadcrumb_parent": "Technology & Experience",
+      "content_html": "KEEP_ORIGINAL"
+    },
+    "stt": {
+      "title": "Speech Recognition (STT) Technology - BrainCheck",
+      "description": "BrainCheck's speech recognition background technology. Explaining the structure and features of modern STT technology centered on OpenAI's Whisper model.",
+      "keywords": "BrainCheck, STT, speech recognition, speech-to-text, Whisper, OpenAI, pronunciation evaluation",
+      "heading": "Speech Recognition (STT) Technology",
+      "breadcrumb_name": "Speech Recognition (STT)",
+      "breadcrumb_parent": "Technology & Experience",
+      "content_html": "KEEP_ORIGINAL"
+    },
+    "ai-content": {
+      "title": "AI-Powered Auto Content Generation Technology - BrainCheck",
+      "description": "BrainCheck's AI-based learning content auto-generation background technology. Explaining the open LLM ecosystem and OpenLLaMA.",
+      "keywords": "BrainCheck, AI, LLM, large language model, OpenLLaMA, flashcard, content generation, open source",
+      "heading": "AI-Powered Auto Content Generation Technology",
+      "breadcrumb_name": "AI Content Generation",
+      "breadcrumb_parent": "Technology & Experience",
+      "content_html": "KEEP_ORIGINAL"
+    },
+    "multiplatform": {
+      "title": "Multi-Platform Support Technology - BrainCheck",
+      "description": "BrainCheck's multi-platform support technology. Explaining the iOS, Android, macOS, Windows support through Google's open-source Flutter framework.",
+      "keywords": "BrainCheck, Flutter, multi-platform, iOS, Android, macOS, Windows, Dart, cross-platform",
+      "heading": "Multi-Platform Support Technology",
+      "breadcrumb_name": "Multi-Platform Support",
+      "breadcrumb_parent": "Technology & Experience",
+      "content_html": "KEEP_ORIGINAL"
+    },
+    "review": {
+      "title": "User Reviews - BrainCheck",
+      "description": "BrainCheck user reviews. Real user reviews including TOEIC score improvement of 200 points, increased English conversation confidence, and more.",
+      "keywords": "BrainCheck, reviews, testimonials, English app reviews, English learning reviews, TOEIC",
+      "hero_title": "Real <span>User Reviews</span>",
+      "hero_subtitle": "Actual reviews from BrainCheck users",
+      "refresh_btn": "See More Reviews",
+      "loading": "Loading reviews...",
+      "error": "Unable to load reviews.",
+      "copied": "Copied ✓",
+      "qr_alt": "Review page QR code"
+    }
+  }
+}

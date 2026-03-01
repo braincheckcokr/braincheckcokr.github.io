@@ -1,0 +1,161 @@
+{% extends "_base.html" %}
+
+{% block content %}
+    <!-- Page Content -->
+    <main class="page-content">
+        <h1>{{ page_t.heading }}</h1>
+
+        <!-- 회사 정보 -->
+        <h2>{{ page_t.company_name }}</h2>
+        <p>{{ page_t.ceo_label }}: <a href="{{ site.social.linkedin }}" target="_blank">{{ page_t.ceo_name }}</a></p>
+
+        <h3>{{ page_t.career_heading }}</h3>
+        <ul>
+            {% for career in page_t.careers %}
+            <li>{{ career }}</li>
+            {% endfor %}
+            <li><a href="{{ site.social.linkedin }}" target="_blank">{{ page_t.linkedin_label }}</a></li>
+        </ul>
+
+        <!--
+        <h3>조직도</h3>
+        <div class="org-chart-wrapper">
+            <div class="org-chart">
+                <ul>
+                    <li>
+                        <div class="org-node org-root">대표</div>
+                        <ul>
+                            <li>
+                                <div class="org-node org-dept">콘텐츠부서</div>
+                                <ul>
+                                    <li><div class="org-node org-role">커리큘럼 기획</div></li>
+                                    <li><div class="org-node org-role">강의 콘텐츠 제작<br>수강생 관리</div></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="org-node org-dept">기술부서</div>
+                                <ul>
+                                    <li><div class="org-node org-role">플랫폼 개발</div></li>
+                                    <li><div class="org-node org-role">인프라·운영</div></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="org-node org-dept">마케팅·영업부서</div>
+                                <ul>
+                                    <li><div class="org-node org-role">마케팅 / 홍보</div></li>
+                                    <li><div class="org-node org-role">B2B 영업</div></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        -->
+
+        <h3>{{ page_t.business_heading }}</h3>
+        <p>{{ page_t.business_number_label }}: {{ site.business.registration }}</p>
+        <p>{{ page_t.address_label }}: {{ page_t.address }}</p>
+
+        <hr>
+
+        <!-- 앱 다운로드 섹션 -->
+        <h2 style="text-align: center;">{{ t.global.download.heading }}</h2>
+        <div class="download-section" style="justify-content: center;">
+            <div class="qr-code">
+                <img src="{{ asset_prefix }}assets/images/qrword0_qr_code.svg" alt="{{ t.global.download.qr_alt }}" width="150" height="150">
+            </div>
+            <div class="store-badges" style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+                <a href="{{ site.app_links.app_store }}" target="_blank">
+                    <img src="{{ asset_prefix }}assets/images/app_store_badge.png" alt="{{ t.global.download.app_store_alt }}" height="50">
+                </a>
+                <a href="{{ site.app_links.google_play }}" target="_blank">
+                    <img src="{{ asset_prefix }}assets/images/google_play_badge.png" alt="{{ t.global.download.google_play_alt }}" height="50">
+                </a>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block jsonld %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "{{ site.base_url }}/#organization",
+        "name": "{{ page_t.schemas.org.name }}",
+        "alternateName": "BrainCheck",
+        "url": "{{ site.base_url }}/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ site.base_url }}/assets/images/app_icon729.png",
+            "width": 729,
+            "height": 729
+        },
+        "founder": {
+            "@type": "Person",
+            "@id": "{{ site.base_url }}/#founder",
+            "name": "{{ page_t.schemas.org.founder_name }}",
+            "url": "{{ site.social.linkedin }}",
+            "jobTitle": "{{ page_t.schemas.org.founder_title }}",
+            "sameAs": [
+                "{{ site.social.linkedin }}"
+            ],
+            "knowsAbout": [
+                {% for item in page_t.schemas.org.founder_knows %}
+                "{{ item }}"{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ],
+            "hasOccupation": [
+                {% for occ in page_t.schemas.org.occupations %}
+                {
+                    "@type": "Occupation",
+                    "name": "{{ occ.name }}",
+                    "occupationLocation": {
+                        "@type": "Organization",
+                        "name": "{{ occ.org }}"
+                    }
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ]
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ page_t.schemas.org.address.street }}",
+            "addressLocality": "{{ page_t.schemas.org.address.locality }}",
+            "addressRegion": "{{ page_t.schemas.org.address.region }}",
+            "addressCountry": "{{ page_t.schemas.org.address.country }}"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "{{ site.contact.email }}",
+            "contactType": "customer service"
+        },
+        "knowsAbout": [
+            {% for item in page_t.schemas.org.knows_about %}
+            "{{ item }}"{% if not loop.last %},{% endif %}
+            {% endfor %}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "{{ t.global.nav.home }}",
+                "item": "{{ site.base_url }}/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "{{ page_t.breadcrumb_name }}",
+                "item": "{{ canonical_url }}"
+            }
+        ]
+    }
+    </script>
+{% endblock %}

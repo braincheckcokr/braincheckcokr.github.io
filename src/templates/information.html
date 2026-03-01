@@ -1,56 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>개인정보처리방침 - 뇌체크</title>
-    <meta name="description" content="뇌체크 개인정보처리방침. 수집하는 개인정보 항목, 이용 목적, 보유기간, 안전성 확보 조치 등 개인정보 보호에 관한 안내입니다.">
-    <meta name="keywords" content="뇌체크, 개인정보처리방침, 개인정보보호, 프라이버시">
-    <meta name="author" content="뇌체크">
-    <meta name="robots" content="index, follow">
+{% extends "_base.html" %}
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="뇌체크">
-    <meta property="og:title" content="뇌체크 - 덜어내는 순간, 몰입이 시작됩니다.">
-    <meta property="og:description" content="영어회화, 영어작문, 뇌체크는 플래시카드를 핵심 추상화로 삼아, 언어 학습의 본질에 몰입하도록 설계된 미니멀리스트 앱입니다.">
-    <meta property="og:url" content="https://braincheck.co.kr/information.html">
-    <meta property="og:image" content="https://braincheck.co.kr/assets/images/og_kakao.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:locale" content="ko_KR">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="뇌체크 - 덜어내는 순간, 몰입이 시작됩니다.">
-    <meta name="twitter:description" content="영어회화, 영어작문, 뇌체크는 플래시카드를 핵심 추상화로 삼아, 언어 학습의 본질에 몰입하도록 설계된 미니멀리스트 앱입니다.">
-    <meta name="twitter:image" content="https://braincheck.co.kr/assets/images/og_kakao.png">
-    <link rel="canonical" href="https://braincheck.co.kr/information.html">
-
-    <!-- hreflang -->
-    <link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/information.html">
-    <link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/information.html">
-    <link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/information.html">
-
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/app_icon58.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/app_icon729.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/app_icon729.png">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <a href="./index.html" class="logo">뇌<span>체크</span></a>
-        <nav class="nav-links">
-            <a href="./about.html">회사소개</a>
-            <a href="./support.html">고객센터</a>
-            <a href="./information.html">개인정보처리방침</a>
-            <a href="/en/" class="lang-switch" style="font-weight:700;color:#4CB050;">EN</a>
-        </nav>
-    </header>
-
+{% block content %}
     <!-- Page Content -->
     <main class="page-content">
         <h1>개인정보 처리방침</h1>
@@ -249,7 +199,7 @@
         <h3>개인정보보호 책임자</h3>
         <p><strong>이름:</strong> 이영훈</p>
         <p><strong>직위:</strong> CEO</p>
-        <p><strong>메일:</strong> <a href="mailto:support@braincheck.co.kr">support@braincheck.co.kr</a></p>
+        <p><strong>메일:</strong> <a href="mailto:{{ site.contact.support_email }}">{{ site.contact.support_email }}</a></p>
 
         <p>이용자는 뇌체크의 서비스를 이용하면서 발생한 모든 개인정보 보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보보호책임자 및 담당부서로 문의할 수 있습니다. 뇌체크는 이용자의 문의에 대해 지체 없이 답변 및 처리해드릴 것입니다.</p>
 
@@ -267,17 +217,9 @@
             <li><strong>시행일:</strong> 2025년 2월 1일</li>
         </ul>
     </main>
+{% endblock %}
 
-    <footer class="footer">
-        <div class="footer-links">
-            <a href="./index.html">홈</a>
-            <a href="./about.html">회사소개</a>
-            <a href="./support.html">고객센터</a>
-            <a href="./information.html">개인정보처리방침</a>
-        </div>
-        <p><a href="./review.html" style="text-decoration:none;color:inherit;">&copy; 뇌체크</a></p>
-    </footer>
-
+{% block jsonld %}
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -286,19 +228,16 @@
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": "홈",
-                "item": "https://braincheck.co.kr/"
+                "name": "{{ t.global.nav.home }}",
+                "item": "{{ site.base_url }}/"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "개인정보처리방침",
-                "item": "https://braincheck.co.kr/information.html"
+                "name": "{{ page_t.breadcrumb_name }}",
+                "item": "{{ canonical_url }}"
             }
         ]
     }
     </script>
-
-    <script src="./common.js"></script>
-</body>
-</html>
+{% endblock %}

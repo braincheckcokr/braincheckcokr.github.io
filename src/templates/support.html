@@ -1,0 +1,67 @@
+{% extends "_base.html" %}
+
+{% block content %}
+    <!-- Page Content -->
+    <main class="page-content">
+        <h1>{{ page_t.heading }}</h1>
+        <p>{{ page_t.intro }}</p>
+
+        <hr>
+
+        <h2>{{ page_t.contact_heading }}</h2>
+        <div class="info-box">
+            <p><strong>{{ page_t.email_label }}:</strong> <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
+        </div>
+
+        <hr>
+
+        <h2 id="faq">{{ page_t.faq_heading }}</h2>
+
+        {% for faq in page_t.faqs %}
+        <h3 id="{{ faq.id }}">{{ faq.question }}</h3>
+        <p>{{ faq.answer }}</p>
+        {% if not loop.last %}{% endif %}
+        {% endfor %}
+    </main>
+{% endblock %}
+
+{% block jsonld %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {% for faq in page_t.faqs %}
+            {
+                "@type": "Question",
+                "name": "{{ faq.question }}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{ faq.answer }}"
+                }
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "{{ t.global.nav.home }}",
+                "item": "{{ site.base_url }}/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "{{ page_t.breadcrumb_name }}",
+                "item": "{{ canonical_url }}"
+            }
+        ]
+    }
+    </script>
+{% endblock %}
