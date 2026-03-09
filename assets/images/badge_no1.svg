@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
   <defs>
     <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4CB050"/>
-      <stop offset="100%" style="stop-color:#3d9142"/>
+      <stop offset="0%" style="stop-color:#00704A"/>
+      <stop offset="100%" style="stop-color:#005A3B"/>
     </linearGradient>
   </defs>
-  <g fill="#4CB050">
+  <g fill="#00704A">
     <!-- Left branch stem -->
-    <path d="M32 82 Q18 65 18 50 Q18 35 28 22" fill="none" stroke="#4CB050" stroke-width="2" stroke-linecap="round"/>
+    <path d="M32 82 Q18 65 18 50 Q18 35 28 22" fill="none" stroke="#00704A" stroke-width="2" stroke-linecap="round"/>
     <!-- Left leaves -->
     <ellipse cx="30" cy="78" rx="4" ry="8" transform="rotate(-20 30 78)"/>
     <ellipse cx="25" cy="70" rx="3.5" ry="7" transform="rotate(-30 25 70)"/>
@@ -19,7 +19,7 @@
     <ellipse cx="32" cy="22" rx="3" ry="5" transform="rotate(-85 32 22)"/>
     
     <!-- Right branch stem -->
-    <path d="M68 82 Q82 65 82 50 Q82 35 72 22" fill="none" stroke="#4CB050" stroke-width="2" stroke-linecap="round"/>
+    <path d="M68 82 Q82 65 82 50 Q82 35 72 22" fill="none" stroke="#00704A" stroke-width="2" stroke-linecap="round"/>
     <!-- Right leaves -->
     <ellipse cx="70" cy="78" rx="4" ry="8" transform="rotate(20 70 78)"/>
     <ellipse cx="75" cy="70" rx="3.5" ry="7" transform="rotate(30 75 70)"/>
@@ -35,5 +35,5 @@
     <ellipse cx="56" cy="84" rx="3" ry="6" transform="rotate(-15 56 84)"/>
   </g>
   <!-- Number 1 -->
-  <text x="50" y="60" text-anchor="middle" fill="#4CB050" font-size="32" font-weight="700" font-family="Arial, Helvetica, sans-serif">1</text>
+  <text x="50" y="60" text-anchor="middle" fill="#00704A" font-size="32" font-weight="700" font-family="Arial, Helvetica, sans-serif">1</text>
 </svg>

@@ -48,7 +48,7 @@ body {
 }
 
 .logo span {
-    color: #4CB050;
+    color: #00704A;
 }
 
 .app-icon-link {
@@ -87,7 +87,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #4CB050;
+    color: #00704A;
 }
 
 /* More Menu (≡) */
@@ -112,7 +112,7 @@ body {
 }
 
 .more-menu-btn:hover {
-    border-color: #4CB050;
+    border-color: #00704A;
     background: #f5faf5;
 }
 
@@ -126,7 +126,7 @@ body {
 }
 
 .more-menu-btn:hover span {
-    background: #4CB050;
+    background: #00704A;
 }
 
 .more-dropdown {
@@ -163,7 +163,7 @@ body {
 
 .more-dropdown a:hover {
     background: #f5faf5;
-    color: #4CB050;
+    color: #00704A;
 }
 
 /* Hero Section */
@@ -194,7 +194,7 @@ body {
 }
 
 .hero h1 span {
-    background: linear-gradient(135deg, #4CB050 0%, #2E7D32 100%);
+    background: linear-gradient(135deg, #00704A 0%, #005A3B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -328,19 +328,19 @@ body {
     top: 10px;
     width: 8px;
     height: 8px;
-    background: linear-gradient(135deg, #4CB050, #2E7D32);
+    background: linear-gradient(135deg, #00704A, #005A3B);
     border-radius: 50%;
 }
 
 .highlight {
-    color: #4CB050;
+    color: #00704A;
     font-weight: 600;
 }
 
 .goal {
     font-size: 18px;
     font-weight: 600;
-    color: #4CB050;
+    color: #00704A;
     margin: 24px 0;
 }
 
@@ -403,7 +403,7 @@ body {
 
 /* Quote */
 blockquote {
-    border-left: 4px solid #4CB050;
+    border-left: 4px solid #00704A;
     padding-left: 20px;
     margin: 24px 0;
     font-style: italic;
@@ -419,7 +419,7 @@ hr {
 
 /* Mission Section */
 .mission {
-    background: linear-gradient(135deg, #4CB050 0%, #2E7D32 100%);
+    background: linear-gradient(135deg, #00704A 0%, #005A3B 100%);
     padding: 80px 40px;
     text-align: center;
     color: #fff;
@@ -494,7 +494,7 @@ hr {
     top: 10px;
     width: 8px;
     height: 8px;
-    background: linear-gradient(135deg, #4CB050, #2E7D32);
+    background: linear-gradient(135deg, #00704A, #005A3B);
     border-radius: 50%;
 }
 
@@ -510,7 +510,7 @@ hr {
 }
 
 .page-content a {
-    color: #4CB050;
+    color: #00704A;
     text-decoration: none;
     font-weight: 500;
 }
@@ -648,7 +648,7 @@ hr {
 }
 
 .footer-logo:hover {
-    color: #4CB050;
+    color: #00704A;
 }
 
 /* Mobile Menu Toggle Button */
@@ -741,7 +741,7 @@ hr {
 }
 
 .mobile-menu a:hover {
-    color: #4CB050;
+    color: #00704A;
 }
 
 .mobile-menu a .logo-icon {
@@ -910,7 +910,7 @@ hr {
 
 .org-node:hover {
     box-shadow: 0 8px 16px rgba(76, 176, 80, 0.15);
-    border-color: #4CB050;
+    border-color: #00704A;
     transform: translateY(-2px);
 }
 
@@ -919,14 +919,14 @@ hr {
     font-size: 16px;
     font-weight: 700;
     color: #fff;
-    background: linear-gradient(135deg, #4CB050, #2E7D32);
+    background: linear-gradient(135deg, #00704A, #005A3B);
     border: none;
     padding: 14px 24px;
 }
 
 .org-dept {
     font-weight: 600;
-    color: #2E7D32;
+    color: #005A3B;
     background: #f5faf5;
     border-color: #c8e6c9;
 }
