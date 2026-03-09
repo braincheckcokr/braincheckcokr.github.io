@@ -35,8 +35,20 @@ function ensureDir(dir) {
   }
 }
 
+function getAssetVersion(fileName) {
+  const filePath = path.join(ROOT, fileName);
+  try {
+    const stat = fs.statSync(filePath);
+    return String(Math.floor(stat.mtimeMs));
+  } catch (_) {
+    return String(Date.now());
+  }
+}
+
 // ── Build pages ────────────────────────────────────────────────
 const generated = [];
+const css_version = getAssetVersion('styles.css');
+const js_version = getAssetVersion('common.js');
 
 for (const lang of site.languages) {
   const t = translations[lang];
@@ -79,6 +91,8 @@ for (const lang of site.languages) {
       nav_prefix: './',
       page_file: page.file,
       page_slug: page.slug,
+      css_version,
+      js_version,
     };
 
     const html = env.render(page.file, context);

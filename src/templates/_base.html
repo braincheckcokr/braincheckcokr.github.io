@@ -42,7 +42,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="{{ asset_prefix }}assets/images/app_icon729.png">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset_prefix }}assets/images/app_icon729.png">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset_prefix }}styles.css">
+    <link rel="stylesheet" href="{{ asset_prefix }}styles.css?v={{ css_version }}">
     {% block head %}{% endblock %}
 </head>
 <body>
@@ -71,7 +71,7 @@
 
     {% block jsonld %}{% endblock %}
 
-    <script src="{{ asset_prefix }}common.js"></script>
+    <script src="{{ asset_prefix }}common.js?v={{ js_version }}"></script>
     {% block scripts %}{% endblock %}
 </body>
 </html>
