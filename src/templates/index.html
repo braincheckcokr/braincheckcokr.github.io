@@ -5,7 +5,15 @@
     <section class="hero">
         <div class="hero-content">
             <h1>{{ page_t.hero_title | safe }}</h1>
-            <p>{{ page_t.hero_description | safe }}</p>
+            <div class="hero-copy-block">
+                {% if t.lang == "ko" and page_t.hero_description_ko %}
+                <p class="hero-copy hero-copy--ko">{{ page_t.hero_description_ko | safe }}</p>
+                {% elif t.lang == "en" and page_t.hero_description_en %}
+                <p class="hero-copy hero-copy--en">{{ page_t.hero_description_en | safe }}</p>
+                {% elif page_t.hero_description %}
+                <p class="hero-copy hero-copy--single">{{ page_t.hero_description | safe }}</p>
+                {% endif %}
+            </div>
         </div>
         <div class="hero-rank-strip">
             {% for badge in page_t.badges %}
@@ -27,6 +35,18 @@
             </div>
         </div>
     </section>
+    {% if page_t.hero_below_title %}
+    <section class="hero-under-copy">
+        <div class="hero-under-copy-inner">
+            {% if page_t.hero_below_title %}
+            <h2>{{ page_t.hero_below_title | safe }}</h2>
+            {% endif %}
+            {% if page_t.hero_description %}
+            <p>{{ page_t.hero_description | safe }}</p>
+            {% endif %}
+        </div>
+    </section>
+    {% endif %}
 
     <!-- What We Do -->
     <section class="section">

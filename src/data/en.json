@@ -38,8 +38,11 @@
       "title": "BrainCheck - AI-Powered Language Learning App | Flashcard English Study",
       "description": "BrainCheck is an app for efficient English learning with AI-powered flashcards. Features ML recommendations, speech recognition evaluation, and high-quality TTS for natural pronunciation learning. Supports iOS, Android, Windows, macOS.",
       "keywords": "English learning, flashcard, AI English, English app, TOEIC, English conversation, language learning, BrainCheck",
-      "hero_title": "Precisely mastering<br><span>the essence of language learning</span>",
+      "hero_title": "<span>Make memory easier</span>, BrainCheck.",
+      "hero_below_title": "The Essence of Language Learning<br><span>Handled with Precision</span>",
       "hero_description": "BrainCheck is a language learning community platform that uses flashcards as its core abstraction to precisely address the essence of language learning.",
+      "hero_description_ko": "뇌체크는 원하는 것을 더 쉽게 기억하는 플랫폼입니다.<br>미니멀리즘을 통한 몰입으로 더 쉽고 오래 기억할 수 있습니다.",
+      "hero_description_en": "Make memory easier, BrainCheck.<br><br>BrainCheck is a platform designed to help you easily remember what matters.<br>Through flow and minimalism, you can remember more easily and for longer.",
       "badges": [
         {"text": "#1 Language Learning Experience", "note": "(Internal benchmark)"},
         {"text": "#1 Learning Accuracy Focus", "note": "(Internal benchmark)"},
