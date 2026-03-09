@@ -7,16 +7,24 @@
             <h1>{{ page_t.hero_title | safe }}</h1>
             <p>{{ page_t.hero_description | safe }}</p>
         </div>
-        <div class="badges-section">
+        <div class="hero-rank-strip">
             {% for badge in page_t.badges %}
-            <div class="badge-item">
-                <img src="{{ asset_prefix }}assets/images/badge_no1.png" alt="1위" class="badge-icon">
-                <div class="badge-info">
-                    <div class="badge-text">{{ badge.text }}</div>
-                    <div class="badge-note">{{ badge.note }}</div>
+            <div class="hero-rank-item">
+                <img src="{{ asset_prefix }}assets/images/badge_no1.png" alt="{{ badge.text }}" class="hero-rank-icon">
+                <div class="hero-rank-copy">
+                    <div class="hero-rank-text">{{ badge.text }}</div>
+                    <div class="hero-rank-note">{{ badge.note }}</div>
                 </div>
             </div>
             {% endfor %}
+        </div>
+        <div class="hero-screens-stage" aria-hidden="true">
+            <div class="hero-screens-track">
+                <img src="{{ asset_prefix }}assets/images/hero-screens/{{ t.lang }}/01_today_text.png" alt="" class="hero-screen hero-screen--left">
+                <img src="{{ asset_prefix }}assets/images/hero-screens/{{ t.lang }}/02_explore_text.png" alt="" class="hero-screen hero-screen--mid-left">
+                <img src="{{ asset_prefix }}assets/images/hero-screens/{{ t.lang }}/03_deck_cards_text.png" alt="" class="hero-screen hero-screen--mid-right">
+                <img src="{{ asset_prefix }}assets/images/hero-screens/{{ t.lang }}/04_sequence_text.png" alt="" class="hero-screen hero-screen--right">
+            </div>
         </div>
     </section>
 
@@ -99,7 +107,7 @@
         <h2>{{ t.global.download.heading }}</h2>
         <div class="download-section" style="justify-content: center;">
             <div class="qr-code">
-                <img src="{{ asset_prefix }}assets/images/qrword0_qr_code.svg" alt="{{ t.global.download.qr_alt }}" width="150" height="150">
+                <img src="{{ asset_prefix }}assets/images/braincheck-co-kr-qrcode.svg" alt="{{ t.global.download.qr_alt }}" width="150" height="150">
             </div>
             <div class="store-badges" style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
                 <a href="{{ site.app_links.app_store }}" target="_blank">
