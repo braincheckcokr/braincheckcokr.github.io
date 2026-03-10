@@ -55,6 +55,9 @@
             <a href="{{ nav_prefix }}information.html">{{ t.global.nav.privacy }}</a>
             <a href="{{ t.global.lang_switch.url }}" class="lang-switch" style="font-weight:700;color:#00704A;">{{ t.global.lang_switch.label }}</a>
         </nav>
+        <div class="header-mobile-actions">
+            <a href="{{ t.global.lang_switch.url }}" class="mobile-lang-switch">{{ t.global.lang_switch.label }}</a>
+        </div>
     </header>
 
     {% block content %}{% endblock %}

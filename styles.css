@@ -91,6 +91,22 @@ body {
     color: #00704A;
 }
 
+.header-mobile-actions {
+    display: none;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile-lang-switch {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #00704A;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+}
+
 /* More Menu (≡) */
 .more-menu-wrapper {
     position: relative;
@@ -1044,6 +1060,10 @@ hr {
 
     .nav-links {
         display: none;
+    }
+
+    .header-mobile-actions {
+        display: flex;
     }
 
     .menu-toggle {

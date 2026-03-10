@@ -48,7 +48,8 @@
         menuToggle.className = 'menu-toggle';
         menuToggle.setAttribute('aria-label', '메뉴 열기');
         menuToggle.innerHTML = '<span></span><span></span><span></span>';
-        header.appendChild(menuToggle);
+        var menuToggleHost = header.querySelector('.header-mobile-actions');
+        (menuToggleHost || header).appendChild(menuToggle);
     }
 
     if (!document.querySelector('.mobile-menu-overlay')) {
