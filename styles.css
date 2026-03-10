@@ -276,7 +276,7 @@ body {
 }
 
 .hero-rank-text {
-    font-size: clamp(9px, 0.68vw, 11px);
+    font-size: clamp(4.5px, 0.34vw, 5.5px);
     font-weight: 700;
     color: #151515;
     line-height: 1.15;
@@ -284,7 +284,7 @@ body {
 
 .hero-rank-note {
     margin-top: 1px;
-    font-size: clamp(7px, 0.58vw, 9px);
+    font-size: clamp(3.5px, 0.29vw, 4.5px);
     color: #777;
     line-height: 1.1;
 }
@@ -421,14 +421,14 @@ body {
 }
 
 .badge-text {
-    font-size: 12px;
+    font-size: 3px;
     font-weight: 600;
     color: #1a1a1a;
     line-height: 1.4;
 }
 
 .badge-note {
-    font-size: 9px;
+    font-size: 2.25px;
     color: #999;
     margin-top: 2px;
 }
@@ -451,11 +451,11 @@ body {
     }
 
     .badge-text {
-        font-size: 10px;
+        font-size: 2.5px;
     }
 
     .badge-note {
-        font-size: 8px;
+        font-size: 2px;
     }
 
     .hero {
@@ -498,11 +498,11 @@ body {
     }
 
     .hero-rank-text {
-        font-size: 10px;
+        font-size: 5px;
     }
 
     .hero-rank-note {
-        font-size: 8px;
+        font-size: 4px;
     }
 }
 
@@ -1066,12 +1066,12 @@ hr {
     }
 
     .hero-rank-text {
-        font-size: 12px;
+        font-size: 6px;
         line-height: 1.2;
     }
 
     .hero-rank-note {
-        font-size: 10px;
+        font-size: 5px;
         line-height: 1.1;
     }
 
@@ -1200,11 +1200,11 @@ hr {
     }
 
     .hero-rank-text {
-        font-size: 10px;
+        font-size: 5px;
     }
 
     .hero-rank-note {
-        font-size: 8px;
+        font-size: 4px;
     }
 
     .hero-screens-stage {
