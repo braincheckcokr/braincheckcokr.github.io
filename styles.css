@@ -236,6 +236,7 @@ body {
 
 .hero-copy--en {
     color: #4f4f4f;
+    max-width: 100%;
 }
 
 .hero-rank-strip {
@@ -328,6 +329,56 @@ body {
     justify-content: center;
     gap: clamp(14px, 2vw, 32px);
     padding: 26px 24px;
+}
+
+@media (max-width: 1600px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content {
+        position: static;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: min(1100px, calc(100% - 48px));
+        margin: 0 auto;
+    }
+
+    .hero-rank-strip {
+        --rank-scale: 1;
+        position: static;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: min(1100px, calc(100% - 48px));
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: clamp(16px, 1.8vw, 28px);
+        margin: 24px auto 0;
+        padding-block: 0;
+    }
+
+    .hero-rank-item {
+        width: auto;
+    }
+
+    .hero-rank-icon {
+        width: clamp(104px, 9.8vw, 144px);
+        height: clamp(104px, 9.8vw, 144px);
+        margin-bottom: clamp(-30px, -2.2vw, -22px);
+    }
+
+    .hero-rank-text {
+        font-size: clamp(9px, 0.68vw, 11px);
+    }
+
+    .hero-rank-note {
+        font-size: clamp(7px, 0.58vw, 9px);
+    }
 }
 
 .hero-screen {

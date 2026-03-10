@@ -2,8 +2,8 @@
   "lang": "en",
   "locale": "en_US",
   "html_lang": "en",
-  "site_name": "BrainCheck",
-  "site_name_display": "Brain<span>Check</span>",
+  "site_name": "Looply",
+  "site_name_display": "Loop<span>ly</span>",
   "global": {
     "nav": {
       "home": "Home",
@@ -16,15 +16,15 @@
       "url": "/"
     },
     "footer": {
-      "copyright": "BrainCheck"
+      "copyright": "Looply"
     },
     "og": {
-      "title": "BrainCheck - When you let go, focus begins.",
-      "description": "English conversation, English writing — BrainCheck is a minimalist app designed to help you focus on the essence of language learning through flashcard abstraction."
+      "title": "Looply - When you let go, focus begins.",
+      "description": "English conversation, English writing — Looply is a minimalist app designed to help you focus on the essence of language learning through flashcard abstraction."
     },
     "twitter": {
-      "title": "BrainCheck - When you let go, focus begins.",
-      "description": "English conversation, English writing — BrainCheck is a minimalist app designed to help you focus on the essence of language learning through flashcard abstraction."
+      "title": "Looply - When you let go, focus begins.",
+      "description": "English conversation, English writing — Looply is a minimalist app designed to help you focus on the essence of language learning through flashcard abstraction."
     },
     "download": {
       "heading": "Get Started Now",
@@ -35,14 +35,14 @@
   },
   "pages": {
     "index": {
-      "title": "BrainCheck - AI-Powered Language Learning App | Flashcard English Study",
-      "description": "BrainCheck is an app for efficient English learning with AI-powered flashcards. Features ML recommendations, speech recognition evaluation, and high-quality TTS for natural pronunciation learning. Supports iOS, Android, Windows, macOS.",
-      "keywords": "English learning, flashcard, AI English, English app, TOEIC, English conversation, language learning, BrainCheck",
-      "hero_title": "<span>Make memory easier</span>, BrainCheck",
+      "title": "Looply - AI-Powered Language Learning App | Flashcard English Study",
+      "description": "Looply is an app for efficient English learning with AI-powered flashcards. Features ML recommendations, speech recognition evaluation, and high-quality TTS for natural pronunciation learning. Supports iOS, Android, Windows, macOS.",
+      "keywords": "English learning, flashcard, AI English, English app, TOEIC, English conversation, language learning, Looply",
+      "hero_title": "<span>Make memory easier</span>, Looply",
       "hero_below_title": "The Essence of Language Learning<br><span>Handled with Precision</span>",
-      "hero_description": "BrainCheck is a language learning community platform that uses flashcards as its core abstraction to precisely address the essence of language learning.",
+      "hero_description": "Looply is a language learning community platform that uses flashcards as its core abstraction to precisely address the essence of language learning.",
       "hero_description_ko": "뇌체크는 원하는 것을 더 쉽게 기억하는 플랫폼입니다.<br>미니멀리즘을 통한 몰입으로 더 쉽고 오래 기억할 수 있습니다.",
-      "hero_description_en": "Make memory easier, BrainCheck.<br><br>BrainCheck is a platform designed to help you easily remember what matters.<br>Through flow and minimalism, you can remember more easily and for longer.",
+      "hero_description_en": "Make memory easier, Looply. Looply is a platform designed to help you easily remember what matters.<br>Through flow and minimalism, you can remember more easily and for longer.",
       "badges": [
         {"text": "#1 Language Learning Experience", "note": "(Internal benchmark)"},
         {"text": "#1 Learning Accuracy Focus", "note": "(Internal benchmark)"},
@@ -55,13 +55,13 @@
           "<strong>Listening</strong> is the process of recognizing sounds and determining correct answers",
           "<strong>Speaking</strong> is the process of converting thoughts into language and verifying their accuracy"
         ],
-        "abstraction": "BrainCheck abstracts all these processes into <strong>a simple flashcard interface</strong>.",
+        "abstraction": "Looply abstracts all these processes into <strong>a simple flashcard interface</strong>.",
         "tracking": "Behind the scenes, it continuously tracks the learner's <strong>comprehension, retention rate, and forgetting speed</strong>.",
         "goal": "It adjusts the learning flow so that learners always remain in the 'optimal memory state'."
       },
       "features": {
         "heading": "Technology & Experience",
-        "intro": "BrainCheck is built around these core technologies to simultaneously elevate both learning efficiency and experience.",
+        "intro": "Looply is built around these core technologies to simultaneously elevate both learning efficiency and experience.",
         "cards": [
           {"title": "ML-Based Recommendation System", "desc": "Analyzes learner comprehension and forgetting patterns to select the next study material at the optimal timing"},
           {"title": "High-Quality Text-to-Speech (TTS)", "desc": "Delivers an immersive listening experience with natural speech that closely resembles real conversation"},
@@ -72,7 +72,7 @@
       },
       "content_creation": {
         "heading": "Content Creation & Sharing",
-        "intro": "On BrainCheck, users are more than just learners.",
+        "intro": "On Looply, users are more than just learners.",
         "items": [
           "Anyone can create their own <strong>language learning books (decks)</strong>",
           "And <strong>share or sell</strong> them to other users",
@@ -90,7 +90,7 @@
           {
             "title": "1. Perfection comes from removal",
             "quote": "\"Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.\" — Antoine de Saint-Exupéry",
-            "text": "BrainCheck <strong>keeps removing to focus on the essence</strong> rather than piling on features."
+            "text": "Looply <strong>keeps removing to focus on the essence</strong> rather than piling on features."
           },
           {
             "title": "2. Learning is a process of 'arrival'",
@@ -101,24 +101,24 @@
             "title": "3. Easy explanations are short and show the whole picture",
             "intro": "An easy explanation is not a detailed one. It's one that makes the other person feel they <strong>\"understand\"</strong> in a short time.",
             "quote": "This comes not from individual pieces of information, but from <strong>showing the structure and perspective of the entire situation</strong>.",
-            "text": "Every learning experience in BrainCheck is designed based on this principle."
+            "text": "Every learning experience in Looply is designed based on this principle."
           }
         ]
       },
       "faq": {
         "heading": "Frequently Asked Questions",
         "items": [
-          {"q": "Is BrainCheck free?", "a": "Yes, basic features are available for free."},
+          {"q": "Is Looply free?", "a": "Yes, basic features are available for free."},
           {"q": "What devices can I use it on?", "a": "It supports iOS, Android, macOS, and Windows."},
           {"q": "Is my learning data synced?", "a": "Yes, all devices are automatically synced when you log in."}
         ]
       },
       "schemas": {
         "website": {
-          "name": "BrainCheck"
+          "name": "Looply"
         },
         "app": {
-          "name": "BrainCheck",
+          "name": "Looply",
           "description": "AI-powered flashcard language learning app. Uses the FSRS machine learning algorithm to analyze learner forgetting patterns and suggest optimal review timing, with high-quality TTS and speech recognition (STT) pronunciation evaluation for listening and speaking practice.",
           "category": "EducationalApplication",
           "subcategory": "Language Learning",
@@ -184,9 +184,9 @@
       }
     },
     "support": {
-      "title": "Support - BrainCheck",
-      "description": "BrainCheck Support Center. For inquiries or assistance, contact us at admin@braincheck.co.kr. We'll respond promptly.",
-      "keywords": "BrainCheck, support, contact, customer service, English app support",
+      "title": "Support - Looply",
+      "description": "Looply Support Center. For inquiries or assistance, contact us at admin@braincheck.co.kr. We'll respond promptly.",
+      "keywords": "Looply, support, contact, customer service, English app support",
       "heading": "Support",
       "intro": "If you need assistance or have questions about our service, please contact us below.",
       "contact_heading": "Contact Us",
@@ -196,12 +196,12 @@
       "faqs": [
         {
           "id": "what-is",
-          "question": "What kind of learning app is BrainCheck?",
-          "answer": "BrainCheck is an AI-powered flashcard language learning app. Machine learning analyzes learner forgetting patterns to suggest reviews at optimal timing, with speech recognition (STT) and high-quality TTS for listening and speaking practice."
+          "question": "What kind of learning app is Looply?",
+          "answer": "Looply is an AI-powered flashcard language learning app. Machine learning analyzes learner forgetting patterns to suggest reviews at optimal timing, with speech recognition (STT) and high-quality TTS for listening and speaking practice."
         },
         {
           "id": "free",
-          "question": "Is BrainCheck free?",
+          "question": "Is Looply free?",
           "answer": "Yes, basic features are available for free. Some premium features are available through subscription."
         },
         {
@@ -222,7 +222,7 @@
         {
           "id": "privacy",
           "question": "How is my personal information handled?",
-          "answer": "BrainCheck complies with the Personal Information Protection Act. Learning data is encrypted and securely stored. For details, please refer to our Privacy Policy."
+          "answer": "Looply complies with the Personal Information Protection Act. Learning data is encrypted and securely stored. For details, please refer to our Privacy Policy."
         },
         {
           "id": "refund",
@@ -232,64 +232,64 @@
       ]
     },
     "information": {
-      "title": "Privacy Policy - BrainCheck",
-      "description": "BrainCheck Privacy Policy. Information about personal data collected, purpose of use, retention period, and security measures.",
-      "keywords": "BrainCheck, privacy policy, personal information protection, privacy",
+      "title": "Privacy Policy - Looply",
+      "description": "Looply Privacy Policy. Information about personal data collected, purpose of use, retention period, and security measures.",
+      "keywords": "Looply, privacy policy, personal information protection, privacy",
       "heading": "Privacy Policy",
       "breadcrumb_name": "Privacy Policy",
       "content_html": "KEEP_ORIGINAL"
     },
     "mlsystem": {
-      "title": "ML-Based Recommendation System - BrainCheck",
-      "description": "BrainCheck's machine learning-based spaced repetition recommendation system. Introducing the FSRS algorithm's performance and benchmark results.",
-      "keywords": "BrainCheck, machine learning, FSRS, spaced repetition, algorithm, benchmark",
+      "title": "ML-Based Recommendation System - Looply",
+      "description": "Looply's machine learning-based spaced repetition recommendation system. Introducing the FSRS algorithm's performance and benchmark results.",
+      "keywords": "Looply, machine learning, FSRS, spaced repetition, algorithm, benchmark",
       "heading": "ML-Based Recommendation System",
       "breadcrumb_name": "ML-Based Recommendation System",
       "breadcrumb_parent": "Technology & Experience",
       "content_html": "KEEP_ORIGINAL"
     },
     "tts": {
-      "title": "High-Quality Text-to-Speech (TTS) Technology - BrainCheck",
-      "description": "BrainCheck's TTS background technology. Introducing CALM (Continuous Audio Language Models) and Pocket TTS for modern speech synthesis.",
-      "keywords": "BrainCheck, TTS, text-to-speech, speech synthesis, CALM, Pocket TTS, Kyutai",
+      "title": "High-Quality Text-to-Speech (TTS) Technology - Looply",
+      "description": "Looply's TTS background technology. Introducing CALM (Continuous Audio Language Models) and Pocket TTS for modern speech synthesis.",
+      "keywords": "Looply, TTS, text-to-speech, speech synthesis, CALM, Pocket TTS, Kyutai",
       "heading": "High-Quality Text-to-Speech (TTS) Technology",
       "breadcrumb_name": "High-Quality TTS",
       "breadcrumb_parent": "Technology & Experience",
       "content_html": "KEEP_ORIGINAL"
     },
     "stt": {
-      "title": "Speech Recognition (STT) Technology - BrainCheck",
-      "description": "BrainCheck's speech recognition background technology. Explaining the structure and features of modern STT technology centered on OpenAI's Whisper model.",
-      "keywords": "BrainCheck, STT, speech recognition, speech-to-text, Whisper, OpenAI, pronunciation evaluation",
+      "title": "Speech Recognition (STT) Technology - Looply",
+      "description": "Looply's speech recognition background technology. Explaining the structure and features of modern STT technology centered on OpenAI's Whisper model.",
+      "keywords": "Looply, STT, speech recognition, speech-to-text, Whisper, OpenAI, pronunciation evaluation",
       "heading": "Speech Recognition (STT) Technology",
       "breadcrumb_name": "Speech Recognition (STT)",
       "breadcrumb_parent": "Technology & Experience",
       "content_html": "KEEP_ORIGINAL"
     },
     "ai-content": {
-      "title": "AI-Powered Auto Content Generation Technology - BrainCheck",
-      "description": "BrainCheck's AI-based learning content auto-generation background technology. Explaining the open LLM ecosystem and OpenLLaMA.",
-      "keywords": "BrainCheck, AI, LLM, large language model, OpenLLaMA, flashcard, content generation, open source",
+      "title": "AI-Powered Auto Content Generation Technology - Looply",
+      "description": "Looply's AI-based learning content auto-generation background technology. Explaining the open LLM ecosystem and OpenLLaMA.",
+      "keywords": "Looply, AI, LLM, large language model, OpenLLaMA, flashcard, content generation, open source",
       "heading": "AI-Powered Auto Content Generation Technology",
       "breadcrumb_name": "AI Content Generation",
       "breadcrumb_parent": "Technology & Experience",
       "content_html": "KEEP_ORIGINAL"
     },
     "multiplatform": {
-      "title": "Multi-Platform Support Technology - BrainCheck",
-      "description": "BrainCheck's multi-platform support technology. Explaining the iOS, Android, macOS, Windows support through Google's open-source Flutter framework.",
-      "keywords": "BrainCheck, Flutter, multi-platform, iOS, Android, macOS, Windows, Dart, cross-platform",
+      "title": "Multi-Platform Support Technology - Looply",
+      "description": "Looply's multi-platform support technology. Explaining the iOS, Android, macOS, Windows support through Google's open-source Flutter framework.",
+      "keywords": "Looply, Flutter, multi-platform, iOS, Android, macOS, Windows, Dart, cross-platform",
       "heading": "Multi-Platform Support Technology",
       "breadcrumb_name": "Multi-Platform Support",
       "breadcrumb_parent": "Technology & Experience",
       "content_html": "KEEP_ORIGINAL"
     },
     "review": {
-      "title": "User Reviews - BrainCheck",
-      "description": "BrainCheck user reviews. Real user reviews including TOEIC score improvement of 200 points, increased English conversation confidence, and more.",
-      "keywords": "BrainCheck, reviews, testimonials, English app reviews, English learning reviews, TOEIC",
+      "title": "User Reviews - Looply",
+      "description": "Looply user reviews. Real user reviews including TOEIC score improvement of 200 points, increased English conversation confidence, and more.",
+      "keywords": "Looply, reviews, testimonials, English app reviews, English learning reviews, TOEIC",
       "hero_title": "Real <span>User Reviews</span>",
-      "hero_subtitle": "Actual reviews from BrainCheck users",
+      "hero_subtitle": "Actual reviews from Looply users",
       "refresh_btn": "See More Reviews",
       "loading": "Loading reviews...",
       "error": "Unable to load reviews.",

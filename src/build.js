@@ -251,7 +251,7 @@ function buildLlmsTxt() {
     const enDir = path.join(ROOT, 'en');
     ensureDir(enDir);
     const enLines = [
-      `# BrainCheck`,
+      `# ${enT.site_name}`,
       '',
       `> ${enT.global.og.description}`,
       '',
