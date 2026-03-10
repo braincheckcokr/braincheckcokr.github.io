@@ -41,8 +41,8 @@
       "hero_title": "<span>Make memory easier</span>, Looply",
       "hero_below_title": "The Essence of Language Learning<br><span>Handled with Precision</span>",
       "hero_description": "Looply is a language learning community platform that uses flashcards as its core abstraction to precisely address the essence of language learning.",
-      "hero_description_ko": "뇌체크는 원하는 것을 더 쉽게 기억하는 플랫폼입니다.<br>미니멀리즘을 통한 몰입으로 더 쉽고 오래 기억할 수 있습니다.",
-      "hero_description_en": "Make memory easier, Looply. Looply is a platform designed to help you easily remember what matters.<br>Through flow and minimalism, you can remember more easily and for longer.",
+      "hero_description_ko": "원하는 것을 적으세요.<br>뇌체크가 더 쉽고 오래 기억하도록 도와줍니다.",
+      "hero_description_en": "Write down what matters to you.<br>Looply helps you remember more easily and for longer.",
       "badges": [
         {"text": "#1 Language Learning Experience", "note": "(Internal benchmark)"},
         {"text": "#1 Learning Accuracy Focus", "note": "(Internal benchmark)"},
