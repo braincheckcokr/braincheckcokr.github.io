@@ -75,7 +75,7 @@
         "intro": "뇌체크에서 유저는 단순한 학습자가 아닙니다.",
         "items": [
           "누구나 <strong>언어 학습 책(덱)</strong>을 직접 만들 수 있고",
-          "이를 다른 유저에게 <strong>공유하거나 판매</strong>할 수 있습니다",
+          "이를 다른 유저에게 <strong>공유</strong>할 수 있습니다",
           "텍스트나 음성을 제공하면 <strong>AI가 자동으로 학습 콘텐츠를 생성</strong>하고 사용자는 이를 검수한 뒤 바로 배포할 수 있습니다"
         ],
         "goal": "학습자이자 제작자인 언어 학습 유저 커뮤니티"
@@ -232,39 +232,32 @@
       ]
     },
     "paddle": {
-      "title": "Paddle 결제 안내 - 뇌체크",
-      "description": "뇌체크 Brain Check Plus Paddle 결제 안내. 요금제, 이용약관, 개인정보 처리방침, 환불 정책을 확인하세요.",
-      "keywords": "뇌체크, Brain Check Plus, Paddle, 요금제, 이용약관, 개인정보 처리방침, 환불 정책",
-      "heading": "Paddle 결제 안내",
-      "breadcrumb_name": "Paddle 결제 안내"
+      "title": "구독 안내 - 뇌체크",
+      "description": "뇌체크 Brain Check Plus 구독 안내. 요금제, 이용약관, 환불 정책을 확인하세요.",
+      "keywords": "뇌체크, Brain Check Plus, 구독, 요금제, 이용약관, 환불 정책",
+      "heading": "구독 안내",
+      "breadcrumb_name": "구독 안내"
     },
     "paddle-pricing": {
       "title": "Brain Check Plus 요금제 - 뇌체크",
       "description": "Brain Check Plus 요금제. 월 US$4.50, 연 US$43, 50GB storage, 매월 20,000 AI Credits 제공.",
-      "keywords": "Brain Check Plus, 뇌체크 Plus, Paddle, 월 구독, 연 구독, AI Credits, storage",
+      "keywords": "Brain Check Plus, 뇌체크 Plus, 구독, 월 구독, 연 구독, AI Credits, storage",
       "breadcrumb_name": "요금제",
-      "breadcrumb_parent": "Paddle 결제 안내"
+      "breadcrumb_parent": "구독 안내"
     },
     "paddle-terms-of-service": {
       "title": "Brain Check 이용약관 - 뇌체크",
       "description": "Brain Check 서비스 및 Brain Check Plus 구독 이용약관입니다.",
-      "keywords": "뇌체크, Brain Check, 이용약관, Paddle, 구독 약관",
+      "keywords": "뇌체크, Brain Check, 이용약관, 구독 약관",
       "breadcrumb_name": "이용약관",
-      "breadcrumb_parent": "Paddle 결제 안내"
-    },
-    "paddle-privacy-policy": {
-      "title": "Brain Check 개인정보 처리방침 - 뇌체크",
-      "description": "Brain Check 개인정보 처리방침 및 Paddle 결제 데이터 처리 안내입니다.",
-      "keywords": "뇌체크, Brain Check, 개인정보 처리방침, Paddle, 결제 개인정보",
-      "breadcrumb_name": "개인정보 처리방침",
-      "breadcrumb_parent": "Paddle 결제 안내"
+      "breadcrumb_parent": "구독 안내"
     },
     "paddle-refund-policy": {
       "title": "Brain Check 환불 정책 - 뇌체크",
-      "description": "Brain Check Plus 구독 환불 정책, 구독 해지, AI Credits 만료, Paddle 환불 처리 안내입니다.",
-      "keywords": "뇌체크, Brain Check Plus, 환불 정책, Paddle, 구독 해지, AI Credits",
+      "description": "Brain Check Plus 구독 환불 정책, 구독 해지, AI Credits 만료 안내입니다.",
+      "keywords": "뇌체크, Brain Check Plus, 환불 정책, 구독 해지, AI Credits",
       "breadcrumb_name": "환불 정책",
-      "breadcrumb_parent": "Paddle 결제 안내"
+      "breadcrumb_parent": "구독 안내"
     },
     "information": {
       "title": "개인정보처리방침 - 뇌체크",

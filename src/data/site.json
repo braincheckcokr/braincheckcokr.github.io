@@ -10,7 +10,6 @@
     {"slug": "paddle", "file": "paddle.html", "og_type": "website"},
     {"slug": "paddle-pricing", "file": "paddle/pricing.html", "og_type": "website"},
     {"slug": "paddle-terms-of-service", "file": "paddle/terms-of-service.html", "og_type": "website"},
-    {"slug": "paddle-privacy-policy", "file": "paddle/privacy-policy.html", "og_type": "website"},
     {"slug": "paddle-refund-policy", "file": "paddle/refund-policy.html", "og_type": "website"},
     {"slug": "mlsystem", "file": "mlsystem.html", "og_type": "article"},
     {"slug": "tts", "file": "tts.html", "og_type": "article"},

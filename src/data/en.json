@@ -232,39 +232,32 @@
       ]
     },
     "paddle": {
-      "title": "Paddle Billing - BrainCheck",
-      "description": "BrainCheck Plus Paddle billing guide. Review pricing, terms of service, privacy policy, and refund policy.",
-      "keywords": "BrainCheck, Brain Check Plus, Paddle, pricing, terms of service, privacy policy, refund policy",
-      "heading": "Paddle Billing",
-      "breadcrumb_name": "Paddle Billing"
+      "title": "Subscription - BrainCheck",
+      "description": "BrainCheck Plus subscription guide. Review pricing, terms of service, and refund policy.",
+      "keywords": "BrainCheck, Brain Check Plus, subscription, pricing, terms of service, refund policy",
+      "heading": "Subscription",
+      "breadcrumb_name": "Subscription"
     },
     "paddle-pricing": {
       "title": "Brain Check Plus Pricing - BrainCheck",
       "description": "Brain Check Plus pricing. Plus is US$4.50 monthly or US$43 yearly with 50GB storage and 20,000 AI Credits per month.",
-      "keywords": "Brain Check Plus, BrainCheck, Paddle, monthly subscription, yearly subscription, AI Credits, storage",
+      "keywords": "Brain Check Plus, BrainCheck, subscription, monthly subscription, yearly subscription, AI Credits, storage",
       "breadcrumb_name": "Pricing",
-      "breadcrumb_parent": "Paddle Billing"
+      "breadcrumb_parent": "Subscription"
     },
     "paddle-terms-of-service": {
       "title": "Brain Check Terms of Service - BrainCheck",
       "description": "Terms of service for Brain Check and Brain Check Plus subscriptions.",
-      "keywords": "BrainCheck, Brain Check, terms of service, Paddle, subscription terms",
+      "keywords": "BrainCheck, Brain Check, terms of service, subscription terms",
       "breadcrumb_name": "Terms of Service",
-      "breadcrumb_parent": "Paddle Billing"
-    },
-    "paddle-privacy-policy": {
-      "title": "Brain Check Privacy Policy - BrainCheck",
-      "description": "Brain Check privacy policy and Paddle billing data processing notice.",
-      "keywords": "BrainCheck, Brain Check, privacy policy, Paddle, billing privacy",
-      "breadcrumb_name": "Privacy Policy",
-      "breadcrumb_parent": "Paddle Billing"
+      "breadcrumb_parent": "Subscription"
     },
     "paddle-refund-policy": {
       "title": "Brain Check Refund Policy - BrainCheck",
-      "description": "Brain Check Plus refund policy, subscription cancellation, AI Credits expiration, and Paddle refund handling.",
-      "keywords": "BrainCheck, Brain Check Plus, refund policy, Paddle, subscription cancellation, AI Credits",
+      "description": "Brain Check Plus refund policy, subscription cancellation, and AI Credits expiration guide.",
+      "keywords": "BrainCheck, Brain Check Plus, refund policy, subscription cancellation, AI Credits",
       "breadcrumb_name": "Refund Policy",
-      "breadcrumb_parent": "Paddle Billing"
+      "breadcrumb_parent": "Subscription"
     },
     "information": {
       "title": "Privacy Policy - BrainCheck",

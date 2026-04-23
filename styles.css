@@ -91,6 +91,65 @@ body {
     color: #00704A;
 }
 
+.nav-subscription-menu {
+    position: relative;
+}
+
+.nav-subscription-menu summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.2s;
+}
+
+.nav-subscription-menu summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav-subscription-menu summary::after {
+    content: '▾';
+    color: #00704A;
+    font-size: 11px;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+.nav-subscription-menu[open] summary,
+.nav-subscription-menu summary:hover {
+    color: #00704A;
+}
+
+.nav-subscription-menu[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.nav-subscription-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 210px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    padding: 8px 0;
+    z-index: 1100;
+}
+
+.nav-subscription-panel a {
+    display: block;
+    padding: 10px 18px;
+    white-space: nowrap;
+}
+
+.nav-subscription-panel a:hover {
+    background: #f5faf5;
+}
+
 .header-mobile-actions {
     display: none;
     align-items: center;
@@ -181,48 +240,6 @@ body {
 .more-dropdown a:hover {
     background: #f5faf5;
     color: #00704A;
-}
-
-.more-submodule {
-    border-top: 1px solid #f0f0f0;
-    margin-top: 4px;
-    padding-top: 4px;
-}
-
-.more-submodule summary {
-    display: block;
-    padding: 10px 20px;
-    color: #1a1a1a;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    list-style: none;
-    transition: background 0.15s, color 0.15s;
-}
-
-.more-submodule summary::-webkit-details-marker {
-    display: none;
-}
-
-.more-submodule summary::after {
-    content: '+';
-    float: right;
-    color: #00704A;
-    font-weight: 700;
-}
-
-.more-submodule[open] summary::after {
-    content: '-';
-}
-
-.more-submodule summary:hover {
-    background: #f5faf5;
-    color: #00704A;
-}
-
-.more-submodule-list a {
-    padding-left: 34px;
-    font-size: 13px;
 }
 
 /* Hero Section */

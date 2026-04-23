@@ -13,6 +13,7 @@
         openMenu: 'Open menu',
         home: 'Home',
         about: 'About',
+        subscription: 'Subscription',
         support: 'Support',
         privacy: 'Privacy Policy',
         copyright: 'BrainCheck'
@@ -21,6 +22,7 @@
         openMenu: '메뉴 열기',
         home: '홈',
         about: '회사소개',
+        subscription: '구독',
         support: '고객센터',
         privacy: '개인정보처리방침',
         copyright: '뇌체크'
@@ -40,19 +42,66 @@
         { href: 'multiplatform.html', text: '멀티플랫폼 지원' }
     ];
 
-    var paddleLinks = isEnglish ? [
+    var detailLinks = isEnglish ? [
         { href: 'paddle/pricing.html', text: 'Pricing' },
         { href: 'paddle/terms-of-service.html', text: 'Terms of Service' },
-        { href: 'paddle/privacy-policy.html', text: 'Privacy Policy' },
         { href: 'paddle/refund-policy.html', text: 'Refund Policy' }
     ] : [
         { href: 'paddle/pricing.html', text: '요금제' },
         { href: 'paddle/terms-of-service.html', text: '이용약관' },
-        { href: 'paddle/privacy-policy.html', text: '개인정보 처리방침' },
         { href: 'paddle/refund-policy.html', text: '환불 정책' }
     ];
+    var moreDropdown = null;
+    var subscriptionMenu = null;
+
+    function closeDesktopMenus(except) {
+        if (moreDropdown && except !== 'more') {
+            moreDropdown.classList.remove('active');
+        }
+        if (subscriptionMenu && except !== 'subscription') {
+            subscriptionMenu.removeAttribute('open');
+        }
+    }
 
     var navLinks = header && header.querySelector('.nav-links');
+    if (navLinks && !navLinks.querySelector('.nav-subscription-menu')) {
+        subscriptionMenu = document.createElement('details');
+        subscriptionMenu.className = 'nav-subscription-menu';
+
+        var subscriptionSummary = document.createElement('summary');
+        subscriptionSummary.textContent = labels.subscription;
+        subscriptionMenu.appendChild(subscriptionSummary);
+
+        var subscriptionPanel = document.createElement('div');
+        subscriptionPanel.className = 'nav-subscription-panel';
+        detailLinks.forEach(function(item) {
+            var a = document.createElement('a');
+            a.href = withPrefix(item.href);
+            a.textContent = item.text;
+            subscriptionPanel.appendChild(a);
+        });
+        subscriptionMenu.appendChild(subscriptionPanel);
+
+        subscriptionMenu.addEventListener('toggle', function() {
+            if (subscriptionMenu.open) {
+                closeDesktopMenus('subscription');
+            }
+        });
+
+        subscriptionMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        var aboutLink = navLinks.querySelector('a[href$="about.html"]');
+        if (aboutLink && aboutLink.nextSibling) {
+            navLinks.insertBefore(subscriptionMenu, aboutLink.nextSibling);
+        } else if (aboutLink) {
+            navLinks.appendChild(subscriptionMenu);
+        } else {
+            navLinks.insertBefore(subscriptionMenu, navLinks.firstChild);
+        }
+    }
+
     if (navLinks && !navLinks.querySelector('.more-menu-wrapper')) {
         var wrapper = document.createElement('div');
         wrapper.className = 'more-menu-wrapper';
@@ -62,47 +111,31 @@
         btn.setAttribute('aria-label', labels.more);
         btn.innerHTML = '<span></span><span></span><span></span>';
 
-        var dropdown = document.createElement('div');
-        dropdown.className = 'more-dropdown';
+        moreDropdown = document.createElement('div');
+        moreDropdown.className = 'more-dropdown';
         techLinks.forEach(function(item) {
             var a = document.createElement('a');
             a.href = withPrefix(item.href);
             a.textContent = item.text;
-            dropdown.appendChild(a);
+            moreDropdown.appendChild(a);
         });
-
-        var paddleDetails = document.createElement('details');
-        paddleDetails.className = 'more-submodule';
-        var paddleSummary = document.createElement('summary');
-        paddleSummary.textContent = 'Paddle';
-        paddleDetails.appendChild(paddleSummary);
-
-        var paddleList = document.createElement('div');
-        paddleList.className = 'more-submodule-list';
-        paddleLinks.forEach(function(item) {
-            var a = document.createElement('a');
-            a.href = withPrefix(item.href);
-            a.textContent = item.text;
-            paddleList.appendChild(a);
-        });
-        paddleDetails.appendChild(paddleList);
-        dropdown.appendChild(paddleDetails);
 
         wrapper.appendChild(btn);
-        wrapper.appendChild(dropdown);
+        wrapper.appendChild(moreDropdown);
         navLinks.appendChild(wrapper);
 
         btn.addEventListener('click', function(e) {
             e.stopPropagation();
-            dropdown.classList.toggle('active');
+            closeDesktopMenus('more');
+            moreDropdown.classList.toggle('active');
         });
 
-        dropdown.addEventListener('click', function(e) {
+        moreDropdown.addEventListener('click', function(e) {
             e.stopPropagation();
         });
 
         document.addEventListener('click', function() {
-            dropdown.classList.remove('active');
+            closeDesktopMenus();
         });
     }
 
@@ -126,6 +159,12 @@
         mobileMenu.className = 'mobile-menu';
 
         var html = '<a href="' + withPrefix('about.html') + '">' + labels.about + '</a>' +
+            '<details class="mobile-submodule">' +
+            '<summary>' + labels.subscription + '</summary>';
+        detailLinks.forEach(function(item) {
+            html += '<a href="' + withPrefix(item.href) + '">' + item.text + '</a>';
+        });
+        html += '</details>' +
             '<a href="' + withPrefix('support.html') + '">' + labels.support + '</a>' +
             '<a href="' + withPrefix('information.html') + '">' + labels.privacy + '</a>' +
             '';
@@ -133,13 +172,6 @@
         techLinks.forEach(function(item) {
             html += '<a href="' + withPrefix(item.href) + '">' + item.text + '</a>';
         });
-
-        html += '<details class="mobile-submodule">' +
-            '<summary>Paddle</summary>';
-        paddleLinks.forEach(function(item) {
-            html += '<a href="' + withPrefix(item.href) + '">' + item.text + '</a>';
-        });
-        html += '</details>';
 
         mobileMenu.innerHTML = html;
         document.querySelector('.mobile-menu-overlay').after(mobileMenu);
