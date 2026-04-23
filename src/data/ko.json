@@ -231,6 +231,41 @@
         }
       ]
     },
+    "paddle": {
+      "title": "Paddle 결제 안내 - 뇌체크",
+      "description": "뇌체크 Brain Check Plus Paddle 결제 안내. 요금제, 이용약관, 개인정보 처리방침, 환불 정책을 확인하세요.",
+      "keywords": "뇌체크, Brain Check Plus, Paddle, 요금제, 이용약관, 개인정보 처리방침, 환불 정책",
+      "heading": "Paddle 결제 안내",
+      "breadcrumb_name": "Paddle 결제 안내"
+    },
+    "paddle-pricing": {
+      "title": "Brain Check Plus 요금제 - 뇌체크",
+      "description": "Brain Check Plus 요금제. 월 US$4.50, 연 US$43, 50GB storage, 매월 20,000 AI Credits 제공.",
+      "keywords": "Brain Check Plus, 뇌체크 Plus, Paddle, 월 구독, 연 구독, AI Credits, storage",
+      "breadcrumb_name": "요금제",
+      "breadcrumb_parent": "Paddle 결제 안내"
+    },
+    "paddle-terms-of-service": {
+      "title": "Brain Check 이용약관 - 뇌체크",
+      "description": "Brain Check 서비스 및 Brain Check Plus 구독 이용약관입니다.",
+      "keywords": "뇌체크, Brain Check, 이용약관, Paddle, 구독 약관",
+      "breadcrumb_name": "이용약관",
+      "breadcrumb_parent": "Paddle 결제 안내"
+    },
+    "paddle-privacy-policy": {
+      "title": "Brain Check 개인정보 처리방침 - 뇌체크",
+      "description": "Brain Check 개인정보 처리방침 및 Paddle 결제 데이터 처리 안내입니다.",
+      "keywords": "뇌체크, Brain Check, 개인정보 처리방침, Paddle, 결제 개인정보",
+      "breadcrumb_name": "개인정보 처리방침",
+      "breadcrumb_parent": "Paddle 결제 안내"
+    },
+    "paddle-refund-policy": {
+      "title": "Brain Check 환불 정책 - 뇌체크",
+      "description": "Brain Check Plus 구독 환불 정책, 구독 해지, AI Credits 만료, Paddle 환불 처리 안내입니다.",
+      "keywords": "뇌체크, Brain Check Plus, 환불 정책, Paddle, 구독 해지, AI Credits",
+      "breadcrumb_name": "환불 정책",
+      "breadcrumb_parent": "Paddle 결제 안내"
+    },
     "information": {
       "title": "개인정보처리방침 - 뇌체크",
       "description": "뇌체크 개인정보처리방침. 수집하는 개인정보 항목, 이용 목적, 보유기간, 안전성 확보 조치 등 개인정보 보호에 관한 안내입니다.",

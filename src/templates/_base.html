@@ -30,13 +30,17 @@
 
     <!-- hreflang -->
     {% for alt_lang in site.languages %}
+    {% if alt_lang in page_langs %}
     {% if alt_lang == site.default_lang %}
     <link rel="alternate" hreflang="{{ alt_lang }}" href="{{ site.base_url }}/{{ page_file }}">
     {% else %}
     <link rel="alternate" hreflang="{{ alt_lang }}" href="{{ site.base_url }}/{{ alt_lang }}/{{ page_file }}">
     {% endif %}
+    {% endif %}
     {% endfor %}
+    {% if site.default_lang in page_langs %}
     <link rel="alternate" hreflang="x-default" href="{{ site.base_url }}/{{ page_file }}">
+    {% endif %}
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset_prefix }}assets/images/app_icon58.png">
     <link rel="icon" type="image/png" sizes="192x192" href="{{ asset_prefix }}assets/images/app_icon729.png">
@@ -45,7 +49,7 @@
     <link rel="stylesheet" href="{{ asset_prefix }}styles.css?v={{ css_version }}">
     {% block head %}{% endblock %}
 </head>
-<body>
+<body data-nav-prefix="{{ nav_prefix }}">
     <!-- Header -->
     <header class="header">
         <a href="{{ nav_prefix }}index.html" class="logo">{{ t.site_name_display | safe }}</a>

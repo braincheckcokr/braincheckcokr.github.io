@@ -45,6 +45,24 @@ function getAssetVersion(fileName) {
   }
 }
 
+function pageSupportsLang(page, lang) {
+  return !Array.isArray(page.langs) || page.langs.includes(lang);
+}
+
+function relativePrefix(fromFile, lang) {
+  const langDir = lang === site.default_lang ? ROOT : path.join(ROOT, lang);
+  const fromDir = path.dirname(path.join(langDir, fromFile));
+  const rel = path.relative(fromDir, langDir);
+  return rel === '' ? './' : rel.split(path.sep).join('/') + '/';
+}
+
+function assetPrefix(fromFile, lang) {
+  const langDir = lang === site.default_lang ? ROOT : path.join(ROOT, lang);
+  const fromDir = path.dirname(path.join(langDir, fromFile));
+  const rel = path.relative(fromDir, ROOT);
+  return rel === '' ? './' : rel.split(path.sep).join('/') + '/';
+}
+
 // ── Build pages ────────────────────────────────────────────────
 const generated = [];
 const css_version = getAssetVersion('styles.css');
@@ -57,13 +75,18 @@ for (const lang of site.languages) {
   ensureDir(outDir);
 
   for (const page of site.pages) {
+    if (!pageSupportsLang(page, lang)) {
+      continue;
+    }
+
     const page_t = t.pages[page.slug];
     if (!page_t) {
       console.warn(`⚠ Missing translation: ${lang}.pages.${page.slug} — skipping`);
       continue;
     }
 
-    const asset_prefix = isDefault ? './' : '../';
+    const asset_prefix = assetPrefix(page.file, lang);
+    const nav_prefix = relativePrefix(page.file, lang);
 
     // Canonical URL logic:
     //   Korean index  → base_url + "/"
@@ -88,15 +111,17 @@ for (const lang of site.languages) {
       canonical_url,
       og_type: page.og_type,
       asset_prefix,
-      nav_prefix: './',
+      nav_prefix,
       page_file: page.file,
       page_slug: page.slug,
+      page_langs: page.langs || site.languages,
       css_version,
       js_version,
     };
 
     const html = env.render(page.file, context);
     const outPath = path.join(outDir, page.file);
+    ensureDir(path.dirname(outPath));
     fs.writeFileSync(outPath, html, 'utf8');
 
     const relPath = path.relative(ROOT, outPath);
@@ -114,6 +139,10 @@ function buildSitemap() {
   for (const page of site.pages) {
     // Each page gets entries for each language
     for (const lang of site.languages) {
+      if (!pageSupportsLang(page, lang)) {
+        continue;
+      }
+
       const isDefault = lang === site.default_lang;
       let loc;
       if (isDefault) {
@@ -139,6 +168,10 @@ function buildSitemap() {
 
       // hreflang alternates
       for (const altLang of site.languages) {
+        if (!pageSupportsLang(page, altLang)) {
+          continue;
+        }
+
         const altDefault = altLang === site.default_lang;
         let altHref;
         if (altDefault) {
@@ -153,10 +186,12 @@ function buildSitemap() {
         xml += `    <xhtml:link rel="alternate" hreflang="${altLang}" href="${altHref}" />\n`;
       }
       // x-default → default language
-      const xDefaultHref = page.slug === 'index'
-        ? site.base_url + '/'
-        : site.base_url + '/' + page.file;
-      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${xDefaultHref}" />\n`;
+      if (pageSupportsLang(page, site.default_lang)) {
+        const xDefaultHref = page.slug === 'index'
+          ? site.base_url + '/'
+          : site.base_url + '/' + page.file;
+        xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${xDefaultHref}" />\n`;
+      }
 
       xml += '  </url>\n';
     }
