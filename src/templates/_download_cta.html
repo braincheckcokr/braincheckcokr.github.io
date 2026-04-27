@@ -1,0 +1,9 @@
+{% macro app_download_cta(t, asset_prefix) %}
+<div class="download-section app-download-section">
+    <button class="app-download-button" type="button" data-app-download aria-label="{{ t.global.download.button_label }}">
+        <img src="{{ asset_prefix }}assets/images/icons/playstore-filled.svg" alt="" aria-hidden="true">
+        <img src="{{ asset_prefix }}assets/images/icons/apple-filled.svg" alt="" aria-hidden="true">
+        <span>{{ t.global.download.button_label }}</span>
+    </button>
+</div>
+{% endmacro %}

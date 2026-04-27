@@ -28,9 +28,16 @@
     },
     "download": {
       "heading": "Get Started Now",
+      "button_label": "App download",
+      "banner_subtitle": "Continue public learning content in Web Play",
+      "banner_action": "Open",
+      "banner_close_label": "Close banner",
       "app_store_alt": "Download on the App Store",
       "google_play_alt": "Get it on Google Play",
-      "qr_alt": "App Download QR Code"
+      "qr_alt": "App Download QR Code",
+      "modal_title": "Scan with your camera to get started",
+      "modal_close_label": "Close QR",
+      "fallback_link": "Open link"
     }
   },
   "pages": {

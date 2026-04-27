@@ -28,9 +28,16 @@
     },
     "download": {
       "heading": "지금 시작하세요",
+      "button_label": "앱 다운로드",
+      "banner_subtitle": "공개 학습 콘텐츠를 Web Play에서 이어보기",
+      "banner_action": "열기",
+      "banner_close_label": "배너 닫기",
       "app_store_alt": "App Store에서 다운로드",
       "google_play_alt": "Google Play에서 다운로드",
-      "qr_alt": "앱 다운로드 QR 코드"
+      "qr_alt": "앱 다운로드 QR 코드",
+      "modal_title": "카메라로 스캔해 시작하세요",
+      "modal_close_label": "QR 닫기",
+      "fallback_link": "링크로 열기"
     }
   },
   "pages": {

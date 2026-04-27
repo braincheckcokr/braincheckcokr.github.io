@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6754181689, app-argument=https://braincheck.co.kr/review.html">
     <title>사용자 리뷰 - 뇌체크</title>
     <meta name="description" content="뇌체크 사용자 리뷰. 토익 점수 200점 향상, 영어 회화 자신감 향상 등 실제 사용자들의 생생한 학습 후기를 확인하세요.">
     <meta name="keywords" content="뇌체크, 리뷰, 후기, 영어앱 후기, 영어학습 후기, 토익">
@@ -37,7 +38,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/app_icon729.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/app_icon729.png">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css?v=1776987848513">
+    <link rel="stylesheet" href="./styles.css?v=1777277184050">
 <style>
     .review-hero {
         padding: 140px 40px 60px;
@@ -186,7 +187,17 @@
     }
 </style>
 </head>
-<body data-nav-prefix="./">
+<body class="has-app-banner" data-nav-prefix="./" data-ios-store-url="https://apps.apple.com/kr/app/%EB%87%8C%EC%B2%B4%ED%81%AC-%EC%98%81%EC%96%B4%ED%9A%8C%ED%99%94-%EC%98%81%EC%96%B4%EC%9E%91%EB%AC%B8/id6754181689" data-android-store-url="https://play.google.com/store/apps/details?id=kr.co.braincheck.bc&amp;hl=ko" data-one-link-url="https://braincheck.onelink.me/fc86/glgprgei">
+    <div class="app-banner" data-app-banner>
+        <img class="app-banner-icon" src="./assets/images/app_mark_transparent.png" alt="">
+        <div class="app-banner-copy">
+            <strong class="app-banner-title">Brain Check</strong>
+            <span class="app-banner-subtitle">공개 학습 콘텐츠를 Web Play에서 이어보기</span>
+        </div>
+        <button class="app-banner-action" type="button" data-app-banner-action data-app-download>열기</button>
+        <button class="app-banner-close" type="button" aria-label="배너 닫기" data-app-banner-close>&times;</button>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <a href="./index.html" class="logo">뇌<span>체크</span></a>
@@ -226,19 +237,14 @@
 <!-- App Download -->
 <section class="section" style="text-align: center;">
     <h2>지금 시작하세요</h2>
-    <div class="download-section" style="justify-content: center;">
-        <div class="qr-code">
-            <img src="./assets/images/braincheck-co-kr-review-html-qrcode.svg" alt="리뷰 페이지 QR 코드" width="400" height="400">
-        </div>
-        <div class="store-badges" style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
-            <a href="https://apps.apple.com/kr/app/%EB%87%8C%EC%B2%B4%ED%81%AC-%EC%98%81%EC%96%B4%ED%9A%8C%ED%99%94-%EC%98%81%EC%96%B4%EC%9E%91%EB%AC%B8/id6754181689" target="_blank">
-                <img src="./assets/images/app_store_badge.png" alt="App Store에서 다운로드" height="50">
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=kr.co.braincheck.bc&hl=ko" target="_blank">
-                <img src="./assets/images/google_play_badge.png" alt="Google Play에서 다운로드" height="50">
-            </a>
-        </div>
-    </div>
+    <div class="download-section app-download-section">
+    <button class="app-download-button" type="button" data-app-download aria-label="앱 다운로드">
+        <img src="./assets/images/icons/playstore-filled.svg" alt="" aria-hidden="true">
+        <img src="./assets/images/icons/apple-filled.svg" alt="" aria-hidden="true">
+        <span>앱 다운로드</span>
+    </button>
+</div>
+
 </section>
 
 <div id="copiedFeedback" class="copied-feedback">복사됨 ✓</div>
@@ -266,7 +272,18 @@
 }
 </script>
 
-    <script src="./common.js?v=1776988132347"></script>
+    <div class="download-modal" data-download-modal hidden role="dialog" aria-modal="true" aria-labelledby="download-modal-title">
+        <div class="download-modal-card">
+            <button class="download-modal-close" type="button" aria-label="QR 닫기" data-download-modal-close>&times;</button>
+            <h2 id="download-modal-title">카메라로 스캔해 시작하세요</h2>
+            <div class="download-qr-wrap">
+                <img class="download-qr" data-download-qr alt="앱 다운로드 QR 코드">
+            </div>
+            <a class="download-modal-link" data-download-fallback-link href="https://braincheck.onelink.me/fc86/glgprgei">링크로 열기</a>
+        </div>
+    </div>
+
+    <script src="./common.js?v=1777276872815"></script>
 <script>
     const REVIEWS_BASE_URL = './assets/data/reviews/';
     const TEXT_LOADING = '리뷰 불러오는 중...';

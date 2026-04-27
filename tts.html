@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6754181689, app-argument=https://braincheck.co.kr/tts.html">
     <title>고품질 음성 생성(TTS) 기술 소개 - 뇌체크</title>
     <meta name="description" content="뇌체크의 TTS 배경 기술 소개. CALM(Continuous Audio Language Models)과 Pocket TTS를 중심으로 최신 음성 합성 기술을 설명합니다.">
     <meta name="keywords" content="뇌체크, TTS, 음성합성, Text-to-Speech, CALM, Pocket TTS, Kyutai, 음성생성">
@@ -37,9 +38,19 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/app_icon729.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/app_icon729.png">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css?v=1776987848513">
+    <link rel="stylesheet" href="./styles.css?v=1777277184050">
 </head>
-<body data-nav-prefix="./">
+<body class="has-app-banner" data-nav-prefix="./" data-ios-store-url="https://apps.apple.com/kr/app/%EB%87%8C%EC%B2%B4%ED%81%AC-%EC%98%81%EC%96%B4%ED%9A%8C%ED%99%94-%EC%98%81%EC%96%B4%EC%9E%91%EB%AC%B8/id6754181689" data-android-store-url="https://play.google.com/store/apps/details?id=kr.co.braincheck.bc&amp;hl=ko" data-one-link-url="https://braincheck.onelink.me/fc86/glgprgei">
+    <div class="app-banner" data-app-banner>
+        <img class="app-banner-icon" src="./assets/images/app_mark_transparent.png" alt="">
+        <div class="app-banner-copy">
+            <strong class="app-banner-title">Brain Check</strong>
+            <span class="app-banner-subtitle">공개 학습 콘텐츠를 Web Play에서 이어보기</span>
+        </div>
+        <button class="app-banner-action" type="button" data-app-banner-action data-app-download>열기</button>
+        <button class="app-banner-close" type="button" aria-label="배너 닫기" data-app-banner-close>&times;</button>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <a href="./index.html" class="logo">뇌<span>체크</span></a>
@@ -230,6 +241,17 @@
     }
     </script>
 
-    <script src="./common.js?v=1776988132347"></script>
+    <div class="download-modal" data-download-modal hidden role="dialog" aria-modal="true" aria-labelledby="download-modal-title">
+        <div class="download-modal-card">
+            <button class="download-modal-close" type="button" aria-label="QR 닫기" data-download-modal-close>&times;</button>
+            <h2 id="download-modal-title">카메라로 스캔해 시작하세요</h2>
+            <div class="download-qr-wrap">
+                <img class="download-qr" data-download-qr alt="앱 다운로드 QR 코드">
+            </div>
+            <a class="download-modal-link" data-download-fallback-link href="https://braincheck.onelink.me/fc86/glgprgei">링크로 열기</a>
+        </div>
+    </div>
+
+    <script src="./common.js?v=1777276872815"></script>
 </body>
 </html>

@@ -53,6 +53,146 @@
     ];
     var moreDropdown = null;
     var subscriptionMenu = null;
+    var appBannerStorageKey = 'bc-site-app-banner-dismissed';
+    var appDownloadConfig = {
+        iosStoreUrl: document.body.getAttribute('data-ios-store-url') || 'https://apps.apple.com/app/id6754181689',
+        androidStoreUrl: document.body.getAttribute('data-android-store-url') || 'https://play.google.com/store/apps/details?id=kr.co.braincheck.bc',
+        oneLinkUrl: document.body.getAttribute('data-one-link-url') || 'https://braincheck.onelink.me/fc86/glgprgei'
+    };
+
+    function detectDownloadPlatform() {
+        var userAgent = navigator.userAgent || navigator.vendor || '';
+        var isTouchMac = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+
+        if (/iPad|iPhone|iPod/.test(userAgent) || isTouchMac) {
+            return 'ios';
+        }
+
+        if (/android/i.test(userAgent)) {
+            return 'android';
+        }
+
+        return 'desktop';
+    }
+
+    function getAndroidStoreUrl() {
+        var url = new URL(appDownloadConfig.androidStoreUrl);
+        url.searchParams.set('referrer', window.location.href);
+        return url.toString();
+    }
+
+    function showDownloadModal() {
+        var modal = document.querySelector('[data-download-modal]');
+        var qrImage = modal && modal.querySelector('[data-download-qr]');
+        var fallbackLink = modal && modal.querySelector('[data-download-fallback-link]');
+
+        if (!modal || !qrImage || !fallbackLink) {
+            window.open(appDownloadConfig.oneLinkUrl, '_blank');
+            return;
+        }
+
+        fallbackLink.href = appDownloadConfig.oneLinkUrl;
+        qrImage.src = 'https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=12&data=' +
+            encodeURIComponent(appDownloadConfig.oneLinkUrl);
+        modal.hidden = false;
+    }
+
+    function initAppDownloadButtons() {
+        document.querySelectorAll('[data-app-download]').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var platform = detectDownloadPlatform();
+
+                if (platform === 'ios') {
+                    window.open(appDownloadConfig.iosStoreUrl, '_blank');
+                    return;
+                }
+
+                if (platform === 'android') {
+                    window.open(getAndroidStoreUrl(), '_blank');
+                    return;
+                }
+
+                showDownloadModal();
+            });
+        });
+    }
+
+    function initDownloadModals() {
+        document.querySelectorAll('[data-download-modal]').forEach(function(modal) {
+            var closeButton = modal.querySelector('[data-download-modal-close]');
+
+            if (closeButton) {
+                closeButton.addEventListener('click', function() {
+                    modal.hidden = true;
+                });
+            }
+
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.hidden = true;
+                }
+            });
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key !== 'Escape') {
+                return;
+            }
+
+            document.querySelectorAll('[data-download-modal]').forEach(function(modal) {
+                modal.hidden = true;
+            });
+        });
+    }
+
+    function getSessionValue(key) {
+        try {
+            return window.sessionStorage.getItem(key);
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function setSessionValue(key, value) {
+        try {
+            window.sessionStorage.setItem(key, value);
+        } catch (e) {
+            // Ignore storage failures; the close button should still hide this banner.
+        }
+    }
+
+    function setAppBannerActive(active) {
+        if (document.body) {
+            document.body.classList.toggle('has-app-banner', active);
+        }
+    }
+
+    function initAppBanners() {
+        var banners = document.querySelectorAll('[data-app-banner]');
+        if (!banners.length) {
+            setAppBannerActive(false);
+            return;
+        }
+
+        var dismissed = getSessionValue(appBannerStorageKey) === '1';
+        setAppBannerActive(!dismissed);
+
+        banners.forEach(function(banner) {
+            var closeButton = banner.querySelector('[data-app-banner-close]');
+
+            if (dismissed) {
+                banner.hidden = true;
+            }
+
+            if (closeButton) {
+                closeButton.addEventListener('click', function() {
+                    setSessionValue(appBannerStorageKey, '1');
+                    banner.hidden = true;
+                    setAppBannerActive(false);
+                });
+            }
+        });
+    }
 
     function closeDesktopMenus(except) {
         if (moreDropdown && except !== 'more') {
@@ -210,6 +350,10 @@
             '<p><a href="' + withPrefix('review.html') + '" class="footer-logo">&copy; ' + labels.copyright + '</a></p>';
         document.body.appendChild(footer);
     }
+
+    initAppBanners();
+    initAppDownloadButtons();
+    initDownloadModals();
     }
 
     if (document.readyState === 'loading') {

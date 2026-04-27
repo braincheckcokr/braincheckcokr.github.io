@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://braincheck.co.kr/</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/" />
@@ -11,7 +11,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/" />
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/about.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/about.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/about.html" />
@@ -27,7 +27,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/about.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/about.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/about.html" />
@@ -35,7 +35,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/support.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/support.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/support.html" />
@@ -43,7 +43,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/support.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/support.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/support.html" />
@@ -51,7 +51,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/information.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/information.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/information.html" />
@@ -59,7 +59,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/information.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/information.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/information.html" />
@@ -67,7 +67,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/paddle.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle.html" />
@@ -75,7 +75,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/paddle.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle.html" />
@@ -83,7 +83,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/paddle/pricing.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle/pricing.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle/pricing.html" />
@@ -91,7 +91,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/paddle/pricing.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle/pricing.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle/pricing.html" />
@@ -99,7 +99,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/paddle/terms-of-service.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle/terms-of-service.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle/terms-of-service.html" />
@@ -107,7 +107,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/paddle/terms-of-service.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle/terms-of-service.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle/terms-of-service.html" />
@@ -115,7 +115,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/paddle/refund-policy.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle/refund-policy.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle/refund-policy.html" />
@@ -123,7 +123,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/paddle/refund-policy.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle/refund-policy.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle/refund-policy.html" />
@@ -131,7 +131,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/mlsystem.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/mlsystem.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/mlsystem.html" />
@@ -139,7 +139,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/mlsystem.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/mlsystem.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/mlsystem.html" />
@@ -147,7 +147,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/tts.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/tts.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/tts.html" />
@@ -155,7 +155,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/tts.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/tts.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/tts.html" />
@@ -163,7 +163,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/stt.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/stt.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/stt.html" />
@@ -171,7 +171,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/stt.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/stt.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/stt.html" />
@@ -179,7 +179,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/ai-content.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/ai-content.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/ai-content.html" />
@@ -187,7 +187,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/ai-content.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/ai-content.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/ai-content.html" />
@@ -195,7 +195,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/multiplatform.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/multiplatform.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/multiplatform.html" />
@@ -203,7 +203,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/multiplatform.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/multiplatform.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/multiplatform.html" />
@@ -211,7 +211,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/review.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/review.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/review.html" />
@@ -219,7 +219,7 @@
   </url>
   <url>
     <loc>https://braincheck.co.kr/en/review.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/review.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/review.html" />

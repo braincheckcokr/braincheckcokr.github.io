@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6754181689, app-argument={{ canonical_url }}">
     <title>{{ page_t.title }}</title>
     <meta name="description" content="{{ page_t.description }}">
     <meta name="keywords" content="{{ page_t.keywords }}">
@@ -49,7 +50,17 @@
     <link rel="stylesheet" href="{{ asset_prefix }}styles.css?v={{ css_version }}">
     {% block head %}{% endblock %}
 </head>
-<body data-nav-prefix="{{ nav_prefix }}">
+<body class="has-app-banner" data-nav-prefix="{{ nav_prefix }}" data-ios-store-url="{{ site.app_links.app_store }}" data-android-store-url="{{ site.app_links.google_play | replace("&", "&amp;") }}" data-one-link-url="{{ site.app_links.one_link }}">
+    <div class="app-banner" data-app-banner>
+        <img class="app-banner-icon" src="{{ asset_prefix }}assets/images/app_mark_transparent.png" alt="">
+        <div class="app-banner-copy">
+            <strong class="app-banner-title">Brain Check</strong>
+            <span class="app-banner-subtitle">{{ t.global.download.banner_subtitle }}</span>
+        </div>
+        <button class="app-banner-action" type="button" data-app-banner-action data-app-download>{{ t.global.download.banner_action }}</button>
+        <button class="app-banner-close" type="button" aria-label="{{ t.global.download.banner_close_label }}" data-app-banner-close>&times;</button>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <a href="{{ nav_prefix }}index.html" class="logo">{{ t.site_name_display | safe }}</a>
@@ -96,6 +107,17 @@
     </footer>
 
     {% block jsonld %}{% endblock %}
+
+    <div class="download-modal" data-download-modal hidden role="dialog" aria-modal="true" aria-labelledby="download-modal-title">
+        <div class="download-modal-card">
+            <button class="download-modal-close" type="button" aria-label="{{ t.global.download.modal_close_label }}" data-download-modal-close>&times;</button>
+            <h2 id="download-modal-title">{{ t.global.download.modal_title }}</h2>
+            <div class="download-qr-wrap">
+                <img class="download-qr" data-download-qr alt="{{ t.global.download.qr_alt }}">
+            </div>
+            <a class="download-modal-link" data-download-fallback-link href="{{ site.app_links.one_link }}">{{ t.global.download.fallback_link }}</a>
+        </div>
+    </div>
 
     <script src="{{ asset_prefix }}common.js?v={{ js_version }}"></script>
     {% block scripts %}{% endblock %}

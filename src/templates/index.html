@@ -1,4 +1,5 @@
 {% extends "_base.html" %}
+{% from "_download_cta.html" import app_download_cta %}
 
 {% block content %}
     <!-- Hero Section -->
@@ -125,19 +126,7 @@
     <!-- App Download -->
     <section class="section" style="text-align: center;">
         <h2>{{ t.global.download.heading }}</h2>
-        <div class="download-section" style="justify-content: center;">
-            <div class="qr-code">
-                <img src="{{ asset_prefix }}assets/images/braincheck-co-kr-qrcode.svg" alt="{{ t.global.download.qr_alt }}" width="150" height="150">
-            </div>
-            <div class="store-badges" style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
-                <a href="{{ site.app_links.app_store }}" target="_blank">
-                    <img src="{{ asset_prefix }}assets/images/app_store_badge.png" alt="{{ t.global.download.app_store_alt }}" height="50">
-                </a>
-                <a href="{{ site.app_links.google_play }}" target="_blank">
-                    <img src="{{ asset_prefix }}assets/images/google_play_badge.png" alt="{{ t.global.download.google_play_alt }}" height="50">
-                </a>
-            </div>
-        </div>
+        {{ app_download_cta(t, asset_prefix) }}
     </section>
 {% endblock %}
 
