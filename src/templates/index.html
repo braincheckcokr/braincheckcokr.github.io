@@ -27,13 +27,18 @@
             </div>
             {% endfor %}
         </div>
-        <div class="hero-screens-stage" aria-hidden="true">
-            <div class="hero-screens-track">
-                <img src="{{ asset_prefix }}assets/images/hero-screens/{{ t.lang }}/01_today_text.png" alt="" class="hero-screen hero-screen--left">
-                <img src="{{ asset_prefix }}assets/images/hero-screens/{{ t.lang }}/02_explore_text.png" alt="" class="hero-screen hero-screen--mid-left">
-                <img src="{{ asset_prefix }}assets/images/hero-screens/{{ t.lang }}/03_deck_cards_text.png" alt="" class="hero-screen hero-screen--mid-right">
-                <img src="{{ asset_prefix }}assets/images/hero-screens/{{ t.lang }}/04_sequence_text.png" alt="" class="hero-screen hero-screen--right">
+        <div class="hero-screens-stage" data-preview-carousel>
+            <div class="hero-screens-viewport">
+                <div class="hero-screens-track" data-preview-track>
+                    {% set preview_images = ["preview-01.png", "preview-02.png", "preview-03.png", "preview-04.png", "preview-05.png", "preview-06.png", "preview-07.png", "preview-08.png"] %}
+                    {% for image in preview_images %}
+                    <figure class="hero-screen-frame" data-preview-item>
+                        <img src="{{ asset_prefix }}assets/images/store-preview/ios_kr/{{ image }}" alt="{{ t.global.preview.image_alt }} {{ loop.index }}" class="hero-screen" loading="eager">
+                    </figure>
+                    {% endfor %}
+                </div>
             </div>
+            <div class="hero-screens-dots" data-preview-dots></div>
         </div>
     </section>
     {% if page_t.hero_below_title %}

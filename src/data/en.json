@@ -38,6 +38,11 @@
       "modal_title": "Scan with your camera to get started",
       "modal_close_label": "Close QR",
       "fallback_link": "Open link"
+    },
+    "preview": {
+      "previous": "Previous preview",
+      "next": "Next preview",
+      "image_alt": "BrainCheck app preview"
     }
   },
   "pages": {

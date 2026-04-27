@@ -331,8 +331,8 @@ body:not(.has-app-banner) .app-banner {
 
 /* Hero Section */
 .hero {
-    --hero-stage-start: 74vh;
-    --hero-stage-height: clamp(760px, 92vh, 1080px);
+    --hero-stage-start: 70vh;
+    --hero-stage-height: clamp(520px, 48vw, 740px);
     min-height: 100vh;
     position: relative;
     display: flex;
@@ -463,8 +463,7 @@ body:not(.has-app-banner) .app-banner {
     height: var(--hero-stage-height);
     background: linear-gradient(180deg, #161616 0%, #080808 100%);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .hero-screens-stage::before {
@@ -479,18 +478,43 @@ body:not(.has-app-banner) .app-banner {
     z-index: 1;
 }
 
-.hero-screens-track {
+.hero-screens-viewport {
     position: relative;
     z-index: 2;
-    width: max-content;
-    min-width: 100%;
-    height: calc(100% - 52px);
-    margin: 0 auto;
+    width: min(1240px, calc(100% - 80px));
+    height: calc(100% - 82px);
+    margin: 26px auto 0;
+    overflow: hidden;
+}
+
+.hero-screens-track {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0;
+    transition: transform 0.36s ease;
+}
+
+.hero-screens-page {
+    flex: 0 0 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(12px, 1.4vw, 24px);
+}
+
+.hero-screen-frame {
+    min-width: 0;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: clamp(14px, 2vw, 32px);
-    padding: 26px 24px;
 }
 
 @media (max-width: 1600px) {
@@ -544,14 +568,47 @@ body:not(.has-app-banner) .app-banner {
 }
 
 .hero-screen {
-    height: 100%;
-    width: auto;
-    border-radius: 34px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    border-radius: 18px;
     box-shadow: 0 28px 48px rgba(0, 0, 0, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: #0d0d0d;
-    flex: 0 0 auto;
     object-fit: contain;
+}
+
+.hero-screens-dots {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.hero-screens-dot {
+    width: 9px;
+    height: 9px;
+    border: 0;
+    border-radius: 999px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.38);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-screens-dot.is-active {
+    background: #fff;
+    transform: scale(1.16);
+}
+
+.hero-screens-dot:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
 }
 
 .hero-screen--left {
@@ -1424,11 +1481,11 @@ hr {
         top: auto;
         bottom: auto;
         width: 100vw;
-        height: auto;
+        height: clamp(280px, 70vw, 430px);
         margin-top: 28px;
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
-        overflow: visible;
+        overflow: hidden;
         border-radius: 0;
     }
 
@@ -1436,21 +1493,29 @@ hr {
         display: none;
     }
 
+    .hero-screens-viewport {
+        width: min(760px, calc(100% - 40px));
+        height: calc(100% - 64px);
+        margin-top: 18px;
+    }
+
+    .hero-screens-page {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+    }
+
     .hero-screens-track {
-        width: 100%;
-        min-width: 0;
-        height: auto;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 16px;
-        padding: 18px 0 20px;
+        height: 100%;
     }
 
     .hero-screen {
-        width: min(94vw, 420px);
-        height: auto;
-        border-radius: 20px;
+        width: 100%;
+        max-height: 100%;
+        border-radius: 12px;
+    }
+
+    .hero-screens-dots {
+        margin-top: 14px;
     }
 
     .hero-screen--left,
@@ -1582,18 +1647,41 @@ hr {
     }
 
     .hero-screens-stage {
+        height: auto;
         margin-top: 20px;
+        padding: 18px 0 22px;
         border-radius: 0;
     }
 
+    .hero-screens-viewport {
+        width: min(300px, calc(100% - 54px));
+        height: auto;
+        margin-top: 0;
+    }
+
+    .hero-screens-page {
+        height: auto;
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
     .hero-screens-track {
-        gap: 12px;
-        padding: 14px 0;
+        height: auto;
+        align-items: flex-start;
+    }
+
+    .hero-screen-frame {
+        height: auto;
     }
 
     .hero-screen {
-        width: min(96vw, 340px);
-        border-radius: 16px;
+        width: 100%;
+        max-height: none;
+        border-radius: 14px;
+    }
+
+    .hero-screens-dots {
+        margin-top: 16px;
     }
 
     .hero-under-copy {

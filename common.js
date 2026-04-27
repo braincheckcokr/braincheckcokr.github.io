@@ -194,6 +194,132 @@
         });
     }
 
+    function initPreviewCarousels() {
+        document.querySelectorAll('[data-preview-carousel]').forEach(function(carousel) {
+            var track = carousel.querySelector('[data-preview-track]');
+            var dotsHost = carousel.querySelector('[data-preview-dots]');
+
+            if (!track || !dotsHost) {
+                return;
+            }
+
+            var items = Array.prototype.slice.call(track.querySelectorAll('[data-preview-item]'));
+            if (!items.length) {
+                return;
+            }
+
+            var currentIndex = 0;
+            var pageSize = 4;
+            var intervalMs = 10000;
+            var autoTimer = null;
+            var resizeFrame = null;
+            var dotLabelPrefix = isEnglish ? 'Show preview group ' : '미리보기 그룹 ';
+
+            function getPageCount() {
+                return Math.max(1, Math.ceil(items.length / pageSize));
+            }
+
+            function updateCarousel() {
+                var pageCount = getPageCount();
+                currentIndex = (currentIndex + pageCount) % pageCount;
+                track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+                carousel.classList.toggle('is-single-page', pageCount <= 1);
+                dotsHost.querySelectorAll('.hero-screens-dot').forEach(function(dot, index) {
+                    var isActive = index === currentIndex;
+                    dot.classList.toggle('is-active', isActive);
+                    dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+                });
+            }
+
+            function renderPages() {
+                if (track.querySelector('.hero-screens-page')) {
+                    updateCarousel();
+                    return;
+                }
+
+                currentIndex = 0;
+                track.innerHTML = '';
+                dotsHost.innerHTML = '';
+
+                for (var i = 0; i < items.length; i += pageSize) {
+                    var page = document.createElement('div');
+                    page.className = 'hero-screens-page';
+
+                    for (var j = i; j < Math.min(i + pageSize, items.length); j += 1) {
+                        page.appendChild(items[j]);
+                    }
+
+                    track.appendChild(page);
+                }
+
+                for (var pageIndex = 0; pageIndex < getPageCount(); pageIndex += 1) {
+                    var dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'hero-screens-dot';
+                    dot.setAttribute('aria-label', dotLabelPrefix + (pageIndex + 1));
+                    dot.setAttribute('data-preview-page', String(pageIndex));
+                    dotsHost.appendChild(dot);
+                }
+
+                updateCarousel();
+            }
+
+            function stopAuto() {
+                if (autoTimer) {
+                    window.clearInterval(autoTimer);
+                    autoTimer = null;
+                }
+            }
+
+            function startAuto() {
+                stopAuto();
+
+                if (getPageCount() <= 1) {
+                    return;
+                }
+
+                autoTimer = window.setInterval(function() {
+                    currentIndex += 1;
+                    updateCarousel();
+                }, intervalMs);
+            }
+
+            dotsHost.addEventListener('click', function(event) {
+                var dot = event.target.closest('[data-preview-page]');
+                if (!dot) {
+                    return;
+                }
+
+                currentIndex = Number(dot.getAttribute('data-preview-page')) || 0;
+                updateCarousel();
+                startAuto();
+            });
+
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    stopAuto();
+                    return;
+                }
+
+                startAuto();
+            });
+
+            window.addEventListener('resize', function() {
+                if (resizeFrame) {
+                    window.cancelAnimationFrame(resizeFrame);
+                }
+
+                resizeFrame = window.requestAnimationFrame(function() {
+                    resizeFrame = null;
+                    renderPages();
+                });
+            });
+
+            renderPages();
+            startAuto();
+        });
+    }
+
     function closeDesktopMenus(except) {
         if (moreDropdown && except !== 'more') {
             moreDropdown.classList.remove('active');
@@ -354,6 +480,7 @@
     initAppBanners();
     initAppDownloadButtons();
     initDownloadModals();
+    initPreviewCarousels();
     }
 
     if (document.readyState === 'loading') {
