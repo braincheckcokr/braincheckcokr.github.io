@@ -42,6 +42,7 @@
     "preview": {
       "previous": "Previous preview",
       "next": "Next preview",
+      "image_dir": "ios_en",
       "image_alt": "BrainCheck app preview"
     }
   },

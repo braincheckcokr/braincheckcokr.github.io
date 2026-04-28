@@ -33,7 +33,7 @@
                     {% set preview_images = ["preview-01.png", "preview-02.png", "preview-03.png", "preview-04.png", "preview-05.png", "preview-06.png", "preview-07.png", "preview-08.png"] %}
                     {% for image in preview_images %}
                     <figure class="hero-screen-frame" data-preview-item>
-                        <img src="{{ asset_prefix }}assets/images/store-preview/ios_kr/{{ image }}" alt="{{ t.global.preview.image_alt }} {{ loop.index }}" class="hero-screen" loading="eager">
+                        <img src="{{ asset_prefix }}assets/images/store-preview/{{ t.global.preview.image_dir }}/{{ image }}" alt="{{ t.global.preview.image_alt }} {{ loop.index }}" class="hero-screen" loading="eager">
                     </figure>
                     {% endfor %}
                 </div>

@@ -42,6 +42,7 @@
     "preview": {
       "previous": "이전 미리보기",
       "next": "다음 미리보기",
+      "image_dir": "ios_kr",
       "image_alt": "뇌체크 앱 미리보기"
     }
   },
