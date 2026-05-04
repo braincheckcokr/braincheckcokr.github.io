@@ -4,18 +4,18 @@
 
 ## 주요 링크
 
-- [홈페이지](https://braincheck.co.kr/): 뇌체크는 AI 기반 플래시카드로 영어를 효율적으로 학습하는 앱입니다. 머신러닝 추천, 음성인식 발화 평가, 고품질 TTS로 자연스러운 발음 학습. iOS, Android, Windows, macOS 지원.
-- [회사소개](https://braincheck.co.kr/about.html): 뇌체크 회사소개. 대표 이영훈, 전 매직엑스 AI 테크리더 출신. 언어 학습의 본질에 집중하는 AI 기반 플래시카드 학습 플랫폼을 만듭니다.
-- [고객센터](https://braincheck.co.kr/support.html): 뇌체크 고객센터. 서비스 이용 중 문의사항이나 지원이 필요하시면 admin@braincheck.co.kr로 연락해주세요. 빠른 답변을 드리겠습니다.
-- [개인정보처리방침](https://braincheck.co.kr/information.html): 뇌체크 개인정보처리방침. 수집하는 개인정보 항목, 이용 목적, 보유기간, 안전성 확보 조치 등 개인정보 보호에 관한 안내입니다.
+- [홈페이지](https://braincheck.co.kr/main/): 뇌체크는 AI 기반 플래시카드로 영어를 효율적으로 학습하는 앱입니다. 머신러닝 추천, 음성인식 발화 평가, 고품질 TTS로 자연스러운 발음 학습. iOS, Android, Windows, macOS 지원.
+- [회사소개](https://braincheck.co.kr/main/about.html): 뇌체크 회사소개. 대표 이영훈, 전 매직엑스 AI 테크리더 출신. 언어 학습의 본질에 집중하는 AI 기반 플래시카드 학습 플랫폼을 만듭니다.
+- [고객센터](https://braincheck.co.kr/main/support.html): 뇌체크 고객센터. 서비스 이용 중 문의사항이나 지원이 필요하시면 admin@braincheck.co.kr로 연락해주세요. 빠른 답변을 드리겠습니다.
+- [개인정보처리방침](https://braincheck.co.kr/main/information.html): 뇌체크 개인정보처리방침. 수집하는 개인정보 항목, 이용 목적, 보유기간, 안전성 확보 조치 등 개인정보 보호에 관한 안내입니다.
 
 ## 기술 문서
 
-- [머신러닝 기반 추천 시스템](https://braincheck.co.kr/mlsystem.html): 뇌체크의 머신러닝 기반 간격 반복 추천 시스템. FSRS 알고리즘의 성능과 벤치마크 결과를 소개합니다.
-- [고품질 음성 생성(TTS)](https://braincheck.co.kr/tts.html): 뇌체크의 TTS 배경 기술 소개. CALM(Continuous Audio Language Models)과 Pocket TTS를 중심으로 최신 음성 합성 기술을 설명합니다.
-- [음성 인식(STT) 및 발화 평가](https://braincheck.co.kr/stt.html): 뇌체크의 음성 인식 배경 기술 소개. OpenAI Whisper 모델을 중심으로 최신 STT 기술의 구조와 특징을 설명합니다.
-- [AI 기반 자동 학습 콘텐츠 생성](https://braincheck.co.kr/ai-content.html): 뇌체크의 AI 기반 학습 콘텐츠 자동 생성 배경 기술 소개. 공개 대규모 언어 모델(LLM) 생태계와 OpenLLaMA를 중심으로 설명합니다.
-- [멀티플랫폼 지원](https://braincheck.co.kr/multiplatform.html): 뇌체크의 멀티플랫폼 지원 기술 소개. Google의 오픈소스 UI 프레임워크 Flutter를 활용한 iOS, Android, macOS, Windows 지원 배경을 설명합니다.
+- [머신러닝 기반 추천 시스템](https://braincheck.co.kr/main/mlsystem.html): 뇌체크의 머신러닝 기반 간격 반복 추천 시스템. FSRS 알고리즘의 성능과 벤치마크 결과를 소개합니다.
+- [고품질 음성 생성(TTS)](https://braincheck.co.kr/main/tts.html): 뇌체크의 TTS 배경 기술 소개. CALM(Continuous Audio Language Models)과 Pocket TTS를 중심으로 최신 음성 합성 기술을 설명합니다.
+- [음성 인식(STT) 및 발화 평가](https://braincheck.co.kr/main/stt.html): 뇌체크의 음성 인식 배경 기술 소개. OpenAI Whisper 모델을 중심으로 최신 STT 기술의 구조와 특징을 설명합니다.
+- [AI 기반 자동 학습 콘텐츠 생성](https://braincheck.co.kr/main/ai-content.html): 뇌체크의 AI 기반 학습 콘텐츠 자동 생성 배경 기술 소개. 공개 대규모 언어 모델(LLM) 생태계와 OpenLLaMA를 중심으로 설명합니다.
+- [멀티플랫폼 지원](https://braincheck.co.kr/main/multiplatform.html): 뇌체크의 멀티플랫폼 지원 기술 소개. Google의 오픈소스 UI 프레임워크 Flutter를 활용한 iOS, Android, macOS, Windows 지원 배경을 설명합니다.
 
 ## 앱 다운로드
 

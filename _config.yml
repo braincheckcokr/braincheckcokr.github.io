@@ -1,6 +1,6 @@
 title: BrainCheck
 url: "https://braincheck.co.kr"
-baseurl: ""
+baseurl: "/main"
 
 # SEO 설정
 description: "플래시카드 기반 언어 학습 플랫폼"

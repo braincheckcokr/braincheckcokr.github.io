@@ -2,7 +2,7 @@
 layout: default
 title: 고객센터 - BrainCheck
 description: 뇌체크 고객 지원 및 문의
-canonical_url: "https://braincheck.co.kr/support"
+canonical_url: "https://braincheck.co.kr/main/support.html"
 ---
 
 # 고객센터

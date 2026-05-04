@@ -2,227 +2,227 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://braincheck.co.kr/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/about.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/about.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/about.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/about.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/about.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/about.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/about.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/about.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/about.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/about.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/about.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/about.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/about.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/about.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/support.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/support.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/support.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/support.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/support.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/support.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/support.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/support.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/support.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/support.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/support.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/support.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/support.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/support.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/support.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/support.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/information.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/information.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/information.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/information.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/information.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/information.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/information.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/information.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/information.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/information.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/information.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/information.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/information.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/information.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/information.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/information.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/paddle.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/paddle.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/paddle.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/paddle.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/paddle.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/paddle.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/paddle.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/paddle.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/paddle.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/paddle.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/paddle.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/paddle.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/paddle/pricing.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/paddle/pricing.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle/pricing.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle/pricing.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/paddle/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/paddle/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/paddle/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/paddle/pricing.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/paddle/pricing.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/paddle/pricing.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle/pricing.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle/pricing.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/paddle/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/paddle/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/paddle/pricing.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/paddle/pricing.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/paddle/terms-of-service.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/paddle/terms-of-service.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle/terms-of-service.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle/terms-of-service.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/paddle/terms-of-service.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/paddle/terms-of-service.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/paddle/terms-of-service.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/paddle/terms-of-service.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/paddle/terms-of-service.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/paddle/terms-of-service.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle/terms-of-service.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle/terms-of-service.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/paddle/terms-of-service.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/paddle/terms-of-service.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/paddle/terms-of-service.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/paddle/terms-of-service.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/paddle/refund-policy.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/paddle/refund-policy.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle/refund-policy.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle/refund-policy.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/paddle/refund-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/paddle/refund-policy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/paddle/refund-policy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/paddle/refund-policy.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/paddle/refund-policy.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/paddle/refund-policy.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/paddle/refund-policy.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/paddle/refund-policy.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/paddle/refund-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/paddle/refund-policy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/paddle/refund-policy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/paddle/refund-policy.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/mlsystem.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/mlsystem.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/mlsystem.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/mlsystem.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/mlsystem.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/mlsystem.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/mlsystem.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/mlsystem.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/mlsystem.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/mlsystem.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/mlsystem.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/mlsystem.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/mlsystem.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/mlsystem.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/mlsystem.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/mlsystem.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/tts.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/tts.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/tts.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/tts.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/tts.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/tts.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/tts.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/tts.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/tts.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/tts.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/tts.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/tts.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/tts.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/tts.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/tts.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/tts.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/stt.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/stt.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/stt.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/stt.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/stt.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/stt.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/stt.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/stt.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/stt.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/stt.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/stt.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/stt.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/stt.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/stt.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/stt.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/stt.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/ai-content.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/ai-content.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/ai-content.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/ai-content.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/ai-content.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/ai-content.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/ai-content.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/ai-content.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/ai-content.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/ai-content.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/ai-content.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/ai-content.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/ai-content.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/ai-content.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/ai-content.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/ai-content.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/multiplatform.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/multiplatform.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/multiplatform.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/multiplatform.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/multiplatform.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/multiplatform.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/multiplatform.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/multiplatform.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/multiplatform.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/multiplatform.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/multiplatform.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/multiplatform.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/multiplatform.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/multiplatform.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/multiplatform.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/multiplatform.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/review.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/review.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/review.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/review.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/review.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/review.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/review.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/review.html" />
   </url>
   <url>
-    <loc>https://braincheck.co.kr/en/review.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://braincheck.co.kr/main/en/review.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/review.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/en/review.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/review.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/main/review.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://braincheck.co.kr/main/en/review.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/main/review.html" />
   </url>
 </urlset>

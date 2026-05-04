@@ -26,4 +26,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://braincheck.co.kr/sitemap.xml
+Sitemap: https://braincheck.co.kr/main/sitemap.xml

@@ -4,18 +4,18 @@
 
 ## Main Links
 
-- [Home](https://braincheck.co.kr/en/): BrainCheck is an app for efficient English learning with AI-powered flashcards. Features ML recommendations, speech recognition evaluation, and high-quality TTS for natural pronunciation learning. Supports iOS, Android, Windows, macOS.
-- [About](https://braincheck.co.kr/en/about.html): About BrainCheck. Founded by Younghun Lee, former AI Tech Leader at MagicX. Building an AI-powered flashcard learning platform focused on the essence of language learning.
-- [Support](https://braincheck.co.kr/en/support.html): BrainCheck Support Center. For inquiries or assistance, contact us at admin@braincheck.co.kr. We'll respond promptly.
-- [Privacy Policy](https://braincheck.co.kr/en/information.html): BrainCheck Privacy Policy. Information about personal data collected, purpose of use, retention period, and security measures.
+- [Home](https://braincheck.co.kr/main/en/): BrainCheck is an app for efficient English learning with AI-powered flashcards. Features ML recommendations, speech recognition evaluation, and high-quality TTS for natural pronunciation learning. Supports iOS, Android, Windows, macOS.
+- [About](https://braincheck.co.kr/main/en/about.html): About BrainCheck. Founded by Younghun Lee, former AI Tech Leader at MagicX. Building an AI-powered flashcard learning platform focused on the essence of language learning.
+- [Support](https://braincheck.co.kr/main/en/support.html): BrainCheck Support Center. For inquiries or assistance, contact us at admin@braincheck.co.kr. We'll respond promptly.
+- [Privacy Policy](https://braincheck.co.kr/main/en/information.html): BrainCheck Privacy Policy. Information about personal data collected, purpose of use, retention period, and security measures.
 
 ## Technical Documentation
 
-- [ML-Based Recommendation System](https://braincheck.co.kr/en/mlsystem.html): BrainCheck's machine learning-based spaced repetition recommendation system. Introducing the FSRS algorithm's performance and benchmark results.
-- [High-Quality TTS](https://braincheck.co.kr/en/tts.html): BrainCheck's TTS background technology. Introducing CALM (Continuous Audio Language Models) and Pocket TTS for modern speech synthesis.
-- [Speech Recognition (STT)](https://braincheck.co.kr/en/stt.html): BrainCheck's speech recognition background technology. Explaining the structure and features of modern STT technology centered on OpenAI's Whisper model.
-- [AI Content Generation](https://braincheck.co.kr/en/ai-content.html): BrainCheck's AI-based learning content auto-generation background technology. Explaining the open LLM ecosystem and OpenLLaMA.
-- [Multi-Platform Support](https://braincheck.co.kr/en/multiplatform.html): BrainCheck's multi-platform support technology. Explaining the iOS, Android, macOS, Windows support through Google's open-source Flutter framework.
+- [ML-Based Recommendation System](https://braincheck.co.kr/main/en/mlsystem.html): BrainCheck's machine learning-based spaced repetition recommendation system. Introducing the FSRS algorithm's performance and benchmark results.
+- [High-Quality TTS](https://braincheck.co.kr/main/en/tts.html): BrainCheck's TTS background technology. Introducing CALM (Continuous Audio Language Models) and Pocket TTS for modern speech synthesis.
+- [Speech Recognition (STT)](https://braincheck.co.kr/main/en/stt.html): BrainCheck's speech recognition background technology. Explaining the structure and features of modern STT technology centered on OpenAI's Whisper model.
+- [AI Content Generation](https://braincheck.co.kr/main/en/ai-content.html): BrainCheck's AI-based learning content auto-generation background technology. Explaining the open LLM ecosystem and OpenLLaMA.
+- [Multi-Platform Support](https://braincheck.co.kr/main/en/multiplatform.html): BrainCheck's multi-platform support technology. Explaining the iOS, Android, macOS, Windows support through Google's open-source Flutter framework.
 
 ## Download
 
