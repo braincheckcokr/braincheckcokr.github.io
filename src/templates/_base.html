@@ -65,6 +65,7 @@
     <header class="header">
         <a href="{{ nav_prefix }}index.html" class="logo">{{ t.site_name_display | safe }}</a>
         <nav class="nav-links">
+            <a href="/store">{{ t.global.nav.store }}</a>
             <a href="{{ nav_prefix }}about.html">{{ t.global.nav.about }}</a>
             {% if t.lang == "en" %}
             <details class="nav-subscription-menu">
@@ -99,6 +100,7 @@
     <footer class="footer">
         <div class="footer-links">
             <a href="{{ nav_prefix }}index.html">{{ t.global.nav.home }}</a>
+            <a href="/store">{{ t.global.nav.store }}</a>
             <a href="{{ nav_prefix }}about.html">{{ t.global.nav.about }}</a>
             <a href="{{ nav_prefix }}support.html">{{ t.global.nav.support }}</a>
             <a href="{{ nav_prefix }}information.html">{{ t.global.nav.privacy }}</a>
