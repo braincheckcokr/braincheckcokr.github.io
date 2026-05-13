@@ -3,6 +3,101 @@
 {% block content %}
     <!-- Page Content -->
     <main class="page-content">
+        {% if t.lang == "en" %}
+        <h1>High-Quality Text-to-Speech (TTS) Technology</h1>
+        <p>This page introduces background technologies that help explain BrainCheck's TTS features. It focuses on recent speech synthesis work such as CALM and Pocket TTS. This does not mean BrainCheck uses these models directly.</p>
+
+        <hr>
+
+        <h2>Limits of Discrete-Token Speech Synthesis</h2>
+        <p>One common approach in modern speech synthesis converts audio into a sequence of discrete tokens, then uses a language model to generate those tokens.</p>
+        <p>This creates a fundamental tradeoff. Audio tokens are extracted through a lossy codec, so higher audio quality usually requires generating more tokens. More tokens increase compute cost and latency. In other words, the system must compromise between quality and speed.</p>
+
+        <hr>
+
+        <h2>Continuous Audio Language Models (CALM)</h2>
+        <p>Kyutai Labs proposed CALM (Continuous Audio Language Models) as one way to address this problem.</p>
+
+        <h3>Core Idea</h3>
+        <p>Instead of turning audio into discrete tokens, CALM directly generates continuous audio representations.</p>
+        <ol>
+            <li>A large neural network (Transformer) reads the text context and creates a summary at each step.</li>
+            <li>A smaller network (MLP) uses that summary to predict the next piece of sound.</li>
+            <li>The model is trained so the sound pieces connect naturally and consistently.</li>
+        </ol>
+        <p>Because this avoids the bitrate bottleneck of discrete tokenization, the paper reports that CALM can generate speech with less computation at comparable quality.</p>
+
+        <h3>Discrete vs Continuous Methods</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Discrete-token method</th>
+                    <th>CALM (continuous method)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Audio representation</td>
+                    <td>Lossy compressed discrete tokens</td>
+                    <td>Continuous latent vectors (VAE-based)</td>
+                </tr>
+                <tr>
+                    <td>How quality improves</td>
+                    <td>Generate more tokens, increasing cost</td>
+                    <td>Avoid the bitrate limit of discrete tokenization</td>
+                </tr>
+                <tr>
+                    <td>Compute efficiency</td>
+                    <td>Cost grows with token count</td>
+                    <td>Paper reports lower compute at similar quality</td>
+                </tr>
+                <tr>
+                    <td>Generation style</td>
+                    <td>Autoregressive token generation</td>
+                    <td>Transformer plus MLP continuous-frame generation</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><small>Note: This comparison summarizes results reported in the CALM paper. Outcomes can vary depending on model, data, and implementation.</small></p>
+
+        <hr>
+
+        <h2>Pocket TTS: A Practical CALM Implementation</h2>
+        <p>Pocket TTS is an open-source TTS model that implements research ideas from the CALM paper in a practical form.</p>
+
+        <h3>Main Characteristics (Based on the Kyutai Labs README)</h3>
+        <ul>
+            <li><strong>Model size</strong>: 100M parameters</li>
+            <li><strong>CPU-only execution</strong>: Runs without a GPU and uses only two CPU cores</li>
+            <li><strong>Faster-than-real-time generation</strong>: Reported at roughly 6x real time on a MacBook Air M4 CPU, depending on measurement environment</li>
+            <li><strong>Very low latency</strong>: Around 200ms to the first audio chunk</li>
+            <li><strong>Audio streaming</strong>: Playback can begin before the full generation is complete</li>
+            <li><strong>Voice cloning</strong>: Can reproduce a speaker's voice from a short sample. Voice cloning should only be used with consent, and Kyutai Labs explicitly forbids impersonation without consent.</li>
+            <li><strong>Long-text handling</strong>: Designed without a fixed text-length limit, although generation time increases with input length</li>
+            <li><strong>English only for now</strong>: The model focuses on English speech synthesis</li>
+        </ul>
+
+        <h3>Why a GPU Is Not Required</h3>
+        <p>Pocket TTS has 100M parameters, which is small compared with large language models. Kyutai Labs reports that, because the model is small and uses batch size 1, they did not observe meaningful speed gains from GPU execution.</p>
+
+        <h3>Browser Execution</h3>
+        <p>Pocket TTS does not officially support browser execution, but the model is small enough that the community has released experimental WebAssembly-based implementations using Rust/Candle, JAX-JS, ONNX Runtime Web, and related tools.</p>
+
+        <hr>
+
+        <h2>How BrainCheck Applies TTS</h2>
+        <p>BrainCheck uses high-quality TTS technology when generating audio for learning cards.</p>
+        <ol>
+            <li><strong>Natural pronunciation</strong>: Speech closer to real conversation improves the listening experience compared with mechanical voices.</li>
+            <li><strong>Low-latency playback</strong>: Shorter waiting time keeps the learning flow smooth.</li>
+        </ol>
+
+        <hr>
+
+        <p>Related paper: <a href="https://arxiv.org/abs/2509.06926" target="_blank">Continuous Audio Language Models (CALM)</a> - Simon Rouard, Manu Orsini, Axel Roebel, Neil Zeghidour, Alexandre Defossez (2025)</p>
+        <p>Sources: <a href="https://github.com/kyutai-labs/pocket-tts" target="_blank">Pocket TTS GitHub</a> · <a href="https://kyutai.org/papers" target="_blank">Kyutai Labs Publications</a></p>
+        {% else %}
         <h1>고품질 음성 생성(TTS) 기술 소개</h1>
         <p>이 페이지는 뇌체크의 TTS 기능을 이해하기 위한 배경 기술을 소개합니다. 최근 음성 합성 분야에서 주목받는 CALM과 Pocket TTS를 중심으로 설명하며, 뇌체크가 이 모델을 그대로 사용한다는 의미는 아닙니다.</p>
 
@@ -96,6 +191,7 @@
 
         <p>관련 논문: <a href="https://arxiv.org/abs/2509.06926" target="_blank">Continuous Audio Language Models (CALM)</a> — Simon Rouard, Manu Orsini, Axel Roebel, Neil Zeghidour, Alexandre Défossez (2025)</p>
         <p>출처: <a href="https://github.com/kyutai-labs/pocket-tts" target="_blank">Pocket TTS GitHub</a> · <a href="https://kyutai.org/papers" target="_blank">Kyutai Labs Publications</a></p>
+        {% endif %}
     </main>
 {% endblock %}
 
@@ -104,7 +200,7 @@
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "고품질 음성 생성(TTS) 기술 소개",
+        "headline": "{% if t.lang == "en" %}High-Quality Text-to-Speech (TTS) Technology{% else %}고품질 음성 생성(TTS) 기술 소개{% endif %}",
         "description": "{{ page_t.description }}",
         "url": "{{ canonical_url }}",
         "author": {
@@ -121,7 +217,7 @@
             }
         },
         "mainEntityOfPage": "{{ canonical_url }}",
-        "keywords": ["TTS", "Text-to-Speech", "음성합성", "CALM", "Pocket TTS"],
+        "keywords": {% if t.lang == "en" %}["TTS", "Text-to-Speech", "speech synthesis", "CALM", "Pocket TTS"]{% else %}["TTS", "Text-to-Speech", "음성합성", "CALM", "Pocket TTS"]{% endif %},
         "citation": {
             "@type": "ScholarlyArticle",
             "name": "Continuous Audio Language Models (CALM)",

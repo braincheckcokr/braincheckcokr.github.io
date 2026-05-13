@@ -3,6 +3,226 @@
 {% block content %}
     <!-- Page Content -->
     <main class="page-content">
+        {% if t.lang == "en" %}
+        <h1>ML-Based Recommendation System</h1>
+        <p>This page introduces the spaced repetition algorithm adopted by BrainCheck and summarizes its performance characteristics.</p>
+
+        <hr>
+
+        <h2>What Is a Spaced Repetition Algorithm?</h2>
+        <p>A spaced repetition algorithm automatically manages the review schedule for flashcards.</p>
+        <p>The core idea is simple. Instead of memorizing everything in one intense session, reviews are spread out over time. To do this efficiently, the algorithm models how a learner's memory behaves. It predicts when a learner is likely to forget a specific item and schedules review around that moment.</p>
+        <p>The better the algorithm predicts memory, the less time a learner needs to remember material for longer.</p>
+
+        <hr>
+
+        <h2>Benchmark Dataset</h2>
+        <p>The benchmark data was collected from 10,000 real users.</p>
+        <ul>
+            <li>Total reviews: about 727 million</li>
+            <li>Reviews used for evaluation: about 349.9 million, excluding same-day reviews</li>
+            <li>Data source: Hugging Face Datasets (open-spaced-repetition)</li>
+        </ul>
+        <p>Same-day reviews are excluded from evaluation. Repeating a card several times on the same day is not directly related to long-term memory prediction, and including those records can distort an algorithm's real predictive ability.</p>
+        <p>Records created after manual date changes or under disabled settings were filtered out, and outlier filters were also applied.</p>
+
+        <hr>
+
+        <h2>Evaluation Method</h2>
+
+        <h3>Time-Series Split</h3>
+        <p>The benchmark uses TimeSeriesSplit from the sklearn library. It trains on past learning records and evaluates on future learning results. This prevents the algorithm from seeing future information and measures performance under conditions closer to real use.</p>
+        <p><small>Note: TimeSeriesSplit is applied independently per user. Data is not mixed across users, so one user's future records do not leak into another user's training data.</small></p>
+
+        <h3>Metrics</h3>
+        <p><strong>Short version:</strong> The benchmark measures how accurately an algorithm predicts the probability that a learner will remember an item.</p>
+
+        <p><strong>Log Loss</strong><br>
+        Measures the difference between predicted recall probability and the actual review result, remembered or forgotten. It shows how close the algorithm's probability estimates are to real outcomes. The range is 0 to infinity, and lower is better.</p>
+
+        <p><strong>RMSE (bins)</strong><br>
+        Groups predictions and actual outcomes by review interval, review count, lapse count, and similar bins, then computes a weighted root mean squared error across those bins. It evaluates accuracy across many learning situations. The range is 0 to 1, and lower is better.</p>
+
+        <p><strong>AUC (Area Under the ROC Curve)</strong><br>
+        Measures how well the algorithm separates successful recall from failed recall. The range is 0 to 1, and higher is better. In practice, it is usually above 0.5.</p>
+
+        <p>Log Loss and RMSE (bins) measure calibration: whether predicted probabilities match actual data.<br>
+        AUC measures discrimination: whether the model can distinguish between two outcomes.</p>
+
+        <hr>
+
+        <h2>Algorithm Categories</h2>
+
+        <h3>Two-Component and Three-Component Memory Models</h3>
+        <p>The two-component model of long-term memory describes memory state with two independent variables:</p>
+        <ul>
+            <li><strong>Retrievability (R)</strong>: The probability of recalling an item</li>
+            <li><strong>Stability (S)</strong>: The half-life of the memory</li>
+        </ul>
+        <p>The three-component model adds <strong>Difficulty (D)</strong>.</p>
+
+        <p>Representative algorithms:</p>
+        <ul>
+            <li><strong>FSRS v1-v4</strong>: Versions that evolved from early experiments to official releases based on community feedback</li>
+            <li><strong>FSRS-4.5</strong>: A version with modest improvements from changing the forgetting-curve shape</li>
+            <li><strong>FSRS-5</strong>: A version that began using same-day review data for training</li>
+            <li><strong>FSRS-6</strong>: The latest version, introducing a parameter that optimizes forgetting-curve flatness per user</li>
+            <li><strong>HLR (Half-Life Regression)</strong>: An algorithm proposed by Duolingo</li>
+        </ul>
+
+        <h3>Alternative Memory Models</h3>
+        <ul>
+            <li><strong>DASH</strong>: Short for Difficulty, Ability, Study History. It predicts memory from learner ability and study history.</li>
+            <li><strong>ACT-R</strong>: An activation-based system for declarative memory that explains spacing effects through memory-trace activation.</li>
+        </ul>
+
+        <h3>Neural Network-Based Models</h3>
+        <ul>
+            <li><strong>GRU</strong>: A recurrent neural network widely used for time-series prediction</li>
+            <li><strong>LSTM</strong>: A more elaborate recurrent neural network architecture than GRU</li>
+            <li><strong>RWKV</strong>: An architecture combining properties of RNNs and Transformers, using rich input features such as full review history, sibling-card information, deck structure, and day of week</li>
+        </ul>
+
+        <hr>
+
+        <h2>Benchmark Results</h2>
+        <p>The table below excerpts representative algorithms and shows evaluation results excluding same-day reviews. Values are averages; the original benchmark also provides 99% confidence intervals.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Algorithm</th>
+                    <th>Trainable parameters</th>
+                    <th>Log Loss ↓</th>
+                    <th>RMSE (bins) ↓</th>
+                    <th>AUC ↑</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>RWKV-P</strong></td>
+                    <td>2,762,884</td>
+                    <td><strong>0.2773</strong></td>
+                    <td>0.0250</td>
+                    <td><strong>0.8329</strong></td>
+                </tr>
+                <tr>
+                    <td>RWKV</td>
+                    <td>2,762,884</td>
+                    <td>0.3193</td>
+                    <td>0.0540</td>
+                    <td>0.7683</td>
+                </tr>
+                <tr>
+                    <td>LSTM</td>
+                    <td>8,869</td>
+                    <td>0.3332</td>
+                    <td>0.0538</td>
+                    <td>0.7329</td>
+                </tr>
+                <tr>
+                    <td>FSRS-rs</td>
+                    <td>21</td>
+                    <td>0.3443</td>
+                    <td>0.0635</td>
+                    <td>0.7074</td>
+                </tr>
+                <tr>
+                    <td><strong>FSRS-6</strong></td>
+                    <td><strong>21</strong></td>
+                    <td><strong>0.3460</strong></td>
+                    <td><strong>0.0653</strong></td>
+                    <td><strong>0.7034</strong></td>
+                </tr>
+                <tr>
+                    <td>FSRS-5</td>
+                    <td>19</td>
+                    <td>0.3560</td>
+                    <td>0.0741</td>
+                    <td>0.7011</td>
+                </tr>
+                <tr>
+                    <td>FSRS-4.5</td>
+                    <td>17</td>
+                    <td>0.3624</td>
+                    <td>0.0764</td>
+                    <td>0.6893</td>
+                </tr>
+                <tr>
+                    <td>DASH</td>
+                    <td>9</td>
+                    <td>0.3682</td>
+                    <td>0.0836</td>
+                    <td>0.6312</td>
+                </tr>
+                <tr>
+                    <td>GRU</td>
+                    <td>39</td>
+                    <td>0.3753</td>
+                    <td>0.0864</td>
+                    <td>0.6683</td>
+                </tr>
+                <tr>
+                    <td>HLR (Duolingo)</td>
+                    <td>3</td>
+                    <td>0.4694</td>
+                    <td>0.1275</td>
+                    <td>0.6369</td>
+                </tr>
+                <tr>
+                    <td>Ebisu v2</td>
+                    <td>0</td>
+                    <td>0.4989</td>
+                    <td>0.1627</td>
+                    <td>0.6051</td>
+                </tr>
+                <tr>
+                    <td>AVG (baseline)</td>
+                    <td>0</td>
+                    <td>0.3945</td>
+                    <td>0.1034</td>
+                    <td>0.4997</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Key Takeaways</h2>
+
+        <h3>FSRS-6: High Accuracy with a Small Model</h3>
+        <p>With only 21 trainable parameters, FSRS-6 achieves strong predictive accuracy compared with much larger neural models such as RWKV-P, which has millions of parameters.</p>
+        <ul>
+            <li>RWKV-P (about 2.76 million parameters) Log Loss: 0.2773</li>
+            <li>FSRS-6 (21 parameters) Log Loss: 0.3460</li>
+        </ul>
+        <p>Its performance efficiency per parameter is very high. Because the model is small, it can run quickly even on mobile devices and can be optimized locally without a server call.</p>
+
+        <h3>If RWKV-P Ranks First, Why Use FSRS?</h3>
+        <p>RWKV-P is a large neural model with about 2.76 million parameters. It has the highest accuracy in the benchmark, but training and inference require GPU-level compute, and user-specific fine-tuning is difficult in practice. FSRS-6, by contrast, has only 21 parameters, can personalize quickly from a user's own review history, and runs in real time on ordinary devices.</p>
+
+        <h3>Comparison with HLR (Duolingo)</h3>
+        <p>Compared with Duolingo's HLR algorithm (Log Loss 0.4694), FSRS-6 (0.3460) achieves about 26% lower Log Loss.</p>
+
+        <h3>User-Specific Forgetting-Curve Optimization</h3>
+        <p>One of the biggest improvements in FSRS-6 is that it applies a different forgetting-curve shape for each user. Because people do not forget at the same speed, the review schedule can be adjusted to each learner's memory pattern.</p>
+
+        <hr>
+
+        <h2>How BrainCheck Applies Recommendation</h2>
+        <p>BrainCheck tracks each learner's memory state based on the FSRS algorithm.</p>
+        <ol>
+            <li><strong>Retrievability prediction</strong>: Calculates the probability that each card will be remembered.</li>
+            <li><strong>Optimal review timing</strong>: Schedules review just before the recall probability falls below the target level.</li>
+            <li><strong>Personalized parameter optimization</strong>: Continuously adjusts FSRS parameters based on the learner's review history.</li>
+        </ol>
+        <p>This helps learners review while memory is still in a strong state, reducing unnecessary repetition and improving study efficiency.</p>
+
+        <hr>
+
+        <p>Source: <a href="https://github.com/open-spaced-repetition/srs-benchmark" target="_blank">open-spaced-repetition/srs-benchmark</a><br>
+        Dataset: <a href="https://huggingface.co/datasets/open-spaced-repetition" target="_blank">open-spaced-repetition</a> (Hugging Face Datasets)</p>
+        {% else %}
         <h1>머신러닝 기반 추천 시스템</h1>
         <p>뇌체크가 채택한 간격 반복(Spaced Repetition) 알고리즘과 그 성능을 소개합니다.</p>
 
@@ -221,6 +441,7 @@
 
         <p>출처: <a href="https://github.com/open-spaced-repetition/srs-benchmark" target="_blank">open-spaced-repetition/srs-benchmark</a><br>
         데이터셋: <a href="https://huggingface.co/datasets/open-spaced-repetition" target="_blank">open-spaced-repetition</a> (Hugging Face Datasets)</p>
+        {% endif %}
     </main>
 {% endblock %}
 
@@ -229,7 +450,7 @@
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "머신러닝 기반 추천 시스템 - FSRS 알고리즘",
+        "headline": "{% if t.lang == "en" %}ML-Based Recommendation System - FSRS Algorithm{% else %}머신러닝 기반 추천 시스템 - FSRS 알고리즘{% endif %}",
         "description": "{{ page_t.description }}",
         "url": "{{ canonical_url }}",
         "author": {
@@ -246,7 +467,7 @@
             }
         },
         "mainEntityOfPage": "{{ canonical_url }}",
-        "keywords": ["FSRS", "간격반복", "Spaced Repetition", "머신러닝", "알고리즘", "벤치마크"],
+        "keywords": {% if t.lang == "en" %}["FSRS", "spaced repetition", "machine learning", "algorithm", "benchmark"]{% else %}["FSRS", "간격반복", "Spaced Repetition", "머신러닝", "알고리즘", "벤치마크"]{% endif %},
         "about": {
             "@type": "SoftwareApplication",
             "@id": "{{ canonical_home_url }}#app"

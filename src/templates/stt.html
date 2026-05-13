@@ -3,6 +3,137 @@
 {% block content %}
     <!-- Page Content -->
     <main class="page-content">
+        {% if t.lang == "en" %}
+        <h1>Speech Recognition (STT) Technology</h1>
+        <p>This page introduces background technologies that help explain BrainCheck's speech recognition features. It focuses on the structure and characteristics of modern speech recognition through OpenAI's Whisper model. This does not mean BrainCheck uses Whisper directly.</p>
+
+        <hr>
+
+        <h2>What Is Speech Recognition?</h2>
+        <p>Speech recognition, or Speech-to-Text (STT), is technology that converts human speech into text.</p>
+        <p>In language learning, speech recognition plays a central role. When a learner's spoken answer is converted into text, the system can compare it with a target sentence and check how closely they match. Meaningful learning feedback depends on accurate speech recognition.</p>
+
+        <hr>
+
+        <h2>STT and Speech Evaluation Are Different</h2>
+        <p>Speech recognition answers the question "What did the learner say?" by converting audio into text. Speech or pronunciation evaluation asks "How well was it said?" and deals with sound quality such as intonation, stress, connected speech, and speaking speed.</p>
+        <p>Comparing STT output with the correct answer can measure content match, but it cannot fully evaluate pronunciation quality on its own. Pronunciation evaluation may require additional signals such as phoneme-level alignment, speaking-rate analysis, and stress analysis.</p>
+        <p>Evaluation results are also affected by microphone quality, background noise, and speaking speed. For that reason, results should be treated as learning feedback rather than an absolute pronunciation score.</p>
+
+        <hr>
+
+        <h2>Whisper: Speech Recognition with Large-Scale Weak Supervision</h2>
+        <p>Whisper, developed by OpenAI, is a general-purpose speech recognition model trained on 680,000 hours of multilingual audio-text pairs collected from the web. Its code and model weights are released as an open-source project under the MIT license.</p>
+
+        <h3>Large-Scale Weak Supervision</h3>
+        <p>Traditional speech recognition models are often trained on carefully hand-labeled datasets. Whisper takes a different approach. It uses a very large amount of audio and corresponding text, such as captions and transcripts, collected from the internet. Individual examples may be imperfect, but scale and diversity help compensate for that noise. Because the training data includes many recording environments, microphones, accents, and noise conditions, the model tends to be more robust in real-world settings.</p>
+
+        <h3>Multitask Model</h3>
+        <p>Whisper performs several speech-processing tasks with a single model:</p>
+        <ul>
+            <li><strong>Speech recognition</strong>: Converts speech into text in the same language</li>
+            <li><strong>Speech translation</strong>: Translates speech into English text</li>
+            <li><strong>Language identification</strong>: Detects which language is being spoken</li>
+            <li><strong>Voice activity detection support</strong>: Helps separate speech from silence or noise for better transcription quality</li>
+        </ul>
+        <p>These tasks are handled by one Transformer-based sequence-to-sequence model. Special tokens tell the model which task to perform, replacing several steps of a traditional speech-processing pipeline with one model.</p>
+
+        <h3>Zero-Shot Transfer</h3>
+        <p>One of Whisper's notable characteristics is that it performs well across many benchmarks without fine-tuning for each dataset. The paper calls this zero-shot transfer. It reports competitive word error rate and character error rate results against fully supervised methods on several public benchmarks without extra fine-tuning. Performance can still vary significantly by language, noise environment, and speaking style.</p>
+
+        <hr>
+
+        <h2>Model Sizes and Performance</h2>
+        <p>Whisper provides several model sizes so systems can choose based on use case and runtime environment.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Parameters</th>
+                    <th>Multilingual</th>
+                    <th>Required VRAM</th>
+                    <th>Relative speed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tiny</td>
+                    <td>39M</td>
+                    <td>Yes</td>
+                    <td>~1 GB</td>
+                    <td>~10x</td>
+                </tr>
+                <tr>
+                    <td>base</td>
+                    <td>74M</td>
+                    <td>Yes</td>
+                    <td>~1 GB</td>
+                    <td>~7x</td>
+                </tr>
+                <tr>
+                    <td>small</td>
+                    <td>244M</td>
+                    <td>Yes</td>
+                    <td>~2 GB</td>
+                    <td>~4x</td>
+                </tr>
+                <tr>
+                    <td>medium</td>
+                    <td>769M</td>
+                    <td>Yes</td>
+                    <td>~5 GB</td>
+                    <td>~2x</td>
+                </tr>
+                <tr>
+                    <td>large</td>
+                    <td>1.55B</td>
+                    <td>Yes</td>
+                    <td>~10 GB</td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td><strong>turbo</strong></td>
+                    <td>809M</td>
+                    <td>Yes</td>
+                    <td>~6 GB</td>
+                    <td>~8x</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><small>These figures summarize the model table in the OpenAI Whisper GitHub README, including approximate VRAM and relative speed for English transcription on an A100 GPU. Real speed can vary by language, speaking pace, and hardware.</small></p>
+
+        <p>The turbo model is an optimized version of large-v3. It greatly improves speed while preserving most transcription accuracy. However, turbo is focused on transcription and is not suitable for translation from non-English speech into English text. For translation, use multilingual models such as tiny, base, small, medium, or large.</p>
+
+        <h3>English-Only Models</h3>
+        <p>The tiny, base, small, and medium sizes also provide English-only (.en) variants. When the input is only English, these models can outperform multilingual versions, especially at smaller sizes such as tiny.en and base.en. The performance gap narrows as model size increases.</p>
+
+        <hr>
+
+        <h2>Technical Structure</h2>
+        <p>Whisper uses a Transformer-based encoder-decoder architecture.</p>
+        <ol>
+            <li><strong>Audio preprocessing</strong>: Input audio is converted into a log-Mel spectrogram, a representation of sound over frequency and time.</li>
+            <li><strong>Encoder</strong>: The spectrogram is read and converted into a compact representation of speech features.</li>
+            <li><strong>Decoder</strong>: Based on the encoder output, the model generates text token by token. Special tokens specify the task, such as recognition or translation, and the language.</li>
+        </ol>
+        <p>Because the model has a limit on the input length it can process at once, long audio is split and processed in 30-second segments.</p>
+
+        <hr>
+
+        <h2>How BrainCheck Applies STT</h2>
+        <p>BrainCheck's speaking features are built around speech recognition technology.</p>
+        <ol>
+            <li><strong>Speech recognition</strong>: Converts the learner's spoken English into text.</li>
+            <li><strong>Content match checking</strong>: Compares recognized text with the target sentence and analyzes omissions, additions, and substitutions.</li>
+            <li><strong>Learning feedback</strong>: Uses recognition results to provide feedback. Accuracy and response time can vary depending on the environment.</li>
+        </ol>
+
+        <hr>
+
+        <p>Related paper: <a href="https://arxiv.org/abs/2212.04356" target="_blank">Robust Speech Recognition via Large-Scale Weak Supervision</a> - Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, Ilya Sutskever (2022)</p>
+        <p>Sources: <a href="https://github.com/openai/whisper" target="_blank">OpenAI Whisper GitHub</a> · <a href="https://openai.com/blog/whisper" target="_blank">OpenAI Whisper Blog</a></p>
+        {% else %}
         <h1>음성 인식(STT) 기술 소개</h1>
         <p>이 페이지는 뇌체크의 음성 인식 기능을 이해하기 위한 배경 기술을 소개합니다. OpenAI의 Whisper 모델을 중심으로 최신 음성 인식 기술의 구조와 특징을 설명하며, 뇌체크가 Whisper를 그대로 사용한다는 의미는 아닙니다.</p>
 
@@ -132,6 +263,7 @@
 
         <p>관련 논문: <a href="https://arxiv.org/abs/2212.04356" target="_blank">Robust Speech Recognition via Large-Scale Weak Supervision</a> — Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, Ilya Sutskever (2022)</p>
         <p>출처: <a href="https://github.com/openai/whisper" target="_blank">OpenAI Whisper GitHub</a> · <a href="https://openai.com/blog/whisper" target="_blank">OpenAI Whisper Blog</a></p>
+        {% endif %}
     </main>
 {% endblock %}
 
@@ -140,7 +272,7 @@
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "음성 인식(STT) 및 발화 평가 기술 소개",
+        "headline": "{% if t.lang == "en" %}Speech Recognition (STT) and Speech Evaluation Technology{% else %}음성 인식(STT) 및 발화 평가 기술 소개{% endif %}",
         "description": "{{ page_t.description }}",
         "url": "{{ canonical_url }}",
         "author": {
@@ -157,7 +289,7 @@
             }
         },
         "mainEntityOfPage": "{{ canonical_url }}",
-        "keywords": ["STT", "Speech-to-Text", "음성인식", "Whisper", "OpenAI", "발화평가"],
+        "keywords": {% if t.lang == "en" %}["STT", "Speech-to-Text", "speech recognition", "Whisper", "OpenAI", "speech evaluation"]{% else %}["STT", "Speech-to-Text", "음성인식", "Whisper", "OpenAI", "발화평가"]{% endif %},
         "citation": {
             "@type": "ScholarlyArticle",
             "name": "Robust Speech Recognition via Large-Scale Weak Supervision",

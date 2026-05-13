@@ -3,6 +3,150 @@
 {% block content %}
     <!-- Page Content -->
     <main class="page-content">
+        {% if t.lang == "en" %}
+        <h1>AI-Powered Auto Content Generation Technology</h1>
+        <p>This page introduces background technologies that help explain BrainCheck's automatic learning-content generation features. It focuses on the public large language model (LLM) ecosystem. This does not mean BrainCheck uses any particular model directly.</p>
+        <p><small>Here, "public LLM" includes models whose weights are publicly available. It is not identical to "open source" in the software sense. Models, code, and datasets can each have different licenses, so original license terms should be checked before use.</small></p>
+
+        <hr>
+
+        <h2>What Is a Large Language Model?</h2>
+        <p>A Large Language Model (LLM) is an AI model trained on massive text datasets so it can understand and generate natural language.</p>
+        <p>LLMs are trained to predict the next word or token in a given context. Through that process, they learn grammar, factual associations, reasoning patterns, and many text transformations. With enough scale and data, they can perform tasks such as summarization, translation, question answering, and rewriting.</p>
+        <p>In language learning, LLMs are useful because they can make learning material creation more efficient. For example, they can extract key ideas from a source text and reorganize them into question-and-answer flashcards.</p>
+
+        <hr>
+
+        <h2>The Public LLM Ecosystem</h2>
+        <p>Early large language models were mostly closed. Since 2023, more models have released weights under licenses that can allow commercial use, such as Apache 2.0, MIT, or custom commercial terms.</p>
+        <p>The open-llms repository maintained by Eugene Yan is a community resource that catalogs commercially usable public LLMs. It includes models of many sizes and purposes, such as Falcon, Mistral 7B, and Llama 3, and is continuously updated by the community.</p>
+
+        <h3>License Types</h3>
+        <p>Public LLM licenses vary by model. Common patterns include:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>License</th>
+                    <th>Commercial use</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Apache 2.0</td>
+                    <td>Generally allowed, with notice and disclaimer obligations</td>
+                    <td>OpenLLaMA, Falcon, Mistral 7B, and others</td>
+                </tr>
+                <tr>
+                    <td>MIT</td>
+                    <td>Generally allowed, with notice obligations</td>
+                    <td>Dolly, Phi-2, and others</td>
+                </tr>
+                <tr>
+                    <td>Custom terms</td>
+                    <td>May include MAU thresholds, attribution duties, acceptable-use policies, or other conditions</td>
+                    <td>Llama 3, Qwen, and others</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><small>Note: License details must be checked against each model's original license text and may change by version.</small></p>
+
+        <hr>
+
+        <h2>OpenLLaMA: A Public Reproduction of LLaMA (Example)</h2>
+        <p>This section introduces one concrete example of a public LLM. It does not mean BrainCheck uses OpenLLaMA.</p>
+        <p>OpenLLaMA is a project developed by researchers affiliated with Berkeley AI Research (UC Berkeley). It follows an architecture similar to Meta AI's LLaMA, but OpenLLaMA's own code and weights are released as a retrained model under Apache 2.0 terms.</p>
+
+        <h3>What "Reproduction" Means</h3>
+        <p>Meta AI's LLaMA (2023) originally provided model weights for research use, not under a commercial license. OpenLLaMA uses a similar model structure and training setup, such as learning rate and batch size, but replaces the training data with public datasets and trains the model from scratch. The goal is to provide terms that are more friendly to commercial use, subject to checking the original model and dataset licenses.</p>
+
+        <h3>Training Data</h3>
+        <ul>
+            <li><strong>v1 models</strong>: Trained on the RedPajama dataset. RedPajama, created by Together Computer, is a public dataset that reproduces the composition of LLaMA training data, including web documents, Wikipedia, books, academic papers, and code.</li>
+            <li><strong>v2 models</strong>: Trained on a mix of Falcon refined-web, StarCoder code data, and RedPajama components such as Wikipedia, academic papers, books, and StackExchange.</li>
+        </ul>
+
+        <h3>Model Sizes</h3>
+        <p>OpenLLaMA provides 3B, 7B, and 13B parameter models. Major public models targeted one trillion training tokens, and some were released in stages from preview to final. v2 focused mainly on 3B and 7B models.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Parameters</th>
+                    <th>Context length</th>
+                    <th>License</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>OpenLLaMA 3B (v1, v2)</td>
+                    <td>3B</td>
+                    <td>2,048 tokens</td>
+                    <td>Apache 2.0</td>
+                </tr>
+                <tr>
+                    <td>OpenLLaMA 7B (v1, v2)</td>
+                    <td>7B</td>
+                    <td>2,048 tokens</td>
+                    <td>Apache 2.0</td>
+                </tr>
+                <tr>
+                    <td>OpenLLaMA 13B (v1)</td>
+                    <td>13B</td>
+                    <td>2,048 tokens</td>
+                    <td>Apache 2.0</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><small>Context length means the amount of text the model can attend to at one time.</small></p>
+
+        <h3>Benchmark Reference</h3>
+        <p>According to benchmark results from the project, OpenLLaMA performs at a level similar to the original LLaMA on most evaluation tasks, such as English multiple-choice and commonsense benchmarks, and scores higher on some tasks.</p>
+        <p>These figures are reference values from research benchmarks. Real service quality, especially for Korean or educational content, can vary greatly depending on input material, post-processing, and evaluation criteria. Detailed numbers are available on the <a href="https://github.com/openlm-research/open_llama" target="_blank">OpenLLaMA GitHub</a> page.</p>
+        <p><small>Note: These figures are based on lm-evaluation-harness benchmark results in the OpenLLaMA GitHub repository. Results can vary by evaluation protocol, and the project notes slight differences from the original LLaMA paper.</small></p>
+
+        <hr>
+
+        <h2>Practical Use of Public LLMs</h2>
+        <p>Public LLMs can generate general-purpose text, but it is common to adapt them to a specific task through additional fine-tuning.</p>
+
+        <h3>Fine-Tuning</h3>
+        <p>Fine-tuning is the process of further training a pretrained LLM for a target task. Examples include:</p>
+        <ul>
+            <li><strong>Instruction following</strong>: Training the model to respond appropriately to user requests</li>
+            <li><strong>Domain adaptation</strong>: Improving performance for domains such as medicine, law, or education</li>
+            <li><strong>Output-format control</strong>: Training the model to produce JSON, Markdown, question-answer pairs, or other required formats</li>
+        </ul>
+        <p>Fine-tuning requires task-specific training data and evaluation, and larger models may require substantial compute resources.</p>
+
+        <hr>
+
+        <h2>Limits and Cautions</h2>
+        <p>LLM-based automatic generation has several important limits:</p>
+        <ul>
+            <li><strong>Hallucination</strong>: The model can generate plausible but incorrect information.</li>
+            <li><strong>Bias reflection</strong>: Biases in the input text or training data can be reflected in the output.</li>
+            <li><strong>Copyright caution</strong>: Generated material should avoid copying copyrighted source text directly.</li>
+            <li><strong>Personal information</strong>: Personal or sensitive information should not be included in inputs.</li>
+        </ul>
+        <p>For these reasons, automatically generated learning content should be reviewed by the user before use.</p>
+
+        <hr>
+
+        <h2>How BrainCheck Applies AI Content Generation</h2>
+        <p>BrainCheck helps create draft learning cards from text materials such as documents, articles, and transcribed audio, then lets users review and edit those drafts.</p>
+        <ol>
+            <li><strong>Text extraction</strong>: Extracts key content suitable for learning from the source material.</li>
+            <li><strong>Draft learning-card generation</strong>: Converts extracted content into flashcard formats such as question-answer pairs and fill-in-the-blank items.</li>
+            <li><strong>User review and editing</strong>: Provides editing tools so users can check and revise automatically generated cards.</li>
+        </ol>
+        <p>The quality of generated learning material depends on the source material, model capability, and post-processing. Final learning content should be used after user review.</p>
+
+        <hr>
+
+        <p><small>Note: Licenses can change by version. The sources below are based on information available in 2025.</small></p>
+        <p>Sources: <a href="https://github.com/openlm-research/open_llama" target="_blank">OpenLLaMA GitHub</a> · <a href="https://github.com/eugeneyan/open-llms" target="_blank">Open LLMs</a> · <a href="https://arxiv.org/abs/2302.13971" target="_blank">LLaMA paper</a> · <a href="https://github.com/togethercomputer/RedPajama-Data" target="_blank">RedPajama-Data</a> · <a href="https://huggingface.co/datasets/tiiuae/falcon-refinedweb" target="_blank">Falcon refined-web</a> · <a href="https://huggingface.co/datasets/bigcode/starcoderdata" target="_blank">StarCoder dataset</a></p>
+        {% else %}
         <h1>AI 기반 자동 학습 콘텐츠 생성 기술 소개</h1>
         <p>이 페이지는 뇌체크의 자동 학습 콘텐츠 생성 기능을 이해하기 위한 배경 기술을 소개합니다. 공개 대규모 언어 모델(LLM) 생태계를 중심으로 설명하며, 뇌체크가 특정 모델을 그대로 사용한다는 의미는 아닙니다.</p>
         <p><small>여기서 '공개 LLM'은 모델 가중치(학습 결과물)가 공개된 경우를 포함하며, 소프트웨어 분야의 '오픈소스'와 동일한 의미는 아닙니다. 모델·코드·데이터셋은 각각 라이선스가 다를 수 있어, 실제 사용 전 원문 확인이 필요합니다.</small></p>
@@ -145,6 +289,7 @@
 
         <p><small>※ 라이선스는 버전별로 변경될 수 있습니다. 아래 출처는 작성일(2025년) 기준입니다.</small></p>
         <p>출처: <a href="https://github.com/openlm-research/open_llama" target="_blank">OpenLLaMA GitHub</a> · <a href="https://github.com/eugeneyan/open-llms" target="_blank">Open LLMs</a> · <a href="https://arxiv.org/abs/2302.13971" target="_blank">LLaMA 논문</a> · <a href="https://github.com/togethercomputer/RedPajama-Data" target="_blank">RedPajama-Data</a> · <a href="https://huggingface.co/datasets/tiiuae/falcon-refinedweb" target="_blank">Falcon refined-web</a> · <a href="https://huggingface.co/datasets/bigcode/starcoderdata" target="_blank">StarCoder dataset</a></p>
+        {% endif %}
     </main>
 {% endblock %}
 
@@ -153,7 +298,7 @@
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "AI 기반 자동 학습 콘텐츠 생성 기술 소개",
+        "headline": "{% if t.lang == "en" %}AI-Powered Auto Content Generation Technology{% else %}AI 기반 자동 학습 콘텐츠 생성 기술 소개{% endif %}",
         "description": "{{ page_t.description }}",
         "url": "{{ canonical_url }}",
         "author": {
@@ -170,7 +315,7 @@
             }
         },
         "mainEntityOfPage": "{{ canonical_url }}",
-        "keywords": ["LLM", "대규모 언어 모델", "AI", "플래시카드", "학습 콘텐츠 생성", "OpenLLaMA"],
+        "keywords": {% if t.lang == "en" %}["LLM", "large language model", "AI", "flashcards", "learning content generation", "OpenLLaMA"]{% else %}["LLM", "대규모 언어 모델", "AI", "플래시카드", "학습 콘텐츠 생성", "OpenLLaMA"]{% endif %},
         "about": {
             "@type": "SoftwareApplication",
             "@id": "{{ canonical_home_url }}#app"

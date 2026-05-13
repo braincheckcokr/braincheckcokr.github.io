@@ -3,6 +3,124 @@
 {% block content %}
     <!-- Page Content -->
     <main class="page-content">
+        {% if t.lang == "en" %}
+        <h1>Multi-Platform Support Technology</h1>
+        <p>This page introduces the technical background behind how BrainCheck keeps its core learning flow consistent across iOS, Android, macOS, and Windows. It focuses on Flutter, Google's open-source UI framework.</p>
+
+        <hr>
+
+        <h2>Why Multi-Platform Support Matters</h2>
+        <p>Language learning happens repeatedly in everyday life. It is natural to study on a phone during a commute and on a desktop at home. If the learning experience changes too much from device to device, the learning flow breaks and users can become confused.</p>
+        <p>BrainCheck aims to provide consistent screen structure, interaction patterns, and learning data across iOS, Android, macOS, and Windows wherever possible.</p>
+
+        <hr>
+
+        <h2>What Is Flutter?</h2>
+        <p>Flutter is a UI framework developed by Google and released as open source under the BSD 3-Clause license. Most UI and application logic can be shared in a single codebase, while platform-specific settings and release configuration are managed separately. BrainCheck currently prioritizes iOS, Android, macOS, and Windows; web and Linux are outside the current app support scope.</p>
+
+        <h3>Core Characteristics</h3>
+
+        <h4>Single Codebase, Multiple Platforms</h4>
+        <p>Traditional app development usually requires separate iOS code in Swift or Objective-C and Android code in Kotlin or Java. Desktop support for Windows and macOS adds even more code. Flutter generates apps for multiple platforms from one Dart codebase.</p>
+
+        <h4>Own Rendering Model</h4>
+        <p>Instead of primarily relying on each platform's native UI components, Flutter draws the interface itself using renderers such as Skia inside its engine. The renderer can vary by platform and version.</p>
+        <p>This approach helps deliver a more consistent UI across platforms, though subtle differences can still appear because of font rendering, input methods, and OS settings. Flutter can also integrate with platform-specific native features or UI when needed.</p>
+
+        <h4>Widget-Based UI</h4>
+        <p>Most Flutter UI is built from widgets. Buttons, text, layouts, and animations are all expressed as combinations of widgets. Widgets form a tree, and when state changes, Flutter rebuilds the relevant widgets and optimizes rendering around the parts that need to be redrawn.</p>
+
+        <h4>Hot Reload</h4>
+        <p>During development, Hot Reload makes many changes visible quickly. Depending on the change, Hot Restart or a full rebuild may still be required.</p>
+
+        <hr>
+
+        <h2>Flutter Architecture</h2>
+        <p>Flutter uses a layered architecture.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Layer</th>
+                    <th>Role</th>
+                    <th>Implementation language</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Framework</td>
+                    <td>App development APIs such as widgets, layout, animation, and gestures</td>
+                    <td>Dart</td>
+                </tr>
+                <tr>
+                    <td>Engine</td>
+                    <td>Dart runtime, rendering pipeline, text rendering, I/O, and other core runtime features</td>
+                    <td>Mainly C++</td>
+                </tr>
+                <tr>
+                    <td>Embedder</td>
+                    <td>Platform entry point, event loop, and native integration</td>
+                    <td>Platform-specific languages such as Swift, Kotlin, and C++</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Developers usually work at the Framework layer, while the Engine and Embedder abstract many platform differences. Some features, such as permissions, file access, notifications, and in-app purchases, still require platform-specific settings or native integration.</p>
+
+        <hr>
+
+        <h2>Adaptive Design</h2>
+        <p>Even with one codebase, it is important to respect the conventions of each platform. Flutter provides tools for this:</p>
+        <ul>
+            <li><strong>Material Design and Cupertino widgets</strong>: Flutter provides both Android-style Material components and iOS-style Cupertino components. Adaptive design can be applied selectively depending on product intent.</li>
+            <li><strong>Responsive layout</strong>: Flutter provides tools for layouts that adapt from small phone screens to wide desktop screens.</li>
+            <li><strong>Platform channels</strong>: When platform-specific features such as camera, file system, or notifications are needed, platform channels connect Flutter code with native code.</li>
+        </ul>
+        <p>Perfectly identical behavior on every platform is difficult. Keyboard and mouse input, window resizing, multi-window behavior, file permissions, system fonts, and accessibility settings can all affect behavior and presentation.</p>
+
+        <hr>
+
+        <h2>BrainCheck App Supported Platforms</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Platform</th>
+                    <th>BrainCheck app support</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>iOS</td>
+                    <td>Supported</td>
+                </tr>
+                <tr>
+                    <td>Android</td>
+                    <td>Supported</td>
+                </tr>
+                <tr>
+                    <td>macOS</td>
+                    <td>Planned</td>
+                </tr>
+                <tr>
+                    <td>Windows</td>
+                    <td>Planned</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For Flutter's platform support policy, see the official <a href="https://docs.flutter.dev/reference/supported-platforms" target="_blank">Supported Platforms</a> documentation. BrainCheck's minimum OS versions are announced through each store and release notes.</p>
+
+        <hr>
+
+        <h2>How BrainCheck Applies Flutter</h2>
+        <p>BrainCheck uses Flutter to develop iOS, Android, macOS, and Windows apps from one codebase.</p>
+        <ol>
+            <li><strong>Consistent learning flow</strong>: Provides similar screen structure and interactions across devices wherever possible.</li>
+            <li><strong>Learning data sync</strong>: Designed to sync learning records across signed-in devices. Network conditions can delay or temporarily prevent some items from appearing immediately.</li>
+            <li><strong>Faster development cycle</strong>: Shared code speeds up feature improvements and bug fixes. Release timing can still differ because each platform has its own review and distribution policy.</li>
+        </ol>
+
+        <hr>
+
+        <p>Sources: <a href="https://docs.flutter.dev/ui" target="_blank">Flutter documentation - Building user interfaces</a> · <a href="https://docs.flutter.dev/resources/architectural-overview" target="_blank">Flutter architectural overview</a> · <a href="https://docs.flutter.dev/reference/supported-platforms" target="_blank">Flutter supported platforms</a> · <a href="https://github.com/flutter/flutter" target="_blank">Flutter GitHub</a></p>
+        {% else %}
         <h1>멀티플랫폼 지원 기술 소개</h1>
         <p>이 페이지는 뇌체크가 iOS, Android, macOS, Windows에서 핵심 학습 흐름을 일관되게 유지하는 기술적 배경을 소개합니다. Google이 개발한 오픈소스 UI 프레임워크인 Flutter를 중심으로 설명합니다.</p>
 
@@ -119,6 +237,7 @@
         <hr>
 
         <p>출처: <a href="https://docs.flutter.dev/ui" target="_blank">Flutter 공식 문서 — Building user interfaces</a> · <a href="https://docs.flutter.dev/resources/architectural-overview" target="_blank">Flutter 아키텍처 개요</a> · <a href="https://docs.flutter.dev/reference/supported-platforms" target="_blank">Flutter 지원 플랫폼</a> · <a href="https://github.com/flutter/flutter" target="_blank">Flutter GitHub</a></p>
+        {% endif %}
     </main>
 {% endblock %}
 
@@ -127,7 +246,7 @@
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "멀티플랫폼 지원 기술 소개 - Flutter 기반",
+        "headline": "{% if t.lang == "en" %}Multi-Platform Support Technology - Flutter Based{% else %}멀티플랫폼 지원 기술 소개 - Flutter 기반{% endif %}",
         "description": "{{ page_t.description }}",
         "url": "{{ canonical_url }}",
         "author": {
@@ -144,7 +263,7 @@
             }
         },
         "mainEntityOfPage": "{{ canonical_url }}",
-        "keywords": ["Flutter", "멀티플랫폼", "크로스플랫폼", "iOS", "Android", "macOS", "Windows"],
+        "keywords": {% if t.lang == "en" %}["Flutter", "multi-platform", "cross-platform", "iOS", "Android", "macOS", "Windows"]{% else %}["Flutter", "멀티플랫폼", "크로스플랫폼", "iOS", "Android", "macOS", "Windows"]{% endif %},
         "about": {
             "@type": "SoftwareApplication",
             "@id": "{{ canonical_home_url }}#app"
