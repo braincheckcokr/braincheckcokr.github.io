@@ -110,14 +110,14 @@
         "author": {
             "@type": "Organization",
             "name": "{{ t.site_name }}",
-            "url": "{{ site.base_url }}"
+            "url": "{{ canonical_home_url }}"
         },
         "publisher": {
             "@type": "Organization",
             "name": "{{ t.site_name }}",
             "logo": {
                 "@type": "ImageObject",
-                "url": "{{ site.base_url }}/assets/images/app_icon729.png"
+                "url": "{{ public_asset_url }}/images/app_icon729.png"
             }
         },
         "mainEntityOfPage": "{{ canonical_url }}",
@@ -129,7 +129,7 @@
         },
         "about": {
             "@type": "SoftwareApplication",
-            "@id": "{{ site.base_url }}/#app"
+            "@id": "{{ canonical_home_url }}#app"
         }
     }
     </script>
@@ -143,13 +143,13 @@
                 "@type": "ListItem",
                 "position": 1,
                 "name": "{{ t.global.nav.home }}",
-                "item": "{{ site.base_url }}/"
+                "item": "{{ canonical_home_url }}"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "{{ page_t.breadcrumb_parent }}",
-                "item": "{{ site.base_url }}/#features"
+                "item": "{{ canonical_home_url }}#features"
             },
             {
                 "@type": "ListItem",

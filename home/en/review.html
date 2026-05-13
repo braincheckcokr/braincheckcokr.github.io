@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6754181689, app-argument=https://braincheck.co.kr/home/en/review.html">
+    <title>User Reviews - BrainCheck</title>
+    <meta name="description" content="BrainCheck user reviews. Real user reviews including TOEIC score improvement of 200 points, increased English conversation confidence, and more.">
+    <meta name="keywords" content="BrainCheck, reviews, testimonials, English app reviews, English learning reviews, TOEIC">
+    <meta name="author" content="BrainCheck">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BrainCheck">
+    <meta property="og:title" content="BrainCheck - When you let go, focus begins.">
+    <meta property="og:description" content="English conversation, English writing — BrainCheck is a minimalist app designed to help you focus on the essence of language learning through flashcard abstraction.">
+    <meta property="og:url" content="https://braincheck.co.kr/home/en/review.html">
+    <meta property="og:image" content="https://braincheck.co.kr/home/en/assets/images/og_kakao.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BrainCheck - When you let go, focus begins.">
+    <meta name="twitter:description" content="English conversation, English writing — BrainCheck is a minimalist app designed to help you focus on the essence of language learning through flashcard abstraction.">
+    <meta name="twitter:image" content="https://braincheck.co.kr/home/en/assets/images/og_kakao.png">
+    <link rel="canonical" href="https://braincheck.co.kr/home/en/review.html">
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="ko" href="https://braincheck.co.kr/home/ko/review.html">
+    <link rel="alternate" hreflang="en" href="https://braincheck.co.kr/home/en/review.html">
+    <link rel="alternate" hreflang="x-default" href="https://braincheck.co.kr/home/ko/review.html">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/app_icon58.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/app_icon729.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/app_icon729.png">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css?v=1778412803382">
+<style>
+    .review-hero {
+        padding: 140px 40px 60px;
+        text-align: center;
+        background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
+    }
+
+    .review-hero h1 {
+        font-size: clamp(28px, 5vw, 42px);
+        font-weight: 800;
+        margin-bottom: 16px;
+    }
+
+    .review-hero h1 span {
+        background: linear-gradient(135deg, #00704A 0%, #005A3B 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .review-hero p {
+        font-size: 16px;
+        color: #666;
+    }
+
+    .review-section {
+        padding: 40px 40px 100px;
+        max-width: 980px;
+        margin: 0 auto;
+    }
+
+    .review-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+    }
+
+    .review-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 32px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-left: 4px solid #00704A;
+    }
+
+    .review-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .review-card h3,
+    .review-card p.review-content {
+        cursor: pointer;
+        border-radius: 6px;
+        padding: 4px 8px;
+        margin-left: -8px;
+        margin-right: -8px;
+        transition: background 0.2s;
+        position: relative;
+    }
+
+    .review-card h3:hover,
+    .review-card p.review-content:hover {
+        background: #f0f7f0;
+    }
+
+    .review-card h3:active,
+    .review-card p.review-content:active {
+        background: #e0f0e0;
+    }
+
+    .copied-feedback {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s, transform 0.2s;
+        z-index: 9999;
+    }
+
+    .copied-feedback.show {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .review-card h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 16px;
+        line-height: 1.4;
+    }
+
+    .review-card p {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.8;
+    }
+
+    .review-card .stars {
+        margin-bottom: 12px;
+        color: #FFB800;
+        font-size: 16px;
+    }
+
+    .refresh-btn {
+        display: block;
+        margin: 40px auto 0;
+        padding: 14px 32px;
+        background: linear-gradient(135deg, #00704A 0%, #005A3B 100%);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .refresh-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(76, 176, 80, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        .review-hero {
+            padding: 100px 20px 40px;
+        }
+
+        .review-section {
+            padding: 20px 20px 60px;
+        }
+
+        .review-card {
+            padding: 24px;
+        }
+    }
+</style>
+</head>
+<body class="has-app-banner" data-nav-prefix="./" data-ios-store-url="https://apps.apple.com/kr/app/%EB%87%8C%EC%B2%B4%ED%81%AC-%EC%98%81%EC%96%B4%ED%9A%8C%ED%99%94-%EC%98%81%EC%96%B4%EC%9E%91%EB%AC%B8/id6754181689" data-android-store-url="https://play.google.com/store/apps/details?id=kr.co.braincheck.bc&amp;hl=ko" data-one-link-url="https://braincheck.onelink.me/fc86/glgprgei">
+    <div class="app-banner" data-app-banner>
+        <img class="app-banner-icon" src="assets/images/app_mark_transparent.png" alt="">
+        <div class="app-banner-copy">
+            <strong class="app-banner-title">Brain Check</strong>
+        </div>
+        <button class="app-banner-action" type="button" data-app-banner-action data-app-download>Download</button>
+        <button class="app-banner-close" type="button" aria-label="Close banner" data-app-banner-close>&times;</button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="./index.html" class="logo">Brain<span>Check</span></a>
+        <nav class="nav-links">
+            <a href="./about.html">About</a>
+            <details class="nav-subscription-menu">
+                <summary>Subscription</summary>
+                <div class="nav-subscription-panel">
+                    <a href="./subscription/pricing.html">Pricing</a>
+                    <a href="./subscription/terms-of-service.html">Terms of Service</a>
+                    <a href="./subscription/refund-policy.html">Refund Policy</a>
+                </div>
+            </details>
+            <a href="./support.html">Support</a>
+            <a href="./information.html">Privacy Policy</a>
+            <a href="/home/ko/" class="lang-switch" style="font-weight:700;color:#00704A;">KO</a>
+        </nav>
+        <div class="header-mobile-actions">
+            <a href="/home/ko/" class="mobile-lang-switch">KO</a>
+        </div>
+    </header>
+
+<!-- Hero -->
+<section class="review-hero">
+    <h1>Real <span>User Reviews</span></h1>
+    <p>Actual reviews from BrainCheck users</p>
+</section>
+
+<!-- Reviews -->
+<section class="review-section">
+    <div class="review-grid" id="reviewGrid">
+        <!-- Reviews will be inserted here by JavaScript -->
+    </div>
+    <button class="refresh-btn" onclick="displayRandomReviews()">See More Reviews</button>
+</section>
+
+<!-- App Download -->
+<section class="section" style="text-align: center;">
+    <h2>Get Started Now</h2>
+    <div class="download-section app-download-section">
+    <button class="app-download-button" type="button" data-app-download aria-label="App download">
+        <img src="assets/images/icons/playstore-filled.svg" alt="" aria-hidden="true">
+        <img src="assets/images/icons/apple-filled.svg" alt="" aria-hidden="true">
+        <span>App download</span>
+    </button>
+</div>
+
+</section>
+
+<div id="copiedFeedback" class="copied-feedback">Copied ✓</div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./support.html">Support</a>
+            <a href="./information.html">Privacy Policy</a>
+        </div>
+        <p><a href="./review.html" style="text-decoration:none;color:inherit;">&copy; BrainCheck</a></p>
+    </footer>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://braincheck.co.kr/home/en/review.html",
+    "name": "User Reviews - BrainCheck",
+    "description": "BrainCheck user reviews. Real user reviews including TOEIC score improvement of 200 points, increased English conversation confidence, and more.",
+    "isPartOf": {
+        "@id": "https://braincheck.co.kr/home/en/#website"
+    }
+}
+</script>
+
+    <div class="download-modal" data-download-modal hidden role="dialog" aria-modal="true" aria-labelledby="download-modal-title">
+        <div class="download-modal-card">
+            <button class="download-modal-close" type="button" aria-label="Close QR" data-download-modal-close>&times;</button>
+            <h2 id="download-modal-title">Scan with your camera to get started</h2>
+            <div class="download-qr-wrap">
+                <img class="download-qr" data-download-qr alt="App Download QR Code">
+            </div>
+            <a class="download-modal-link" data-download-fallback-link href="https://braincheck.onelink.me/fc86/glgprgei">Open link</a>
+        </div>
+    </div>
+
+    <script src="assets/common.js?v=1778311120424"></script>
+<script>
+    const REVIEWS_BASE_URL = 'assets/data/reviews/';
+    const TEXT_LOADING = 'Loading reviews...';
+    const TEXT_REFRESH = 'See More Reviews';
+    const TEXT_INIT_LOADING = 'Loading reviews...';
+    const TEXT_ERROR = 'Unable to load reviews.';
+    
+    let manifest = null;
+    let loadedReviews = [];
+    let currentChunkIndex = 0;
+    let usedIds = new Set();
+    const isAndroid = /Android/i.test(navigator.userAgent);
+
+    async function loadManifest() {
+        const res = await fetch(REVIEWS_BASE_URL + 'manifest.json');
+        manifest = await res.json();
+    }
+
+    async function loadChunk(index) {
+        if (!manifest || index >= manifest.chunks.length) return false;
+        const filename = manifest.chunks[index];
+        const res = await fetch(REVIEWS_BASE_URL + filename + '?v=' + manifest.version);
+        const chunk = await res.json();
+        loadedReviews = chunk;
+        usedIds.clear();
+        return true;
+    }
+
+    function getRandomReviews(count) {
+        const available = loadedReviews.filter(r => !usedIds.has(r.id));
+        if (available.length < count) {
+            usedIds.clear();
+            return getRandomReviews(count);
+        }
+        const shuffled = available.sort(() => Math.random() - 0.5);
+        const selected = shuffled.slice(0, count);
+        selected.forEach(r => usedIds.add(r.id));
+        return selected;
+    }
+
+    async function displayRandomReviews() {
+        const grid = document.getElementById('reviewGrid');
+        const btn = document.querySelector('.refresh-btn');
+        
+        if (loadedReviews.length === 0 || usedIds.size >= loadedReviews.length * 0.8) {
+            btn.disabled = true;
+            btn.textContent = TEXT_LOADING;
+            currentChunkIndex = (currentChunkIndex + 1) % manifest.chunks.length;
+            await loadChunk(currentChunkIndex);
+            btn.disabled = false;
+            btn.textContent = TEXT_REFRESH;
+        }
+
+        const reviews = getRandomReviews(4);
+        grid.innerHTML = reviews.map(review => {
+            const fullText = review.title + ' ' + review.content;
+            if (isAndroid) {
+                return `
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-content" onclick="copyText('${fullText.replace(/'/g, "\\'")}')">${fullText}</p>
+                    </div>
+                `;
+            } else {
+                return `
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <h3 onclick="copyText(this.textContent)">${review.title}</h3>
+                        <p class="review-content" onclick="copyText(this.textContent)">${review.content}</p>
+                    </div>
+                `;
+            }
+        }).join('');
+    }
+
+    function copyText(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            const toast = document.getElementById('copiedFeedback');
+            toast.classList.add('show');
+            clearTimeout(toast._timer);
+            toast._timer = setTimeout(() => toast.classList.remove('show'), 1000);
+        });
+    }
+
+    async function init() {
+        const grid = document.getElementById('reviewGrid');
+        grid.innerHTML = '<p style="text-align:center;color:#666;">' + TEXT_INIT_LOADING + '</p>';
+        try {
+            await loadManifest();
+            await loadChunk(0);
+            await displayRandomReviews();
+        } catch (e) {
+            grid.innerHTML = '<p style="text-align:center;color:#666;">' + TEXT_ERROR + '</p>';
+        }
+    }
+
+    init();
+</script>
+</body>
+</html>

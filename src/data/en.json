@@ -13,7 +13,7 @@
     },
     "lang_switch": {
       "label": "KO",
-      "url": "/"
+      "url": "/home/ko/"
     },
     "footer": {
       "copyright": "BrainCheck"
@@ -29,8 +29,7 @@
     "download": {
       "heading": "Get Started Now",
       "button_label": "App download",
-      "banner_subtitle": "Continue public learning content in Web Play",
-      "banner_action": "Open",
+      "banner_action": "Download",
       "banner_close_label": "Close banner",
       "app_store_alt": "Download on the App Store",
       "google_play_alt": "Get it on Google Play",
@@ -244,28 +243,28 @@
         }
       ]
     },
-    "paddle": {
+    "subscription": {
       "title": "Subscription - BrainCheck",
       "description": "BrainCheck Plus subscription guide. Review pricing, terms of service, and refund policy.",
       "keywords": "BrainCheck, Brain Check Plus, subscription, pricing, terms of service, refund policy",
       "heading": "Subscription",
       "breadcrumb_name": "Subscription"
     },
-    "paddle-pricing": {
+    "subscription-pricing": {
       "title": "Brain Check Plus Pricing - BrainCheck",
       "description": "Brain Check Plus pricing. Plus is US$4.50 monthly or US$43 yearly with 50GB storage and 20,000 AI Credits per month.",
       "keywords": "Brain Check Plus, BrainCheck, subscription, monthly subscription, yearly subscription, AI Credits, storage",
       "breadcrumb_name": "Pricing",
       "breadcrumb_parent": "Subscription"
     },
-    "paddle-terms-of-service": {
+    "subscription-terms-of-service": {
       "title": "Brain Check Terms of Service - BrainCheck",
       "description": "Terms of service for Brain Check and Brain Check Plus subscriptions.",
       "keywords": "BrainCheck, Brain Check, terms of service, subscription terms",
       "breadcrumb_name": "Terms of Service",
       "breadcrumb_parent": "Subscription"
     },
-    "paddle-refund-policy": {
+    "subscription-refund-policy": {
       "title": "Brain Check Refund Policy - BrainCheck",
       "description": "Brain Check Plus refund policy, subscription cancellation, and AI Credits expiration guide.",
       "keywords": "BrainCheck, Brain Check Plus, refund policy, subscription cancellation, AI Credits",

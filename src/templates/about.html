@@ -71,19 +71,19 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "@id": "{{ site.base_url }}/#organization",
+        "@id": "{{ canonical_home_url }}#organization",
         "name": "{{ page_t.schemas.org.name }}",
         "alternateName": "BrainCheck",
-        "url": "{{ site.base_url }}/",
+        "url": "{{ canonical_home_url }}",
         "logo": {
             "@type": "ImageObject",
-            "url": "{{ site.base_url }}/assets/images/app_icon729.png",
+            "url": "{{ public_asset_url }}/images/app_icon729.png",
             "width": 729,
             "height": 729
         },
         "founder": {
             "@type": "Person",
-            "@id": "{{ site.base_url }}/#founder",
+            "@id": "{{ canonical_home_url }}#founder",
             "name": "{{ page_t.schemas.org.founder_name }}",
             "url": "{{ site.social.linkedin }}",
             "jobTitle": "{{ page_t.schemas.org.founder_title }}",
@@ -136,7 +136,7 @@
                 "@type": "ListItem",
                 "position": 1,
                 "name": "{{ t.global.nav.home }}",
-                "item": "{{ site.base_url }}/"
+                "item": "{{ canonical_home_url }}"
             },
             {
                 "@type": "ListItem",

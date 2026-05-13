@@ -9,6 +9,9 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const DATA_DIR = path.join(__dirname, 'data');
 const TMPL_DIR = path.join(__dirname, 'templates');
+const HOME_FEATURE = 'home';
+const STORE_FEATURE = 'store';
+const LOCALIZED_ASSET_DIR = 'assets';
 
 // ── Load data ──────────────────────────────────────────────────
 const site = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'site.json'), 'utf8'));
@@ -49,18 +52,65 @@ function pageSupportsLang(page, lang) {
   return !Array.isArray(page.langs) || page.langs.includes(lang);
 }
 
+function langOutputDir(lang) {
+  return path.join(ROOT, HOME_FEATURE, lang);
+}
+
+function publicHomePath(lang, page) {
+  const suffix = page.slug === 'index' ? '' : page.file;
+  return suffix === ''
+    ? `/${HOME_FEATURE}/${lang}/`
+    : `/${HOME_FEATURE}/${lang}/${suffix}`;
+}
+
+function publicHomeURL(lang, page) {
+  return site.base_url + publicHomePath(lang, page);
+}
+
+function publicStorePath(lang, suffix = '') {
+  return `/${STORE_FEATURE}/${lang}${suffix}`;
+}
+
+function publicStoreURL(lang, suffix = '') {
+  return site.base_url + publicStorePath(lang, suffix);
+}
+
 function relativePrefix(fromFile, lang) {
-  const langDir = lang === site.default_lang ? ROOT : path.join(ROOT, lang);
+  const langDir = langOutputDir(lang);
   const fromDir = path.dirname(path.join(langDir, fromFile));
   const rel = path.relative(fromDir, langDir);
   return rel === '' ? './' : rel.split(path.sep).join('/') + '/';
 }
 
 function assetPrefix(fromFile, lang) {
-  const langDir = lang === site.default_lang ? ROOT : path.join(ROOT, lang);
+  const langDir = langOutputDir(lang);
   const fromDir = path.dirname(path.join(langDir, fromFile));
-  const rel = path.relative(fromDir, ROOT);
+  const rel = path.relative(fromDir, path.join(langDir, LOCALIZED_ASSET_DIR));
   return rel === '' ? './' : rel.split(path.sep).join('/') + '/';
+}
+
+function copyLocalizedAssets(lang) {
+  const assetDir = path.join(langOutputDir(lang), LOCALIZED_ASSET_DIR);
+  ensureDir(assetDir);
+  fs.cpSync(path.join(ROOT, 'assets'), assetDir, { recursive: true });
+  fs.copyFileSync(path.join(ROOT, 'styles.css'), path.join(assetDir, 'styles.css'));
+  fs.copyFileSync(path.join(ROOT, 'common.js'), path.join(assetDir, 'common.js'));
+}
+
+function localizedAlternates(page) {
+  return site.languages
+    .filter((lang) => pageSupportsLang(page, lang))
+    .map((lang) => ({
+      lang,
+      href: publicHomeURL(lang, page),
+    }));
+}
+
+function localizedStoreAlternates(suffix) {
+  return site.languages.map((lang) => ({
+    lang,
+    href: publicStoreURL(lang, suffix),
+  }));
 }
 
 // ── Build pages ────────────────────────────────────────────────
@@ -70,9 +120,9 @@ const js_version = getAssetVersion('common.js');
 
 for (const lang of site.languages) {
   const t = translations[lang];
-  const isDefault = lang === site.default_lang;
-  const outDir = isDefault ? ROOT : path.join(ROOT, lang);
+  const outDir = langOutputDir(lang);
   ensureDir(outDir);
+  copyLocalizedAssets(lang);
 
   for (const page of site.pages) {
     if (!pageSupportsLang(page, lang)) {
@@ -87,34 +137,26 @@ for (const lang of site.languages) {
 
     const asset_prefix = assetPrefix(page.file, lang);
     const nav_prefix = relativePrefix(page.file, lang);
-
-    // Canonical URL logic:
-    //   Korean index  → base_url + "/"
-    //   Korean others → base_url + "/about.html"
-    //   English index → base_url + "/en/"
-    //   English others→ base_url + "/en/about.html"
-    let canonical_url;
-    if (isDefault) {
-      canonical_url = page.slug === 'index'
-        ? site.base_url + '/'
-        : site.base_url + '/' + page.file;
-    } else {
-      canonical_url = page.slug === 'index'
-        ? site.base_url + '/' + lang + '/'
-        : site.base_url + '/' + lang + '/' + page.file;
-    }
+    const canonical_url = publicHomeURL(lang, page);
+    const alternates = localizedAlternates(page);
 
     const context = {
       t,
       page_t,
       site,
       canonical_url,
+      canonical_home_url: publicHomeURL(lang, { slug: 'index', file: 'index.html' }),
+      public_asset_url: site.base_url + publicHomePath(lang, { slug: 'index', file: 'index.html' }) + LOCALIZED_ASSET_DIR,
       og_type: page.og_type,
       asset_prefix,
       nav_prefix,
       page_file: page.file,
       page_slug: page.slug,
       page_langs: page.langs || site.languages,
+      alternates,
+      x_default_url: pageSupportsLang(page, site.default_lang)
+        ? publicHomeURL(site.default_lang, page)
+        : '',
       css_version,
       js_version,
     };
@@ -136,64 +178,56 @@ function buildSitemap() {
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
   xml += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
 
+  const addURL = ({ loc, priority, alternates, xDefaultHref }) => {
+    xml += '  <url>\n';
+    xml += `    <loc>${loc}</loc>\n`;
+    xml += `    <lastmod>${now}</lastmod>\n`;
+    xml += `    <priority>${priority}</priority>\n`;
+
+    for (const { lang: altLang, href: altHref } of alternates) {
+      xml += `    <xhtml:link rel="alternate" hreflang="${altLang}" href="${altHref}" />\n`;
+    }
+    if (xDefaultHref) {
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${xDefaultHref}" />\n`;
+    }
+
+    xml += '  </url>\n';
+  };
+
   for (const page of site.pages) {
-    // Each page gets entries for each language
     for (const lang of site.languages) {
       if (!pageSupportsLang(page, lang)) {
         continue;
       }
 
-      const isDefault = lang === site.default_lang;
-      let loc;
-      if (isDefault) {
-        loc = page.slug === 'index'
-          ? site.base_url + '/'
-          : site.base_url + '/' + page.file;
-      } else {
-        loc = page.slug === 'index'
-          ? site.base_url + '/' + lang + '/'
-          : site.base_url + '/' + lang + '/' + page.file;
-      }
-
-      xml += '  <url>\n';
-      xml += `    <loc>${loc}</loc>\n`;
-      xml += `    <lastmod>${now}</lastmod>\n`;
-
-      // Priority: index highest, then main pages, then articles
       const priority = page.slug === 'index' ? '1.0'
         : ['about', 'support', 'review'].includes(page.slug) ? '0.8'
         : page.slug === 'information' ? '0.5'
         : '0.7';
-      xml += `    <priority>${priority}</priority>\n`;
 
-      // hreflang alternates
-      for (const altLang of site.languages) {
-        if (!pageSupportsLang(page, altLang)) {
-          continue;
-        }
+      addURL({
+        loc: publicHomeURL(lang, page),
+        priority,
+        alternates: localizedAlternates(page),
+        xDefaultHref: pageSupportsLang(page, site.default_lang)
+          ? publicHomeURL(site.default_lang, page)
+          : '',
+      });
+    }
+  }
 
-        const altDefault = altLang === site.default_lang;
-        let altHref;
-        if (altDefault) {
-          altHref = page.slug === 'index'
-            ? site.base_url + '/'
-            : site.base_url + '/' + page.file;
-        } else {
-          altHref = page.slug === 'index'
-            ? site.base_url + '/' + altLang + '/'
-            : site.base_url + '/' + altLang + '/' + page.file;
-        }
-        xml += `    <xhtml:link rel="alternate" hreflang="${altLang}" href="${altHref}" />\n`;
-      }
-      // x-default → default language
-      if (pageSupportsLang(page, site.default_lang)) {
-        const xDefaultHref = page.slug === 'index'
-          ? site.base_url + '/'
-          : site.base_url + '/' + page.file;
-        xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${xDefaultHref}" />\n`;
-      }
-
-      xml += '  </url>\n';
+  for (const storePage of [
+    { suffix: '', priority: '0.9' },
+    { suffix: '/books', priority: '0.8' },
+    { suffix: '/charts', priority: '0.8' },
+  ]) {
+    for (const lang of site.languages) {
+      addURL({
+        loc: publicStoreURL(lang, storePage.suffix),
+        priority: storePage.priority,
+        alternates: localizedStoreAlternates(storePage.suffix),
+        xDefaultHref: publicStoreURL(site.default_lang, storePage.suffix),
+      });
     }
   }
 
@@ -208,31 +242,6 @@ function buildRobots() {
   const content = `User-agent: *
 Allow: /
 
-# AI Crawlers - Explicitly Allowed
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
 Sitemap: ${site.base_url}/sitemap.xml
 `;
 
@@ -243,7 +252,7 @@ Sitemap: ${site.base_url}/sitemap.xml
 
 // ── Generate llms.txt ──────────────────────────────────────────
 function buildLlmsTxt() {
-  // Korean llms.txt (root)
+  // Curated global llms.txt (root discovery file).
   const koT = translations.ko;
   const koLines = [
     `# ${koT.site_name} (BrainCheck)`,
@@ -256,70 +265,21 @@ function buildLlmsTxt() {
   for (const page of site.pages) {
     if (['index', 'about', 'support', 'information'].includes(page.slug)) {
       const pt = koT.pages[page.slug];
-      const url = page.slug === 'index'
-        ? site.base_url + '/'
-        : site.base_url + '/' + page.file;
+      const url = publicHomeURL('ko', page);
       const label = page.slug === 'index' ? '홈페이지' : pt.breadcrumb_name || pt.title.replace(/ - .*$/, '');
       koLines.push(`- [${label}](${url}): ${pt.description}`);
     }
   }
-  koLines.push('', '## 기술 문서', '');
-  for (const page of site.pages) {
-    if (['mlsystem', 'tts', 'stt', 'ai-content', 'multiplatform'].includes(page.slug)) {
-      const pt = koT.pages[page.slug];
-      const url = site.base_url + '/' + page.file;
-      const label = pt.breadcrumb_name || pt.title.replace(/ - .*$/, '');
-      koLines.push(`- [${label}](${url}): ${pt.description}`);
-    }
-  }
-  koLines.push('', '## 앱 다운로드', '');
-  koLines.push(`- [App Store (iOS)](${site.app_links.app_store})`);
-  koLines.push(`- [Google Play (Android)](${site.app_links.google_play})`);
+  koLines.push('', '## Store', '');
+  koLines.push(`- [Brain Check Store](${site.base_url}/store/ko)`);
+  koLines.push(`- [Brain Check Store EN](${site.base_url}/store/en)`);
+  koLines.push(`- [Books](${site.base_url}/store/ko/books)`);
+  koLines.push(`- [Books EN](${site.base_url}/store/en/books)`);
+  koLines.push(`- [Sitemap](${site.base_url}/sitemap.xml)`);
   koLines.push('');
 
   fs.writeFileSync(path.join(ROOT, 'llms.txt'), koLines.join('\n'), 'utf8');
   generated.push('llms.txt');
-
-  // English llms.txt
-  const enT = translations.en;
-  if (enT) {
-    const enDir = path.join(ROOT, 'en');
-    ensureDir(enDir);
-    const enLines = [
-      `# ${enT.site_name}`,
-      '',
-      `> ${enT.global.og.description}`,
-      '',
-      '## Main Links',
-      '',
-    ];
-    for (const page of site.pages) {
-      if (['index', 'about', 'support', 'information'].includes(page.slug)) {
-        const pt = enT.pages[page.slug];
-        const url = page.slug === 'index'
-          ? site.base_url + '/en/'
-          : site.base_url + '/en/' + page.file;
-        const label = page.slug === 'index' ? 'Home' : pt.breadcrumb_name || pt.title.replace(/ - .*$/, '');
-        enLines.push(`- [${label}](${url}): ${pt.description}`);
-      }
-    }
-    enLines.push('', '## Technical Documentation', '');
-    for (const page of site.pages) {
-      if (['mlsystem', 'tts', 'stt', 'ai-content', 'multiplatform'].includes(page.slug)) {
-        const pt = enT.pages[page.slug];
-        const url = site.base_url + '/en/' + page.file;
-        const label = pt.breadcrumb_name || pt.title.replace(/ - .*$/, '');
-        enLines.push(`- [${label}](${url}): ${pt.description}`);
-      }
-    }
-    enLines.push('', '## Download', '');
-    enLines.push(`- [App Store (iOS)](${site.app_links.app_store})`);
-    enLines.push(`- [Google Play (Android)](${site.app_links.google_play})`);
-    enLines.push('');
-
-    fs.writeFileSync(path.join(enDir, 'llms.txt'), enLines.join('\n'), 'utf8');
-    generated.push('en/llms.txt');
-  }
 }
 
 // ── Run generators ─────────────────────────────────────────────

@@ -177,7 +177,7 @@
 
 {% block scripts %}
 <script>
-    const REVIEWS_BASE_URL = '{{ asset_prefix }}assets/data/reviews/';
+    const REVIEWS_BASE_URL = '{{ asset_prefix }}data/reviews/';
     const TEXT_LOADING = '{{ page_t.loading }}';
     const TEXT_REFRESH = '{{ page_t.refresh_btn }}';
     const TEXT_INIT_LOADING = '{{ page_t.loading }}';
@@ -285,7 +285,7 @@
     "name": "{{ page_t.title }}",
     "description": "{{ page_t.description }}",
     "isPartOf": {
-        "@id": "{{ site.base_url }}#website"
+        "@id": "{{ canonical_home_url }}#website"
     }
 }
 </script>

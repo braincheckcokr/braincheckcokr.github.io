@@ -16,7 +16,7 @@
     <meta property="og:title" content="{{ t.global.og.title }}">
     <meta property="og:description" content="{{ t.global.og.description }}">
     <meta property="og:url" content="{{ canonical_url }}">
-    <meta property="og:image" content="{{ site.base_url }}/assets/images/og_kakao.png">
+    <meta property="og:image" content="{{ public_asset_url }}/images/og_kakao.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
@@ -26,36 +26,29 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ t.global.twitter.title }}">
     <meta name="twitter:description" content="{{ t.global.twitter.description }}">
-    <meta name="twitter:image" content="{{ site.base_url }}/assets/images/og_kakao.png">
+    <meta name="twitter:image" content="{{ public_asset_url }}/images/og_kakao.png">
     <link rel="canonical" href="{{ canonical_url }}">
 
     <!-- hreflang -->
-    {% for alt_lang in site.languages %}
-    {% if alt_lang in page_langs %}
-    {% if alt_lang == site.default_lang %}
-    <link rel="alternate" hreflang="{{ alt_lang }}" href="{{ site.base_url }}/{{ page_file }}">
-    {% else %}
-    <link rel="alternate" hreflang="{{ alt_lang }}" href="{{ site.base_url }}/{{ alt_lang }}/{{ page_file }}">
-    {% endif %}
-    {% endif %}
+    {% for alternate in alternates %}
+    <link rel="alternate" hreflang="{{ alternate.lang }}" href="{{ alternate.href }}">
     {% endfor %}
-    {% if site.default_lang in page_langs %}
-    <link rel="alternate" hreflang="x-default" href="{{ site.base_url }}/{{ page_file }}">
+    {% if x_default_url %}
+    <link rel="alternate" hreflang="x-default" href="{{ x_default_url }}">
     {% endif %}
 
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset_prefix }}assets/images/app_icon58.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset_prefix }}assets/images/app_icon729.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset_prefix }}assets/images/app_icon729.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset_prefix }}images/app_icon58.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset_prefix }}images/app_icon729.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset_prefix }}images/app_icon729.png">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset_prefix }}styles.css?v={{ css_version }}">
     {% block head %}{% endblock %}
 </head>
 <body class="has-app-banner" data-nav-prefix="{{ nav_prefix }}" data-ios-store-url="{{ site.app_links.app_store }}" data-android-store-url="{{ site.app_links.google_play | replace("&", "&amp;") }}" data-one-link-url="{{ site.app_links.one_link }}">
     <div class="app-banner" data-app-banner>
-        <img class="app-banner-icon" src="{{ asset_prefix }}assets/images/app_mark_transparent.png" alt="">
+        <img class="app-banner-icon" src="{{ asset_prefix }}images/app_mark_transparent.png" alt="">
         <div class="app-banner-copy">
             <strong class="app-banner-title">Brain Check</strong>
-            <span class="app-banner-subtitle">{{ t.global.download.banner_subtitle }}</span>
         </div>
         <button class="app-banner-action" type="button" data-app-banner-action data-app-download>{{ t.global.download.banner_action }}</button>
         <button class="app-banner-close" type="button" aria-label="{{ t.global.download.banner_close_label }}" data-app-banner-close>&times;</button>
@@ -70,18 +63,18 @@
             <details class="nav-subscription-menu">
                 <summary>Subscription</summary>
                 <div class="nav-subscription-panel">
-                    <a href="{{ nav_prefix }}paddle/pricing.html">Pricing</a>
-                    <a href="{{ nav_prefix }}paddle/terms-of-service.html">Terms of Service</a>
-                    <a href="{{ nav_prefix }}paddle/refund-policy.html">Refund Policy</a>
+                    <a href="{{ nav_prefix }}subscription/pricing.html">Pricing</a>
+                    <a href="{{ nav_prefix }}subscription/terms-of-service.html">Terms of Service</a>
+                    <a href="{{ nav_prefix }}subscription/refund-policy.html">Refund Policy</a>
                 </div>
             </details>
             {% else %}
             <details class="nav-subscription-menu">
                 <summary>구독</summary>
                 <div class="nav-subscription-panel">
-                    <a href="{{ nav_prefix }}paddle/pricing.html">요금제</a>
-                    <a href="{{ nav_prefix }}paddle/terms-of-service.html">이용약관</a>
-                    <a href="{{ nav_prefix }}paddle/refund-policy.html">환불 정책</a>
+                    <a href="{{ nav_prefix }}subscription/pricing.html">요금제</a>
+                    <a href="{{ nav_prefix }}subscription/terms-of-service.html">이용약관</a>
+                    <a href="{{ nav_prefix }}subscription/refund-policy.html">환불 정책</a>
                 </div>
             </details>
             {% endif %}

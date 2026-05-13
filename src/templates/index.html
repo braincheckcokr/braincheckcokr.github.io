@@ -19,7 +19,7 @@
         <div class="hero-rank-strip">
             {% for badge in page_t.badges %}
             <div class="hero-rank-item">
-                <img src="{{ asset_prefix }}assets/images/badge_no1.png" alt="{{ badge.text }}" class="hero-rank-icon">
+                <img src="{{ asset_prefix }}images/badge_no1.png" alt="{{ badge.text }}" class="hero-rank-icon">
                 <div class="hero-rank-copy">
                     <div class="hero-rank-text">{{ badge.text }}</div>
                     <div class="hero-rank-note">{{ badge.note }}</div>
@@ -33,7 +33,7 @@
                     {% set preview_images = ["preview-01.png", "preview-02.png", "preview-03.png", "preview-04.png", "preview-05.png", "preview-06.png", "preview-07.png", "preview-08.png"] %}
                     {% for image in preview_images %}
                     <figure class="hero-screen-frame" data-preview-item>
-                        <img src="{{ asset_prefix }}assets/images/store-preview/{{ t.global.preview.image_dir }}/{{ image }}" alt="{{ t.global.preview.image_alt }} {{ loop.index }}" class="hero-screen" loading="eager">
+                        <img src="{{ asset_prefix }}images/store-preview/{{ t.global.preview.image_dir }}/{{ image }}" alt="{{ t.global.preview.image_alt }} {{ loop.index }}" class="hero-screen" loading="eager">
                     </figure>
                     {% endfor %}
                 </div>
@@ -140,16 +140,16 @@
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "@id": "{{ site.base_url }}/#website",
+        "@id": "{{ canonical_home_url }}#website",
         "name": "{{ page_t.schemas.website.name }}",
         "alternateName": "BrainCheck",
-        "url": "{{ site.base_url }}/",
+        "url": "{{ canonical_home_url }}",
         "publisher": {
             "@type": "Organization",
             "name": "{{ page_t.schemas.website.name }}",
             "logo": {
                 "@type": "ImageObject",
-                "url": "{{ site.base_url }}/assets/images/app_icon729.png",
+                "url": "{{ public_asset_url }}/images/app_icon729.png",
                 "width": 729,
                 "height": 729
             }
@@ -160,7 +160,7 @@
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "@id": "{{ site.base_url }}/#app",
+        "@id": "{{ canonical_home_url }}#app",
         "name": "{{ page_t.schemas.app.name }}",
         "alternateName": "BrainCheck",
         "description": "{{ page_t.schemas.app.description }}",
@@ -183,11 +183,11 @@
             "{{ feature }}"{% if not loop.last %},{% endif %}
             {% endfor %}
         ],
-        "screenshot": "{{ site.base_url }}/assets/images/og_kakao.png",
-        "image": "{{ site.base_url }}/assets/images/app_icon729.png",
+        "screenshot": "{{ public_asset_url }}/images/og_kakao.png",
+        "image": "{{ public_asset_url }}/images/app_icon729.png",
         "author": {
             "@type": "Organization",
-            "@id": "{{ site.base_url }}/#organization"
+            "@id": "{{ canonical_home_url }}#organization"
         }
     }
     </script>
