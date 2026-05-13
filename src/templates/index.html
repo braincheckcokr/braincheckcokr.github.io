@@ -76,7 +76,7 @@
             <div class="feature-grid">
                 {% set feature_links = ["mlsystem.html", "tts.html", "stt.html", "ai-content.html", "multiplatform.html"] %}
                 {% for card in page_t.features.cards %}
-                <a href="{{ asset_prefix }}{{ feature_links[loop.index0] }}" class="feature-card" style="text-decoration: none; color: inherit;">
+                <a href="{{ nav_prefix }}{{ feature_links[loop.index0] }}" class="feature-card" style="text-decoration: none; color: inherit;">
                     <h4>{{ card.title }}</h4>
                     <p>{{ card.desc }}</p>
                 </a>
