@@ -2,7 +2,7 @@
 layout: default
 title: 회사소개 - BrainCheck
 description: 뇌체크 회사 정보
-canonical_url: "https://braincheck.co.kr/main/about.html"
+canonical_url: "https://braincheck.co.kr/home/ko/about.html"
 ---
 
 ## 회사소개
