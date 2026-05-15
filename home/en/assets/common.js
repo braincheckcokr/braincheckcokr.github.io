@@ -12,6 +12,7 @@
         more: 'More menu',
         openMenu: 'Open menu',
         home: 'Home',
+        store: 'Store',
         about: 'About',
         subscription: 'Subscription',
         support: 'Support',
@@ -21,6 +22,7 @@
         more: '상세 메뉴',
         openMenu: '메뉴 열기',
         home: '홈',
+        store: '스토어',
         about: '회사소개',
         subscription: '구독',
         support: '고객센터',
@@ -424,7 +426,8 @@
         var mobileMenu = document.createElement('nav');
         mobileMenu.className = 'mobile-menu';
 
-        var html = '<a href="' + withPrefix('about.html') + '">' + labels.about + '</a>' +
+        var html = '<a href="/store">' + labels.store + '</a>' +
+            '<a href="' + withPrefix('about.html') + '">' + labels.about + '</a>' +
             '<details class="mobile-submodule">' +
             '<summary>' + labels.subscription + '</summary>';
         detailLinks.forEach(function(item) {
@@ -469,6 +472,7 @@
         footer.className = 'footer';
         footer.innerHTML = '<div class="footer-links">' +
             '<a href="' + withPrefix('index.html') + '">' + labels.home + '</a>' +
+            '<a href="/store">' + labels.store + '</a>' +
             '<a href="' + withPrefix('about.html') + '">' + labels.about + '</a>' +
             '<a href="' + withPrefix('support.html') + '">' + labels.support + '</a>' +
             '<a href="' + withPrefix('information.html') + '">' + labels.privacy + '</a>' +
